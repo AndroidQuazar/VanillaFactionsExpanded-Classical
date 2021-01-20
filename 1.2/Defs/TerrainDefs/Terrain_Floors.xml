@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<TerrainDef ParentName="FloorBase">
+		<defName>VFEC_Mosaic</defName>
+		<label>mosaic</label>
+		<description>Description needed.</description>
+		<texturePath>Terrain/Surfaces/Mosaic</texturePath>
+		<edgeType>Hard</edgeType>
+		<renderPrecedence>70</renderPrecedence>
+		<color>(126,104,94)</color>
+		<statBases>
+			<Beauty>-1</Beauty>
+			<WorkToBuild>100</WorkToBuild>
+		</statBases>
+		<costList>
+			<Steel>10</Steel>
+		</costList>
+		<designationHotKey>Misc6</designationHotKey>
+		<!-- <researchPrerequisites> -->
+		<!-- <li>Stonecutting</li> -->
+		<!-- </researchPrerequisites> -->
+	</TerrainDef>
+</Defs>

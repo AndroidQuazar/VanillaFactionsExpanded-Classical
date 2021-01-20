@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>VFEC_MeatDryingRackInput</defName>
+		<building>VFEC_MeatDryingRack</building>
+		<slot>1</slot>
+		<items>
+			<li>MeatRaw</li>
+		</items>
+	</ItemProcessor.ItemAcceptedDef>
+</Defs>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Vanilla Factions Expanded - Classical</name>
+	<author>Vanilla Expanded team</author>
+	<supportedVersions>
+		<li>1.2</li>
+	</supportedVersions>
+	<packageId>OskarPotocki.VFE.Classical</packageId>
+	<description>
+Description needed.
+
+</description>
+	<modDependencies>
+        <li>
+			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+			<displayName>Vanilla Expanded Framework</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1854607105</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+</ModMetaData>
