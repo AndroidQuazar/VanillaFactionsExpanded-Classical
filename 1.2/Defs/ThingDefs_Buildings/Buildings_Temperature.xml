@@ -66,8 +66,8 @@
 		</comps>
 		<designationCategory>Temperature</designationCategory>
 		<designationHotKey>Misc4</designationHotKey>
-		<!-- <researchPrerequisites> -->
-		<!-- <li>PassiveCooler</li> -->
-		<!-- </researchPrerequisites> -->
+		<researchPrerequisites>
+			<li>VFEC_Research_LargePassiveCooler</li>
+		</researchPrerequisites>
 	</ThingDef>
 </Defs>

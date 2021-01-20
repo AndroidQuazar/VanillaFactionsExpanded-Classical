@@ -5,6 +5,9 @@
 		<label>meat drying rack</label>
 		<description>Description needed</description>
 		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<researchPrerequisites>
+			<li>VFEC_Research_MeatDrying</li>
+		</researchPrerequisites>
 		<graphicData>
 			<texPath>Things/Building/Production/MeatDryingRack/MeatDryingRack</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>

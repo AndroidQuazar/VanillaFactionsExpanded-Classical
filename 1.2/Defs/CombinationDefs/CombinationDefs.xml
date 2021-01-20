@@ -10,8 +10,8 @@
 		<amount>
 			<li>50</li>
 		</amount>
-		<result>Pemmican</result>
-		<yield>25</yield>
+		<result>VFEC_DriedMeat</result>
+		<yield>50</yield>
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>12</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>

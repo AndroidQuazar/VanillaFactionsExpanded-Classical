@@ -18,3 +18,4 @@ List of things that have been integrated
 7. Large passive cooler
 8. Meat drying rack (missing texture) 
 9. Mosaic floor (missing texture) 
+10. Research

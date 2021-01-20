@@ -50,7 +50,7 @@
 			</li>
 		</tools>
 		<recipeMaker>
-			<!-- <researchPrerequisite>Smithing</researchPrerequisite> -->
+			<researchPrerequisite>VFEC_Research_LegionaryArmaments</researchPrerequisite>
 			<skillRequirements>
 				<Crafting>3</Crafting>
 			</skillRequirements>
@@ -106,7 +106,7 @@
 			</li>
 		</tools>
 		<recipeMaker>
-			<!-- <researchPrerequisite>Smithing</researchPrerequisite> -->
+			<researchPrerequisite>VFEC_Research_LegionaryArmaments</researchPrerequisite>
 			<skillRequirements>
 				<Crafting>3</Crafting>
 			</skillRequirements>

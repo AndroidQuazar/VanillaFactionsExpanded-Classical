@@ -16,8 +16,8 @@
 			<Steel>10</Steel>
 		</costList>
 		<designationHotKey>Misc6</designationHotKey>
-		<!-- <researchPrerequisites> -->
-		<!-- <li>Stonecutting</li> -->
-		<!-- </researchPrerequisites> -->
+		<researchPrerequisites>
+		<li>VFEC_Research_Mosaics</li>
+		</researchPrerequisites>
 	</TerrainDef>
 </Defs>

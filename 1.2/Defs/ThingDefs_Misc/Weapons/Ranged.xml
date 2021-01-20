@@ -1,77 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<ThingDef ParentName="BaseWeaponNeolithic">
-    <defName>VFEC_Javelin</defName>
-    <label>javelin</label>
+		<defName>VFEC_Javelin</defName>
+		<label>javelin</label>
+		<description>Description needed.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/Javelin</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_BeatFire</soundInteract>
+		<costList>
+			<WoodLog>70</WoodLog>
+		</costList>
+		<statBases>
+			<WorkToMake>7000</WorkToMake>
+			<Mass>4</Mass>
+			<AccuracyTouch>0.50</AccuracyTouch>
+			<AccuracyShort>0.71</AccuracyShort>
+			<AccuracyMedium>0.50</AccuracyMedium>
+			<AccuracyLong>0.32</AccuracyLong>
+			<RangedWeapon_Cooldown>4</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>NeolithicRangedHeavy</li>
+		</weaponTags>
+		<recipeMaker>
+			<researchPrerequisite>VFEC_Research_LegionaryArmaments</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Pilum_Thrown</defaultProjectile>
+				<warmupTime>4</warmupTime>
+				<range>18.9</range>
+				<soundCast>Interact_BeatFire</soundCast>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>shaft</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>point</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+	<ThingDef ParentName="BaseProjectileNeolithic">
+		<defName>VFEC_Javelin_Thrown</defName>
+		<label>javelin</label>
+		<graphicData>
+			<texPath>Things/Projectile/Javelin</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>RangedStab</damageDef>
+			<damageAmountBase>25</damageAmountBase>
+			<stoppingPower>2.5</stoppingPower>
+			<armorPenetrationBase>0.10</armorPenetrationBase>
+			<speed>26</speed>
+		</projectile>
+	</ThingDef>
+	
+	  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>VFEC_HandeheldScorpion</defName>
+    <label>handheld scorpion</label>
     <description>Description needed.</description>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/Javelin</texPath>
+      <texPath>Things/Item/Equipment/WeaponRanged/Scorpion</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <soundInteract>Interact_BeatFire</soundInteract>
+    <soundInteract>Bow_Large</soundInteract>
     <costList>
-      <WoodLog>70</WoodLog>
+      <WoodLog>60</WoodLog>
     </costList>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
-      <WorkToMake>7000</WorkToMake>
-      <Mass>4</Mass>
-      <AccuracyTouch>0.50</AccuracyTouch>
-      <AccuracyShort>0.71</AccuracyShort>
-      <AccuracyMedium>0.50</AccuracyMedium>
-      <AccuracyLong>0.32</AccuracyLong>
-      <RangedWeapon_Cooldown>4</RangedWeapon_Cooldown>
+      <WorkToMake>9000</WorkToMake>
+      <Mass>3.0</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
     </statBases>
     <weaponTags>
       <li>NeolithicRangedHeavy</li>
+      <li>NeolithicRangedChief</li>
     </weaponTags>
-    <recipeMaker>
-      <skillRequirements>
-        <Crafting>3</Crafting>
-      </skillRequirements>
-    </recipeMaker>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Pilum_Thrown</defaultProjectile>
-        <warmupTime>4</warmupTime>
-        <range>18.9</range>
-        <soundCast>Interact_BeatFire</soundCast>
-        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+        <defaultProjectile>Arrow_Great</defaultProjectile>
+        <warmupTime>2.0</warmupTime>
+        <range>29.9</range>
+        <soundCast>Bow_Large</soundCast>
       </li>
     </verbs>
     <tools>
       <li>
-        <label>shaft</label>
+        <label>limb</label>
         <capacities>
           <li>Blunt</li>
+          <li>Poke</li>
         </capacities>
         <power>9</power>
-         <cooldownTime>2</cooldownTime>
-      </li>
-      <li>
-        <label>point</label>
-        <capacities>
-          <li>Stab</li>
-        </capacities>
-        <power>9</power>
-         <cooldownTime>2</cooldownTime>
+        <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-  </ThingDef>
-  <ThingDef ParentName="BaseProjectileNeolithic">
-    <defName>VFEC_Javelin_Thrown</defName>
-    <label>javelin</label>
-    <graphicData>
-      <texPath>Things/Projectile/Javelin</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <projectile>
-      <damageDef>RangedStab</damageDef>
-      <damageAmountBase>25</damageAmountBase>
-      <stoppingPower>2.5</stoppingPower>
-      <armorPenetrationBase>0.10</armorPenetrationBase>
-      <speed>26</speed>
-    </projectile>
+    <recipeMaker>
+		<recipeMaker>
+			<researchPrerequisite>VFEC_Research_LegionaryArmaments</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+    </recipeMaker>
   </ThingDef>
 </Defs>

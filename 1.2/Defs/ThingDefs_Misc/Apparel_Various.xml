@@ -5,6 +5,9 @@
 		<defName>VFEC_Toga</defName>
 		<label>toga</label>
 		<description>Description needed.</description>
+		<recipeMaker>
+			<researchPrerequisite>VFEC_Research_Togas</researchPrerequisite>
+		</recipeMaker>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/Toga/Toga</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -53,7 +56,7 @@
 		<description>Description needed.</description>
 		<recipeMaker>
 			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
-			<!-- <researchPrerequisite>PlateArmor</researchPrerequisite> -->
+			<researchPrerequisite>VFEC_Research_CenturionArmor</researchPrerequisite>
 			<skillRequirements>
 				<Crafting>7</Crafting>
 			</skillRequirements>
@@ -139,6 +142,7 @@
 				<li>ElectricSmithy</li>
 				<li>FueledSmithy</li>
 			</recipeUsers>
+			<researchPrerequisite>VFEC_Research_CenturionArmor</researchPrerequisite>
 		</recipeMaker>
 		<apparel>
 			<bodyPartGroups>
@@ -156,14 +160,14 @@
 			</defaultOutfitTags>
 		</apparel>
 	</ThingDef>
-		<!--Legionnaire armor-->
+	<!--Legionnaire armor-->
 	<ThingDef ParentName="ArmorSmithableBase">
 		<defName>VFEC_LegionnaireArmor</defName>
 		<label>Legionnaire armor</label>
 		<description>Description needed.</description>
 		<recipeMaker>
 			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
-			<!-- <researchPrerequisite>PlateArmor</researchPrerequisite> -->
+			<researchPrerequisite>VFEC_Research_LegionnaireArmor</researchPrerequisite>
 			<skillRequirements>
 				<Crafting>7</Crafting>
 			</skillRequirements>
@@ -245,6 +249,7 @@
 			<EquipDelay>1.5</EquipDelay>
 		</statBases>
 		<recipeMaker>
+			<researchPrerequisite>VFEC_Research_LegionnaireArmor</researchPrerequisite>
 			<recipeUsers>
 				<li>ElectricSmithy</li>
 				<li>FueledSmithy</li>

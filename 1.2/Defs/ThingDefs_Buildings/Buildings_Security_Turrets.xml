@@ -81,9 +81,9 @@
 		</building>
 		<repairEffect>ConstructDirt</repairEffect>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-		<!-- <researchPrerequisites> -->
-		<!-- <li>VFES_SiegeEquipment</li> -->
-		<!-- </researchPrerequisites> -->
+		<researchPrerequisites>
+		<li>VFEC_Research_Scorpion</li>
+		</researchPrerequisites>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_ShowTurretRadius</li>
