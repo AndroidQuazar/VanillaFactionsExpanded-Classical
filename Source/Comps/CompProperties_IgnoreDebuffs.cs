@@ -17,11 +17,11 @@ namespace VFEC
 
         public CompProperties_IgnoreDebuffs()
         {
-            this.compClass = typeof(CompIgnoreDebuff);
+            this.compClass = typeof(CompIgnoreDebuffs);
         }
     }
 
-    class CompIgnoreDebuff : ThingComp
+    class CompIgnoreDebuffs : ThingComp
     {
         public CompProperties_IgnoreDebuffs Props
         {

@@ -5,6 +5,7 @@ This is only the XML groundwork for the mod. Everything should be double checked
 3. UI/Overlays/FuelScorpionBolt needed, now same as Ballista from VFE-Security
 4. Scorpion sounds and range
 5. Javelin arrow is now a pilm.
+6. C# code for IgnoreDebuffs still gives error on a duplicate node, but should technically work?
 
 
 

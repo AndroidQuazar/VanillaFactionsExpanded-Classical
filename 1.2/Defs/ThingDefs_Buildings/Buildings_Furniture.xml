@@ -46,6 +46,7 @@
 			</li>
 			<li Class="CompProperties_AffectedByFacilities" Inherit="False">
 				<linkableFacilities>
+				<!--Without it gives an error?-->
 				</linkableFacilities>
 			</li>
 		</comps>
