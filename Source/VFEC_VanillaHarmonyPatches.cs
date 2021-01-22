@@ -10,21 +10,21 @@ using UnityEngine;
 using Verse;
 using HarmonyLib;
 
-namespace VFERomans
+namespace VFEC
 {
-    public class VFERoman_VanillaHarmonyPatches
+    public class VFEC_VanillaHarmonyPatches
     {
         [HarmonyPatch(typeof(FactionUIUtility), "DrawFactionRow")]
         class DrawFactionRowPatch
         {
             static void Postfix(Faction faction, float rowY, Rect fillRect)
             {
-                if (faction.def.defName == "VFEWesternRepublic" || faction.def.defName == "VFECentralRepublic" || faction.def.defName == "VFEEasternImperium") {
+                if (faction.def.defName == "VFECWesternRepublic" || faction.def.defName == "VFECCentralRepublic" || faction.def.defName == "VFECEasternImperium") {
                     Rect rect = new Rect(320, rowY + 3, 20f, 20f);
-                    if (Widgets.ButtonImage(rect, VFERoman_TextureLoader.iconCustomize))
+                    if (Widgets.ButtonImage(rect, VFEC_TextureLoader.iconCustomize))
                     {
-                        //Open VFERoman_Window_SubFactionInformation
-                        Find.WindowStack.Add(new VFERoman_Window_SubFaction(Find.World.GetComponent<VFERoman_RepublicFaction>().subFactions.Where(x => x.faction == faction).First()));
+                        //Open VFEC_Window_SubFactionInformation
+                        Find.WindowStack.Add(new VFEC_Window_SubFaction(Find.World.GetComponent<VFEC_RepublicFaction>().subFactions.Where(x => x.faction == faction).First()));
                     }
 
                     if (Mouse.IsOver(rect))

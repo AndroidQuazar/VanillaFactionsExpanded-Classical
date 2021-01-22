@@ -9,9 +9,9 @@ using Verse;
 using UnityEngine;
 
 
-namespace VFERomans
+namespace VFEC
 {
-    class VFERoman_Window_SubFaction : Window
+    class VFEC_Window_SubFaction : Window
     {
 		float basePawnWidth = 100;
 		float basePawnHeight = 100;
@@ -19,9 +19,9 @@ namespace VFERomans
 		float pawnDistanceSize = .88f;
 		float pawnDistanceHeight = -50f;
 
-		VFERoman_SubFaction subfaction;
+		VFEC_SubFaction subfaction;
 
-		public VFERoman_Window_SubFaction(VFERoman_SubFaction subFaction)
+		public VFEC_Window_SubFaction(VFEC_SubFaction subFaction)
 		{
 			if (subFaction == null)
 			{
@@ -205,7 +205,7 @@ namespace VFERomans
 
 		public void circleUnderPawn(Rect pawnRectCircle)
 		{
-			Widgets.ButtonImage(pawnRectCircle, VFERoman_TextureLoader.pawnCircle);
+			Widgets.ButtonImage(pawnRectCircle, VFEC_TextureLoader.pawnCircle);
 		}
 	}
 }

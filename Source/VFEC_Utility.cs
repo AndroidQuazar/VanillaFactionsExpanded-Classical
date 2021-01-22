@@ -10,12 +10,12 @@ using Verse;
 using HarmonyLib;
 
 
-namespace VFERomans
+namespace VFEC
 {
-	public class VFERomans_Utility
+	public class VFECs_Utility
 	{
 
-		public VFERomans_Utility()
+		public VFECs_Utility()
 		{
 
 		}

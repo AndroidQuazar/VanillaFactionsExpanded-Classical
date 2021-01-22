@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 using Verse;
 using RimWorld;
 
-namespace VFERomans
+namespace VFEC
 {
-    public class CompProperties_IgnoreDebuff : CompProperties
+    public class CompProperties_IgnoreDebuffs : CompProperties
     {
         public ThoughtDef removeThought;
         public HediffDef removeHediff;
-        public CompProperties_IgnoreDebuff()
+        public List<ThoughtDef> ThoughtsToRemove = new List<ThoughtDef>();
+        public List<HediffDef> HediffsToRemove = new List<HediffDef>();
+
+        public CompProperties_IgnoreDebuffs()
         {
             this.compClass = typeof(CompIgnoreDebuff);
         }
@@ -20,11 +23,11 @@ namespace VFERomans
 
     class CompIgnoreDebuff : ThingComp
     {
-        public CompProperties_IgnoreDebuff Props
+        public CompProperties_IgnoreDebuffs Props
         {
             get
             {
-                return (CompProperties_IgnoreDebuff)this.props;
+                return (CompProperties_IgnoreDebuffs)this.props;
             }
         }
 
@@ -35,15 +38,21 @@ namespace VFERomans
             {
                 foreach (Pawn pawn in parentAsBed.CurOccupants)
                 {
-                    // Currently only accepts one Thought or Hediff per comp, make a list of all existing thoughts/hediffs per comp and use a foreach loop to make it applicable multiple times.
-                    // Flaw is that once the pawn exits bed the Thought/Hediff returns.
+                    // Current flaw is that once the pawn exits bed the Thought/Hediff returns.
+
                     // Hediff
-                    if (pawn.health.hediffSet.hediffs.Any(h => h.def == this.Props.removeHediff))
+                    foreach (HediffDef hediffdef in this.Props.HediffsToRemove)
                     {
-                        pawn.health.RemoveHediff(pawn.health.hediffSet.hediffs.First(h => h.def == this.Props.removeHediff));
+                        if (pawn.health.hediffSet.hediffs.Any(h => h.def == this.Props.removeHediff))
+                        {
+                            pawn.health.RemoveHediff(pawn.health.hediffSet.hediffs.First(h => h.def == this.Props.removeHediff));
+                        }
                     }
                     // Thought
-                    pawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(this.Props.removeThought);
+                    foreach (ThoughtDef thoughtdef in this.Props.ThoughtsToRemove)
+                    {
+                        pawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(this.Props.removeThought);
+                    }
                 }
             }
         }

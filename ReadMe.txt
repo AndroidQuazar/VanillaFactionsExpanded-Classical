@@ -19,3 +19,4 @@ List of things that have been integrated
 8. Meat drying rack (missing texture) 
 9. Mosaic floor (missing texture) 
 10. Research
+11. V01 of CompProperties_IgnoreDebuffs

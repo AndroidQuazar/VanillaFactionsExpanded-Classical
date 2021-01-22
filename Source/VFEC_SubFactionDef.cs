@@ -7,15 +7,15 @@ using RimWorld;
 using Verse;
 using URF;
 
-namespace VFERomans
+namespace VFEC
 {
-    public class VFERoman_SubFactionDef : Def, IExposable
+    public class VFEC_SubFactionDef : Def, IExposable
     {
         //list vars
         public string name;
         public List<LockedResearchDef> researches;
 
-        public VFERoman_SubFactionDef()
+        public VFEC_SubFactionDef()
         {
 
         }
@@ -32,14 +32,14 @@ namespace VFERomans
     }
 
     [DefOf]
-    public class VFERoman_SubFactionDefOf
+    public class VFEC_SubFactionDefOf
     {
-        public static VFERoman_SubFactionDef VFECentralRepublic;
-        public static VFERoman_SubFactionDef VFEWesternRepublic;
-        public static VFERoman_SubFactionDef VFEEasternImperium;
-        static VFERoman_SubFactionDefOf()
+        public static VFEC_SubFactionDef VFECentralRepublic;
+        public static VFEC_SubFactionDef VFEWesternRepublic;
+        public static VFEC_SubFactionDef VFEEasternImperium;
+        static VFEC_SubFactionDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(VFERoman_SubFactionDef));
+            DefOfHelper.EnsureInitializedInCtor(typeof(VFEC_SubFactionDef));
         }
     }
 

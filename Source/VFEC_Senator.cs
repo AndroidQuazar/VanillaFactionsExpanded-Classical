@@ -9,22 +9,22 @@ using RimWorld.Planet;
 using Verse;
 using HarmonyLib;
 
-namespace VFERomans
+namespace VFEC
 {
-    public class VFERoman_Senator : ILoadReferenceable, IExposable
+    public class VFEC_Senator : ILoadReferenceable, IExposable
     {
         public int loadID;
         public Pawn pawn;
-        public VFERoman_SubFaction subFaction;
+        public VFEC_SubFaction subFaction;
         public int opinion;
         public bool isEmperor;
         public bool isSupporting;
 
-        public VFERoman_Senator()
+        public VFEC_Senator()
         {
 
         }
-        public VFERoman_Senator( VFERoman_SubFaction subFaction, bool isEmperor)
+        public VFEC_Senator( VFEC_SubFaction subFaction, bool isEmperor)
         {
             this.subFaction = subFaction;
             generateNewSenator(isEmperor);
@@ -59,11 +59,11 @@ namespace VFERomans
         //Referenceable
         public string GetUniqueLoadID()
         {
-            return "VFERoman_Senator_" + this.loadID;
+            return "VFEC_Senator_" + this.loadID;
         }
         public void SetUniqueLoadID()
         {
-            this.loadID = Find.World.GetComponent<VFERoman_RepublicFaction>().getNextSenatorID();
+            this.loadID = Find.World.GetComponent<VFEC_RepublicFaction>().getNextSenatorID();
         }
 
         //Expose Data
@@ -74,7 +74,7 @@ namespace VFERomans
             Scribe_Values.Look<bool>(ref isEmperor, "isEmperor");
             Scribe_Values.Look<bool>(ref isSupporting, "isSupporting");
             Scribe_Deep.Look<Pawn>(ref pawn, "pawn");
-            Scribe_References.Look<VFERoman_SubFaction>(ref subFaction, "subFaction");
+            Scribe_References.Look<VFEC_SubFaction>(ref subFaction, "subFaction");
         }
 
 

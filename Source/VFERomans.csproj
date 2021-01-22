@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Assemblies\</OutputPath>
+    <OutputPath>..\1.2\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -85,17 +85,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comps\CompProperties_CureHediffs.cs" />
-    <Compile Include="VERomans.cs" />
+    <None Include="VFEC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VFERoman_RepublicFaction.cs" />
-    <Compile Include="VFERomans_Utility.cs" />
-    <Compile Include="VFERoman_Senator.cs" />
-    <Compile Include="VFERoman_SubFaction.cs" />
-    <Compile Include="VFERoman_SubFactionDef.cs" />
-    <Compile Include="VFERoman_TextureLoader.cs" />
-    <Compile Include="VFERoman_VanillaHarmonyPatches.cs" />
-    <Compile Include="VFERoman_Window_SubFaction.cs" />
-    <Compile Include="VFERoman_WorkGiver.cs" />
+    <Compile Include="VFEC_RepublicFaction.cs" />
+    <None Include="VFEC_Utility.cs" />
+    <None Include="VFEC_Senator.cs" />
+    <None Include="VFEC_SubFaction.cs" />
+    <None Include="VFEC_SubFactionDef.cs" />
+    <None Include="VFEC_Textureloader.cs" />
+    <None Include="VFEC_VanillaHarmonyPatches.cs" />
+    <None Include="VFEC_Window_SubFaction.cs" />
+    <None Include="VFEC_WorkGiver.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

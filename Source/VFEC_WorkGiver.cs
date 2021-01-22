@@ -7,9 +7,9 @@ using Verse;
 using Verse.AI;
 using RimWorld;
 
-namespace VFERomans
+namespace VFEC
 {
-    class VFERoman_WorkGiver_DryMeat : WorkGiver_Scanner
+    class VFEC_WorkGiver_DryMeat : WorkGiver_Scanner
     {
 
         public override ThingRequest PotentialWorkThingRequest
@@ -29,9 +29,9 @@ namespace VFERomans
             }
         }
 
-        public VFERoman_WorkGiver_DryMeat()
+        public VFEC_WorkGiver_DryMeat()
         {
-            //if (VFERoman_WorkGiver_DryMeat.No)
+            //if (VFEC_WorkGiver_DryMeat.No)
         }
 
 

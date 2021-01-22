@@ -9,9 +9,9 @@ using RimWorld.Planet;
 using Verse;
 using HarmonyLib;
 
-namespace VFERomans
+namespace VFEC
 {
-    public class VFERoman_RepublicFaction : WorldComponent
+    public class VFEC_RepublicFaction : WorldComponent
     {
         //Declare base variables here
         public int nextSenatorID = 1;
@@ -19,7 +19,7 @@ namespace VFERomans
 
         public bool spawnTick = true;
 
-        public List<VFERoman_SubFaction> subFactions;
+        public List<VFEC_SubFaction> subFactions;
 
 
         //Expose data
@@ -32,14 +32,14 @@ namespace VFERomans
 
             Scribe_Values.Look<bool>(ref spawnTick, "spawnTick");
 
-            Scribe_Collections.Look<VFERoman_SubFaction>(ref subFactions, "subFactions", LookMode.Deep);
+            Scribe_Collections.Look<VFEC_SubFaction>(ref subFactions, "subFactions", LookMode.Deep);
 
         }
 
         //Constructor
-        public VFERoman_RepublicFaction(World world) : base(world)
+        public VFEC_RepublicFaction(World world) : base(world)
         {
-            var harmony = new Harmony("com.Saakra.VFERomans");
+            var harmony = new Harmony("com.Saakra.VFEC");
             harmony.PatchAll();
         }
 
@@ -54,8 +54,8 @@ namespace VFERomans
             //On first tick of game, prepare the subfactions
             if (this.spawnTick == true)
             {
-                subFactions = new List<VFERoman_SubFaction>() { new VFERoman_SubFaction("VFECentralRepublic"), new VFERoman_SubFaction("VFEWesternRepublic"), new VFERoman_SubFaction("VFEEasternImperium") };
-               // foreach (VFERoman_SubFaction subfaction in subFactions)
+                subFactions = new List<VFEC_SubFaction>() { new VFEC_SubFaction("VFECentralRepublic"), new VFEC_SubFaction("VFEWesternRepublic"), new VFEC_SubFaction("VFEEasternImperium") };
+               // foreach (VFEC_SubFaction subfaction in subFactions)
                 //{
                     //subfaction.resetResearches();
                // }
@@ -67,7 +67,7 @@ namespace VFERomans
             //SOS2-Compatibility
             //Check if change world, if so run the following:
 
-            /* foreach (VFERoman_SubFaction subfaction in subFactions)
+            /* foreach (VFEC_SubFaction subfaction in subFactions)
             {
                 subfaction.updateFaction();
             }

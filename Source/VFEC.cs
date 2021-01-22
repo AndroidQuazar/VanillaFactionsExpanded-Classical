@@ -10,9 +10,10 @@ using Verse;
 using HarmonyLib;
 
 
-namespace VFERomans
+namespace VFEC
 {
-    public class VFERomans
+    public class VFEC
     {
+        // Currently all classes except for the Comps have build action set to none!
     }
 }

@@ -38,10 +38,15 @@
 		<passability>Standable</passability>
 		<designationHotKey>Misc2</designationHotKey>
 		<comps>
-			<li Class="VFERomans.CompProperties_IgnoreDebuff">
-				<!-- <removeThought>SleptInCold</removeThought> -->
+			<li Class="VFEC.CompProperties_IgnoreDebuffs">
+				<removeThought>SleptInCold</removeThought>
 				<removeThought>SleptInHeat</removeThought>
-				<!-- <removeThought>SleptOnGround</removeThought> -->
+				<removeThought>SleptOnGround</removeThought>
+				<removeThought>SleepDisturbed</removeThought>
+			</li>
+			<li Class="CompProperties_AffectedByFacilities" Inherit="False">
+				<linkableFacilities>
+				</linkableFacilities>
 			</li>
 		</comps>
 	</ThingDef>

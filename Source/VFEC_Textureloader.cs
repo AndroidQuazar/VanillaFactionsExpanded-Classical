@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 
-namespace VFERomans
+namespace VFEC
 {
     [StaticConstructorOnStartup]
-    internal  static class VFERoman_TextureLoader
+    internal  static class VFEC_TextureLoader
     {
         public static readonly Texture2D iconCustomize = ContentFinder<Texture2D>.Get("GUI/customizebutton");
         public static readonly Texture2D pawnCircle = ContentFinder<Texture2D>.Get("GUI/unitCircle");
