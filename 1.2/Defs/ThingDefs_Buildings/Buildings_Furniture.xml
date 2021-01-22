@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BedWithQualityBase">
+		<defName>VFEC_Tent</defName>
+		<label>tent</label>
+		<description>Description needed.</description>
+		<tickerType>Rare</tickerType>
+		<graphicData>
+			<texPath>Things/Building/Furniture/Bed/TentSmall</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3,4)</drawSize>
+		</graphicData>
+		<castEdgeShadows>True</castEdgeShadows>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Mass>2.5</Mass>
+			<BedRestEffectiveness>0.95</BedRestEffectiveness>
+			<ImmunityGainSpeedFactor>1.05</ImmunityGainSpeedFactor>
+			<Comfort>0.68</Comfort>
+			<WorkToBuild>600</WorkToBuild>
+		</statBases>
+		<size>(1,2)</size>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>40</costStuffCount>
+		<building>
+			<bed_showSleeperBody>false</bed_showSleeperBody>
+			<bed_healPerDay>4</bed_healPerDay>
+			<bed_caravansCanUse>true</bed_caravansCanUse>
+			<destroySound>BuildingDestroyed_Soft_Medium</destroySound>
+			<destroyShakeAmount>0</destroyShakeAmount>
+		</building>
+		<pathCost>14</pathCost>
+		<passability>Standable</passability>
+		<designationHotKey>Misc2</designationHotKey>
+		<comps>
+			<li Class="VFERomans.CompProperties_IgnoreDebuff">
+				<!-- <removeThought>SleptInCold</removeThought> -->
+				<removeThought>SleptInHeat</removeThought>
+				<!-- <removeThought>SleptOnGround</removeThought> -->
+			</li>
+		</comps>
+	</ThingDef>
+</Defs>

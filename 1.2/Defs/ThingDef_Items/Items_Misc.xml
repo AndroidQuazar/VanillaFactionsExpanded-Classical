@@ -10,7 +10,7 @@
       <li>Foods</li>
     </thingCategories>
     <graphicData>
-      <texPath>Things/Item/Resource/DriedMeat/DriedMeat</texPath>
+      <texPath>Things/Item/Resource/DriedMeat</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <socialPropernessMatters>true</socialPropernessMatters>
