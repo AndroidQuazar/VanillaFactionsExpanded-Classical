@@ -43,9 +43,67 @@
 			</li>
 			<li Class="CompProperties_AffectedByFacilities" Inherit="False">
 				<linkableFacilities>
-				<!--Without it gives an error?-->
+					<!--Without it gives an error?-->
 				</linkableFacilities>
 			</li>
 		</comps>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEC_Thermaebath</defName>
+		<label>thermaebath</label>
+		<description>Description needed.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Power/GeothermalPlant</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<shadowData>
+				<volume>(6.03,1.0,5.25)</volume>
+				<offset>(0,0,-0.25)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.3,0,5.4,6)</rect>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Flammability>0.5</Flammability>
+			<Beauty>30</Beauty>
+			      <JoyGainFactor>3</JoyGainFactor>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(3,3)</size>
+		<costList>
+			<Steel>340</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+		</costList>
+		<comps>
+		</comps>
+		<rotatable>true</rotatable>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Joy</designationCategory>
+		<placeWorkers>
+			<li>PlaceWorker_OnSteamGeyser</li>
+		</placeWorkers>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+			<joyKind>Social</joyKind>
+		</building>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc6</designationHotKey>
+		<researchPrerequisites>
+			<li>VFEC_Research_Thermaebath</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 </Defs>
