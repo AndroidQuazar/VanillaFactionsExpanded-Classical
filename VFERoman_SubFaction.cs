@@ -41,8 +41,8 @@ namespace VFERomans
                 case "VFEWesternRepublic":
                     def = VFERoman_SubFactionDefOf.VFEWesternRepublic;
                     break;
-                case "VFEEasternImperium":
-                    def = VFERoman_SubFactionDefOf.VFEEasternImperium;
+                case "VFEEasternRepublic":
+                    def = VFERoman_SubFactionDefOf.VFEEasternRepublic;
                     break;
 
             }
@@ -158,7 +158,7 @@ namespace VFERomans
                 case "VFEWesternRepublic":
                     str = str + "WR_";
                     break;
-                case "VFEEasternImperium":
+                case "VFEEasternRepublic":
                     str = str + "EI_";
                     break;
             }

@@ -88,13 +88,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VFERoman_RepublicFaction.cs" />
     <Compile Include="VFERomans_Utility.cs" />
+    <Compile Include="VFERoman_RoadBuilder.cs" />
     <Compile Include="VFERoman_Senator.cs" />
     <Compile Include="VFERoman_SubFaction.cs" />
     <Compile Include="VFERoman_SubFactionDef.cs" />
     <Compile Include="VFERoman_TextureLoader.cs" />
     <Compile Include="VFERoman_VanillaHarmonyPatches.cs" />
+    <Compile Include="VFERoman_Window_RoadQueues.cs" />
     <Compile Include="VFERoman_Window_SubFaction.cs" />
-    <Compile Include="VFERoman_WorkGiver.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

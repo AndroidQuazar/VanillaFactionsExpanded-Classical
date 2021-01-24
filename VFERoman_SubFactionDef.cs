@@ -36,7 +36,7 @@ namespace VFERomans
     {
         public static VFERoman_SubFactionDef VFECentralRepublic;
         public static VFERoman_SubFactionDef VFEWesternRepublic;
-        public static VFERoman_SubFactionDef VFEEasternImperium;
+        public static VFERoman_SubFactionDef VFEEasternRepublic;
         static VFERoman_SubFactionDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(VFERoman_SubFactionDef));

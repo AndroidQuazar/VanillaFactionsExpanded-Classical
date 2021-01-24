@@ -20,7 +20,7 @@ namespace VFERomans
         public bool spawnTick = true;
 
         public List<VFERoman_SubFaction> subFactions;
-
+        public VFERoman_RoadBuilder roadBuilder = new VFERoman_RoadBuilder();
 
         //Expose data
         public override void ExposeData()
@@ -54,7 +54,7 @@ namespace VFERomans
             //On first tick of game, prepare the subfactions
             if (this.spawnTick == true)
             {
-                subFactions = new List<VFERoman_SubFaction>() { new VFERoman_SubFaction("VFECentralRepublic"), new VFERoman_SubFaction("VFEWesternRepublic"), new VFERoman_SubFaction("VFEEasternImperium") };
+                subFactions = new List<VFERoman_SubFaction>() { new VFERoman_SubFaction("VFECentralRepublic"), new VFERoman_SubFaction("VFEWesternRepublic"), new VFERoman_SubFaction("VFEEasternRepublic") };
                // foreach (VFERoman_SubFaction subfaction in subFactions)
                 //{
                     //subfaction.resetResearches();
@@ -62,6 +62,12 @@ namespace VFERomans
 
                 spawnTick = false;
 
+            }
+
+
+            foreach(VFERoman_RoadQueue queue in roadBuilder.queues)
+            {
+                queue.tick();
             }
 
             //SOS2-Compatibility
@@ -90,6 +96,22 @@ namespace VFERomans
         {
             this.nextFactionID++;
             return nextFactionID;
+        }
+
+
+
+
+
+
+
+
+
+
+        //Debug Actions
+        [DebugAction("VFERomans", "Open RoadQueues Menu", allowedGameStates = AllowedGameStates.Playing)]
+        private static void openRoadQueuesMenu()
+        {
+            Find.WindowStack.Add(new VFERoman_Window_RoadQueues());
         }
 
     }
