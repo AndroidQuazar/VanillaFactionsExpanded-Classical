@@ -17,7 +17,7 @@ namespace VFEC
         public int loadID;
         public int senatorSupportReached = 0;
 
-        public VFERoman_SubFactionDef def;
+        public VFEC_SubFactionDef def;
         public Faction faction;
         public List<VFEC_Senator> senators = new List<VFEC_Senator>();
 
@@ -35,14 +35,15 @@ namespace VFEC
             //load def and find faction
             switch (defName)
             {
+                
                 case "VFECentralRepublic":
-                    def = VFERoman_SubFactionDefOf.VFECentralRepublic;
+                    def = VFEC_SubFactionDefOf.VFECentralRepublic;
                     break;
                 case "VFEWesternRepublic":
-                    def = VFERoman_SubFactionDefOf.VFEWesternRepublic;
+                    def = VFEC_SubFactionDefOf.VFEWesternRepublic;
                     break;
                 case "VFEEasternRepublic":
-                    def = VFERoman_SubFactionDefOf.VFEEasternRepublic;
+                    def = VFEC_SubFactionDefOf.VFEEasternRepublic;
                     break;
 
             }
@@ -90,6 +91,8 @@ namespace VFEC
         //Used to find factions (Especially when switching planets)
         public void updateFaction()
         {
+            Log.Message(faction.def.defName);
+            Log.Message(def.defName);
             this.faction = Find.FactionManager.FirstFactionOfDef(DefDatabase<FactionDef>.GetNamed(def.defName));
             if (this.faction != null)
             {
@@ -198,7 +201,7 @@ namespace VFEC
         {
             Scribe_Values.Look<int>(ref loadID, "loadID");
             Scribe_Values.Look<int>(ref senatorSupportReached, "senatorSupportReached");
-            Scribe_Defs.Look<VFERoman_SubFactionDef>(ref def, "def");
+            Scribe_Defs.Look<VFEC_SubFactionDef>(ref def, "def");
             Scribe_Collections.Look<VFEC_Senator>(ref senators, "senators", LookMode.Deep);
             Scribe_References.Look<Faction>(ref faction, "faction");
         }

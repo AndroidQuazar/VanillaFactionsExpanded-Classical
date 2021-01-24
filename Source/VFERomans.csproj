@@ -70,8 +70,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="URF">
-      <HintPath>..\..\..\..\Assemblies\URF.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\..\ResearchDiscovery\Assemblies\URF.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
