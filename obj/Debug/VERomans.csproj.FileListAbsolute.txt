@@ -1,6 +1,0 @@
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\VERomans\Assemblies\VERomans.dll
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\VERomans\Assemblies\VERomans.pdb
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\VERomans\Source\VERomans\VERomans\obj\Debug\VERomans.csprojAssemblyReference.cache
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\VERomans\Source\VERomans\VERomans\obj\Debug\VERomans.csproj.CopyComplete
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\VERomans\Source\VERomans\VERomans\obj\Debug\VERomans.dll
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\VERomans\Source\VERomans\VERomans\obj\Debug\VERomans.pdb
