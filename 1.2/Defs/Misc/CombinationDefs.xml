@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEC_MeatDryingRackOutput</defName>
+		<building>VFEC_MeatDryingRack</building>
+		<items>
+			<li>MeatRaw</li>
+		</items>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<amount>
+			<li>50</li>
+		</amount>
+		<result>VFEC_DriedMeat</result>
+		<yield>50</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>12</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+</Defs>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+		<defName>VFEC_HeavyShield</defName>
+		<label>heavy shield</label>
+		<description>Description needed.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/Shield/HeavyShield/HeavyShield</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<thingCategories Inherit="False">
+			<li>VFEC_Shields</li>
+		</thingCategories>
+		<equippedStatOffsets>
+			<ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
+			<MeleeDodgeChance>-2</MeleeDodgeChance>
+			<MoveSpeed>-0.4</MoveSpeed>
+		</equippedStatOffsets>
+		<thingClass>VFECore.Apparel_Shield</thingClass>
+		<costStuffCount>25</costStuffCount>
+		<costList>
+			<WoodLog>50</WoodLog>
+			<Steel>20</Steel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit='False'>VFEC_Research_HeavyShieldMaking</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.55</ArmorRating_Heat>
+			<WorkToMake>2800</WorkToMake>
+			<Mass>1.7</Mass>
+		</statBases>
+		<apparel>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<bodyPartGroups>
+				<li>LeftHand</li>
+				<li>Arms</li>
+			</bodyPartGroups>
+			<layers>
+				<li>VFEC_OuterShell</li>
+			</layers>
+		</apparel>
+		<equippedAngleOffset>-30</equippedAngleOffset>
+		<stuffCategories>
+			<li>Leathery</li>
+		</stuffCategories>
+		<tools>
+			<li>
+				<label>base</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>centre</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<!-- <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"/> -->
+			<li Class="VFECore.CompProperties_Shield">
+				<shieldTags>
+					<li>VikingBasic</li>
+				</shieldTags>
+				<useDeflectMetalEffect>false</useDeflectMetalEffect>
+				<coveredBodyPartGroups>
+					<li>Neck</li>
+					<li>Torso</li>
+					<li>Arms</li>
+					<li>Hands</li>
+				</coveredBodyPartGroups>
+				<offHandGraphicData>
+					<texPath>Things/Item/Equipment/Shield/HeavyShield/HeavyShield</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<drawSize>1.6</drawSize>
+				</offHandGraphicData>
+				<offHandHoldOffset>
+					<northDefault>
+						<offset>(-0.05, 0, 0.2)</offset>
+						<behind>true</behind>
+					</northDefault>
+					<east>
+						<offset>(-0.15, 0, 0.2)</offset>
+						<behind>true</behind>
+					</east>
+					<south>
+						<offset>(0.2, -0.04, 0.2)</offset>
+					</south>
+					<west>
+						<offset>(0.15, 0, 0.2)</offset>
+					</west>
+				</offHandHoldOffset>
+			</li>
+		</comps>
+	</ThingDef>
+</Defs>
