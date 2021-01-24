@@ -7,9 +7,9 @@ using RimWorld;
 using Verse;
 using RimWorld.Planet;
 
-namespace VFERomans
+namespace VFEC
 {
-    public class VFERoman_RoadBuilder: IExposable
+    public class VFEC_RoadBuilder: IExposable
     {
         public List<VFERoman_RoadQueue> queues = new List<VFERoman_RoadQueue>();
 
@@ -148,7 +148,7 @@ namespace VFERomans
 
         public void cull()
         {
-            Find.World.GetComponent<VFERoman_RepublicFaction>().roadBuilder.removeQueue(this);
+            Find.World.GetComponent<VFEC_RepublicFaction>().roadBuilder.removeQueue(this);
         }
 
         public void rename(string str)

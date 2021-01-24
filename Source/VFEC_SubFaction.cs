@@ -9,9 +9,9 @@ using RimWorld.Planet;
 using Verse;
 using HarmonyLib;
 
-namespace VFERomans
+namespace VFEC
 {
-    public class VFERoman_SubFaction : ILoadReferenceable, IExposable
+    public class VFEC_SubFaction : ILoadReferenceable, IExposable
     {
         //Init Vars
         public int loadID;
@@ -19,17 +19,17 @@ namespace VFERomans
 
         public VFERoman_SubFactionDef def;
         public Faction faction;
-        public List<VFERoman_Senator> senators = new List<VFERoman_Senator>();
+        public List<VFEC_Senator> senators = new List<VFEC_Senator>();
 
 
 
-        public VFERoman_SubFaction()
+        public VFEC_SubFaction()
         {
 
         }
 
         //Creation
-        public VFERoman_SubFaction(string defName)
+        public VFEC_SubFaction(string defName)
         {
             SetUniqueLoadID();
             //load def and find faction
@@ -118,7 +118,7 @@ namespace VFERomans
                 {
                     //if pawn does not exist
 
-                    senators.Add(new VFERoman_Senator(this, isEmperor));
+                    senators.Add(new VFEC_Senator(this, isEmperor));
 
                 } 
                 
@@ -132,7 +132,7 @@ namespace VFERomans
                         Find.WorldPawns.PassToWorld(senators[i].pawn, PawnDiscardDecideMode.KeepForever);
                     }
 
-                    senators[i] = new VFERoman_Senator(this, isEmperor);
+                    senators[i] = new VFEC_Senator(this, isEmperor);
 
                 } 
                 else
@@ -170,7 +170,7 @@ namespace VFERomans
         public int updateSenateSupport()
         {
             int tally = 0;
-            foreach (VFERoman_Senator senator in senators)
+            foreach (VFEC_Senator senator in senators)
             {
                 if (senator.isSupporting)
                     tally += 1;
@@ -190,7 +190,7 @@ namespace VFERomans
         }
         public void SetUniqueLoadID()
         {
-            this.loadID = Find.World.GetComponent<VFERoman_RepublicFaction>().getNextFactionID();
+            this.loadID = Find.World.GetComponent<VFEC_RepublicFaction>().getNextFactionID();
         }
 
         //Expose data
@@ -199,7 +199,7 @@ namespace VFERomans
             Scribe_Values.Look<int>(ref loadID, "loadID");
             Scribe_Values.Look<int>(ref senatorSupportReached, "senatorSupportReached");
             Scribe_Defs.Look<VFERoman_SubFactionDef>(ref def, "def");
-            Scribe_Collections.Look<VFERoman_Senator>(ref senators, "senators", LookMode.Deep);
+            Scribe_Collections.Look<VFEC_Senator>(ref senators, "senators", LookMode.Deep);
             Scribe_References.Look<Faction>(ref faction, "faction");
         }
     }

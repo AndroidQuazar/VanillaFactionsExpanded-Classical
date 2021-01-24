@@ -9,9 +9,9 @@ using RimWorld.Planet;
 using Verse;
 using HarmonyLib;
 
-namespace VFERomans
+namespace VFEC
 {
-    public class VFERoman_RepublicFaction : WorldComponent
+    public class VFEC_RepublicFaction : WorldComponent
     {
         //Declare base variables here
         public int nextSenatorID = 1;
@@ -19,8 +19,8 @@ namespace VFERomans
 
         public bool spawnTick = true;
 
-        public List<VFERoman_SubFaction> subFactions;
-        public VFERoman_RoadBuilder roadBuilder = new VFERoman_RoadBuilder();
+        public List<VFEC_SubFaction> subFactions;
+        public VFEC_RoadBuilder roadBuilder = new VFEC_RoadBuilder();
 
         //Expose data
         public override void ExposeData()
@@ -32,12 +32,12 @@ namespace VFERomans
 
             Scribe_Values.Look<bool>(ref spawnTick, "spawnTick");
 
-            Scribe_Collections.Look<VFERoman_SubFaction>(ref subFactions, "subFactions", LookMode.Deep);
+            Scribe_Collections.Look<VFEC_SubFaction>(ref subFactions, "subFactions", LookMode.Deep);
 
         }
 
         //Constructor
-        public VFERoman_RepublicFaction(World world) : base(world)
+        public VFEC_RepublicFaction(World world) : base(world)
         {
             var harmony = new Harmony("com.Saakra.VFERomans");
             harmony.PatchAll();
@@ -54,7 +54,7 @@ namespace VFERomans
             //On first tick of game, prepare the subfactions
             if (this.spawnTick == true)
             {
-                subFactions = new List<VFERoman_SubFaction>() { new VFERoman_SubFaction("VFECentralRepublic"), new VFERoman_SubFaction("VFEWesternRepublic"), new VFERoman_SubFaction("VFEEasternRepublic") };
+                subFactions = new List<VFEC_SubFaction>() { new VFEC_SubFaction("VFECentralRepublic"), new VFEC_SubFaction("VFEWesternRepublic"), new VFEC_SubFaction("VFEEasternRepublic") };
                // foreach (VFERoman_SubFaction subfaction in subFactions)
                 //{
                     //subfaction.resetResearches();
@@ -111,7 +111,7 @@ namespace VFERomans
         [DebugAction("VFERomans", "Open RoadQueues Menu", allowedGameStates = AllowedGameStates.Playing)]
         private static void openRoadQueuesMenu()
         {
-            Find.WindowStack.Add(new VFERoman_Window_RoadQueues());
+            Find.WindowStack.Add(new VFEC_Window_RoadQueues());
         }
 
     }

@@ -8,9 +8,9 @@ using RimWorld.Planet;
 using Verse;
 using UnityEngine;
 
-namespace VFERomans
+namespace VFEC
 {
-	class VFERoman_Window_RoadQueues : Window
+	class VFEC_Window_RoadQueues : Window
 	{ 
 		public int scroll = 0;
 		public int maxScroll;
@@ -21,7 +21,7 @@ namespace VFERomans
 		public int buttonHeight = 40;
 		public int buttonXOffset = 5;
 		public int scrollFieldHeight = 40;
-		public VFERoman_RoadBuilder roadBuilder;
+		public VFEC_RoadBuilder roadBuilder;
 		public VFERoman_RoadQueue queue = null;
 		public string inputText = "New Queue";
 
@@ -33,10 +33,10 @@ namespace VFERomans
 			}
 		}
 
-		public VFERoman_Window_RoadQueues()
+		public VFEC_Window_RoadQueues()
 		{
 			//Window Information
-			this.roadBuilder = Find.World.GetComponent<VFERoman_RepublicFaction>().roadBuilder;
+			this.roadBuilder = Find.World.GetComponent<VFEC_RepublicFaction>().roadBuilder;
 			this.maxScroll = (roadBuilder.queues.Count() * scrollBoxHeight) - scrollBoxHeight;
 
 			//Window Properties

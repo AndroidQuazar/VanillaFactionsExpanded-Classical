@@ -10,7 +10,7 @@ using UnityEngine;
 using Verse;
 using HarmonyLib;
 
-namespace VFERomans
+namespace VFEC
 {
     public class VFERoman_VanillaHarmonyPatches
     {
@@ -21,10 +21,10 @@ namespace VFERomans
             {
                 if (faction.def.defName == "VFEWesternRepublic" || faction.def.defName == "VFECentralRepublic" || faction.def.defName == "VFEEasternRepublic") {
                     Rect rect = new Rect(320, rowY + 3, 20f, 20f);
-                    if (Widgets.ButtonImage(rect, VFERoman_TextureLoader.iconCustomize))
+                    if (Widgets.ButtonImage(rect, VFEC_TextureLoader.iconCustomize))
                     {
                         //Open VFERoman_Window_SubFactionInformation
-                        Find.WindowStack.Add(new VFERoman_Window_SubFaction(Find.World.GetComponent<VFERoman_RepublicFaction>().subFactions.Where(x => x.faction == faction).First()));
+                        Find.WindowStack.Add(new VFEC_Window_SubFaction(Find.World.GetComponent<VFEC_RepublicFaction>().subFactions.Where(x => x.faction == faction).First()));
                     }
 
                     if (Mouse.IsOver(rect))
@@ -45,7 +45,7 @@ namespace VFERomans
         {
             static void Postfix(ref Caravan __instance, ref IEnumerable<Gizmo> __result)
             {
-                VFERoman_RoadBuilder roadBuilder = Find.World.GetComponent<VFERoman_RepublicFaction>().roadBuilder;
+                VFEC_RoadBuilder roadBuilder = Find.World.GetComponent<VFEC_RepublicFaction>().roadBuilder;
 
                 if (__instance.Faction == Find.FactionManager.OfPlayer)
                 {

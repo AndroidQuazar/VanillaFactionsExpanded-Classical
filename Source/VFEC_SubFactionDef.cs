@@ -7,7 +7,7 @@ using RimWorld;
 using Verse;
 using URF;
 
-namespace VFERomans
+namespace VFEC
 {
     public class VFERoman_SubFactionDef : Def, IExposable
     {
