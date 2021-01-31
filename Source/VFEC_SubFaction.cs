@@ -61,7 +61,7 @@ namespace VFEC
             //Log.Message("Displaying Researches in Util...");
             foreach (LockedResearch research in Find.World.GetComponent<ResearchDiscovery>().lockedResearches)
             {
-                Log.Message(research.def.defName);
+                //Log.Message(research.def.defName);
             }
         }
 
@@ -90,15 +90,16 @@ namespace VFEC
 
         //Used to find factions (Especially when switching planets)
         public void updateFaction()
-        {
-            Log.Message(faction.def.defName);
-            Log.Message(def.defName);
+        { 
+            //Log.Message(def.defName);
             this.faction = Find.FactionManager.FirstFactionOfDef(DefDatabase<FactionDef>.GetNamed(def.defName));
             if (this.faction != null)
             {
-               // Log.Message("Updated faction to " + this.faction.Name);
+               // Log.Message(faction.def.defName);
+                // Log.Message("Updated faction to " + this.faction.Name);
             } else
             {
+                Log.Message($"No Faction found of def {def.defName}");
                // Log.Error("Could not find existing faction of VFE faction");
             }
         }
@@ -162,11 +163,11 @@ namespace VFEC
                     str = str + "WR_";
                     break;
                 case "VFEEasternRepublic":
-                    str = str + "EI_";
+                    str = str + "ER_";
                     break;
             }
             str = str + this.senatorSupportReached;
-           // Log.Message(str);
+
             this.unlockTech(str);
         }
 

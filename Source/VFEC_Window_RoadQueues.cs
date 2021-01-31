@@ -25,6 +25,8 @@ namespace VFEC
 		public VFERoman_RoadQueue queue = null;
 		public string inputText = "New Queue";
 
+		private string holdInputText = "";
+
 		public override Vector2 InitialSize
 		{
 			get
@@ -76,7 +78,7 @@ namespace VFEC
 			{
 				//create new queue
 				Log.Message("Debug - Created new queue");
-				roadBuilder.buildNewQueue();
+				roadBuilder.buildNewQueue().rename(holdInputText);
 
 			}
 
@@ -87,11 +89,13 @@ namespace VFEC
 			{
 				VFERoman_RoadQueue tempq = selectedQueue;
 				Rect tempRect = new Rect(selectionBox.x, yOffset + 50 + scrollFieldHeight * i - scroll, 300, scrollFieldHeight);
+				Rect tempRectLabel = tempRect;
+				tempRectLabel.x += 5;
 				Widgets.DrawMenuSection(tempRect);
 				if (tempq == queue)
 					Widgets.DrawLightHighlight(tempRect);
 				Text.Anchor = TextAnchor.MiddleLeft;
-				Widgets.Label(tempRect, tempq.queueName);
+				Widgets.Label(tempRectLabel, tempq.queueName);
 				if (Widgets.ButtonInvisible(tempRect) && Mouse.IsOver(input) == false && Mouse.IsOver(restOfTheDamnMenu) == false)
 				{
 					queue = tempq;
@@ -100,9 +104,14 @@ namespace VFEC
 			}
 
 
+			Widgets.DrawMenuSection(input);
+			string inputString = Widgets.TextField(inputName, inputText);
+			inputText = inputString;
+			holdInputText = inputString;
+
 			Widgets.DrawMenuSection(restOfTheDamnMenu);
 			//View Queue
-			if (Widgets.ButtonTextSubtle(button_ViewQueue, "VFERViewQueue".Translate()))
+			if (Widgets.ButtonTextSubtle(button_ViewQueue, "VFECViewQueue".Translate()))
 			{
 				if (queue == null)
 				{
@@ -114,7 +123,7 @@ namespace VFEC
 				}
 			}
 			//Rename Queue
-			if (Widgets.ButtonTextSubtle(button_RenameQueue, "VFERRenameQueue".Translate()))
+			if (Widgets.ButtonTextSubtle(button_RenameQueue, "VFECRenameQueue".Translate()))
 			{
 				if (queue == null)
 				{
@@ -123,11 +132,11 @@ namespace VFEC
 				else
 				{
 					//If queue is selected
-
+					queue.rename(inputText);
 				}
 			}
 			//Assign Queue
-			if (Widgets.ButtonTextSubtle(button_AssignQueue, "VFERAssignQueue".Translate()))
+			if (Widgets.ButtonTextSubtle(button_AssignQueue, "VFECAssignQueue".Translate()))
 			{
 				if (queue == null)
 				{
@@ -140,7 +149,7 @@ namespace VFEC
 				}
 			}
 			//Delete Queue
-			if (Widgets.ButtonTextSubtle(button_DeleteQueue, "VFERDeleteQueue".Translate()))
+			if (Widgets.ButtonTextSubtle(button_DeleteQueue, "VFECDeleteQueue".Translate()))
 			{
 				if (queue == null)
 				{
@@ -149,13 +158,9 @@ namespace VFEC
 				else
 				{
 					//If queue is selected
-
+					roadBuilder.removeQueue(queue);
 				}
 			}
-
-			Widgets.DrawMenuSection(input);
-			string inputString = Widgets.TextField(inputName, inputText);
-			inputText = inputString;
 
 			Widgets.ButtonTextSubtle(inputNameButton, "");
 			Text.Font = GameFont.Small;

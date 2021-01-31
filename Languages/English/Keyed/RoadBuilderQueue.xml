@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<VFECViewQueue>View Queue</VFECViewQueue>
+	<VFECRenameQueue>Rename Queue</VFECRenameQueue>
+	<VFECAssignQueue>Assign Queue</VFECAssignQueue>
+	<VFECDeleteQueue>Delete Queue</VFECDeleteQueue>
+</LanguageData>

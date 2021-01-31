@@ -39,7 +39,7 @@ namespace VFEC
         public static VFEC_SubFactionDef VFEEasternRepublic;
         static VFEC_SubFactionDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(VFEC_SubFactionDef));
+            DefOfHelper.EnsureInitializedInCtor(typeof(VFEC_SubFactionDefOf));
         }
     }
 

@@ -32,10 +32,11 @@ namespace VFEC
             return null;
         }
 
-        public void buildNewQueue()
+        public VFERoman_RoadQueue buildNewQueue()
         {
             VFERoman_RoadQueue queue = new VFERoman_RoadQueue();
             queues.Add(queue);
+            return queue;
         }
 
         public void removeQueue(VFERoman_RoadQueue queue)
