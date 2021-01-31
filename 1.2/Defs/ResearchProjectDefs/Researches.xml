@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Western Republic -->
+
+	<ResearchProjectDef>
+    <defName>VFER_CR_1</defName>
+    <label>Togas</label>
+    <description>Craft togas, everyday wear of the citizens of the republic. To unlock, gain the support of 1 senator from the Central Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+    <defName>VFER_CR_2</defName>
+    <label>Large passive cooler</label>
+    <description>Make large passive coolers, a way to cool indoor spaces below freezing point without needing electricity. To unlock, gain the support of 2 senators from the Central Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_CR_1</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+	</ResearchProjectDef>
+	
+	
+	<ResearchProjectDef>
+    <defName>VFER_CR_3</defName>
+    <label>Meat drying</label>
+    <description>Construct meat drying racks, allowing you to preserve meat and create a roman delicacy. To unlock, gain the support of 3 senators from the Central Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_CR_2</li>
+    </prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+    <defName>VFER_CR_4</defName>
+    <label>Mosaics</label>
+    <description>Build excellent stone mosaics, utilising different colours and shapes to express beauty. Slow to construct. To unlock, gain the support of 4 senators from the Central Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_CR_3</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+    <defName>VFER_CR_5</defName>
+    <label>Thermaebath</label>
+    <description>Construct large thermaebath that uses steam geysers to warm up the water, allowing up to 9 people to bathe together with an occasional chance of group lovin’. To unlock, gain the support of 5 senators from the Central Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_CR_4</li>
+    </prerequisites>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+    <defName>VFER_CR_6</defName>
+    <label>Gladiator fights</label>
+    <description>Allow captured prisoners to fight to the death, where the winner gets a chance to win freedom. To unlock, gain the support of 6 senators from the Central Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_CR_5</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+	</ResearchProjectDef>
+	
+	
+	<!-- Western Republic -->
+
+	<ResearchProjectDef>
+    <defName>VFER_WR_1</defName>
+    <label>Heavy shield making</label>
+    <description>Create heavy scuta shields typically associated with legionnaires. To unlock, gain the support of 1 senator from the Central Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+    <defName>VFER_WR_2</defName>
+    <label>Legionary armaments</label>
+    <description>Craft javelins, spathas and daggers, constituting towards the legionary armory. To unlock, gain the support of 2 senators from the Western Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_WR_1</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+	</ResearchProjectDef>
+	
+	
+	<ResearchProjectDef>
+    <defName>VFER_WR_3</defName>
+    <label>Legionnaire armor</label>
+    <description>Create heavy armor of legionnaires, capable of withstanding a high degree of sharp damage. To unlock, gain the support of 3 senators from the Western Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_WR_2</li>
+    </prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+    <defName>VFER_WR_4</defName>
+    <label>Centurion armor</label>
+    <description>Smith suits of centurion armor, excellent for leading men into heroic battles. Slow to construct. To unlock, gain the support of 4 senators from the Western Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_WR_3</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+    <defName>VFER_WR_5</defName>
+    <label>Scorpion</label>
+    <description>Construct scorpions, a portable field artillery piece which doubles as a semi-automatic heavy crossbow. To unlock, gain the support of 5 senators from the Western Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_WR_4</li>
+    </prerequisites>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+    <defName>VFER_WR_6</defName>
+    <label>Fire arrows</label>
+    <description>Build the recurve bow equipped with flaming arrows, an effective and inexpensive ranged weapon capable of setting plants, structures and enemies on fire. To unlock, gain the support of 6 senators from the Western Republic.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_WR_5</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+	</ResearchProjectDef>
+
+	
+	<!-- Eastern Imperium -->
+
+	<ResearchProjectDef>
+    <defName>VFER_ER_1</defName>
+    <label>Bronze working</label>
+    <description>Mix steel with stone chunks to create slightly weaker metal in large quantities. To unlock, gain the support of 1 senator from the Eastern Imperium.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+    <defName>VFER_ER_2</defName>
+    <label>Crafting bench</label>
+    <description>Build a workbench for crafting simple things like shivs or bows. To unlock, gain the support of 2 senators from the Eastern Imperium.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_ER_1</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+	</ResearchProjectDef>
+	
+	
+	<ResearchProjectDef>
+    <defName>VFER_ER_3</defName>
+    <label>Legionnaire armor</label>
+    <description>Construct cement press, which allows you to create extremely durable stone material out of stone chunks. To unlock, gain the support of 3 senators from the Eastern Imperium.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_ER_2</li>
+    </prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+    <defName>VFER_ER_4</defName>
+    <label>Wood-fired crematorium</label>
+    <description>Build a huge, wood-fired stone crematorium which vaporizes corpses with high temperatures. To unlock, gain the support of 4 senators from the Eastern Imperium.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_ER_3</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+    <defName>VFER_ER_5</defName>
+    <label>Tyrian production</label>
+    <description>Create a tyrian farm - a river-bank structure that dyes cloth, which can then be extracted in the form of extremely valuable tyrian fabric. To unlock, gain the support of 5 senators from the Eastern Imperium.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_ER_4</li>
+    </prerequisites>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+    <defName>VFER_ER_6</defName>
+    <label>Road building</label>
+    <description>Construct paths, dirt roads and stone roads directly on the world map, allowing for faster caravan travel. To unlock, gain the support of 6 senators from the Eastern Imperium.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+	<tab>VFERomans</tab>
+    <tags>
+    </tags>
+	<prerequisites>
+      <li>VFER_ER_5</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+	</ResearchProjectDef>
+
+
+</Defs>

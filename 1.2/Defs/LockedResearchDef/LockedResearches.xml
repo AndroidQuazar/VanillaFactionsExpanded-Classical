@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Central Republic -->
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_CR_1</defName>
+		<lockedResearches>
+			<li>VFER_CR_1</li>
+		</lockedResearches>
+		<unlockCode>VFER_CR_1</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_CR_2</defName>
+		<lockedResearches>
+			<li>VFER_CR_2</li>
+		</lockedResearches>
+		<unlockCode>VFER_CR_2</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_CR_3</defName>
+		<lockedResearches>
+			<li>VFER_CR_3</li>
+		</lockedResearches>
+		<unlockCode>VFER_CR_3</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_CR_4</defName>
+		<lockedResearches>
+			<li>VFER_CR_4</li>
+		</lockedResearches>
+		<unlockCode>VFER_CR_4</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_CR_5</defName>
+		<lockedResearches>
+			<li>VFER_CR_5</li>
+		</lockedResearches>
+		<unlockCode>VFER_CR_5</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_CR_6</defName>
+		<lockedResearches>
+			<li>VFER_CR_6</li>
+		</lockedResearches>
+		<unlockCode>VFER_CR_6</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+
+
+
+
+	<!-- Western Republic -->
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_WR_1</defName>
+		<lockedResearches>
+			<li>VFER_WR_1</li>
+		</lockedResearches>
+		<unlockCode>VFER_WR_1</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_WR_2</defName>
+		<lockedResearches>
+			<li>VFER_WR_2</li>
+		</lockedResearches>
+		<unlockCode>VFER_WR_2</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_WR_3</defName>
+		<lockedResearches>
+			<li>VFER_WR_3</li>
+		</lockedResearches>
+		<unlockCode>VFER_WR_3</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_WR_4</defName>
+		<lockedResearches>
+			<li>VFER_WR_4</li>
+		</lockedResearches>
+		<unlockCode>VFER_WR_4</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_WR_5</defName>
+		<lockedResearches>
+			<li>VFER_WR_5</li>
+		</lockedResearches>
+		<unlockCode>VFER_WR_5</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_WR_6</defName>
+		<lockedResearches>
+			<li>VFER_WR_6</li>
+		</lockedResearches>
+		<unlockCode>VFER_WR_6</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+
+	
+	
+	
+	
+	<!-- Eastern Imperium -->
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_ER_1</defName>
+		<lockedResearches>
+			<li>VFER_ER_1</li>
+		</lockedResearches>
+		<unlockCode>VFER_ER_1</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_ER_2</defName>
+		<lockedResearches>
+			<li>VFER_ER_2</li>
+		</lockedResearches>
+		<unlockCode>VFER_ER_2</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_ER_3</defName>
+		<lockedResearches>
+			<li>VFER_ER_3</li>
+		</lockedResearches>
+		<unlockCode>VFER_ER_3</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_ER_4</defName>
+		<lockedResearches>
+			<li>VFER_ER_4</li>
+		</lockedResearches>
+		<unlockCode>VFER_ER_4</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_ER_5</defName>
+		<lockedResearches>
+			<li>VFER_ER_5</li>
+		</lockedResearches>
+		<unlockCode>VFER_ER_5</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+	
+	<URF.LockedResearchDef>
+		<defName>VFER_ER_6</defName>
+		<lockedResearches>
+			<li>VFER_ER_6</li>
+		</lockedResearches>
+		<unlockCode>VFER_ER_6</unlockCode>
+		<classToRunUponUnlocking>VFERomans.VFERomans_Utility</classToRunUponUnlocking>
+		<classMethodToRunUponUnlocking>AutoCompleteTechnology</classMethodToRunUponUnlocking>
+		<passResearchLockToMethod>true</passResearchLockToMethod>
+	</URF.LockedResearchDef>
+
+
+
+
+
+
+</Defs>
