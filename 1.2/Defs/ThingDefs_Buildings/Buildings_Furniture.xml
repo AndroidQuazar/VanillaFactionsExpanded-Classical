@@ -38,9 +38,6 @@
 		<passability>Standable</passability>
 		<designationHotKey>Misc2</designationHotKey>
 		<comps>
-			<li Class="VFEC.CompProperties_IgnoreDebuffs">
-				<removeThought>SleptInCold</removeThought>
-			</li>
 			<li Class="CompProperties_AffectedByFacilities" Inherit="False">
 				<linkableFacilities>
 					<!--Without it gives an error?-->

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RecipeDef>
+		<defName>VFEC_ConvertChunksToConcrete</defName>
+		<label>convert stone chunks to conrete</label>
+		<description>Needs description.</description>
+		<jobString>Converting stone chunks to concrete.</jobString>
+		<workAmount>1600</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>CutStone</effectWorking>
+		<soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>StoneChunks</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<VFEC_Concrete>15</VFEC_Concrete>
+		</products>
+		<fixedIngredientFilter>
+			<categories>
+				<li>StoneChunks</li>
+			</categories>
+		</fixedIngredientFilter>
+	</RecipeDef>
+</Defs>
