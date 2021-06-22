@@ -90,24 +90,30 @@
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
 		</placeWorkers>
 	</ThingDef>
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BenchBase">
 		<defName>VFEC_CraftingBench</defName>
 		<label>crafting bench</label>
 		<description>Description needed.</description>
 		<thingClass>Building_WorkTable</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Production/CraftingBench/CraftingBench</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1,1)</drawSize>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,3)</drawSize>
 		</graphicData>
-		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<stuffCategories>
+			<li>Stony</li>
+			<li>Woody</li>
+		</stuffCategories>
+		<costStuffCount>150</costStuffCount>
+		<costList>
+			<Steel>100</Steel>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
 		<statBases>
 			<WorkToBuild>1000</WorkToBuild>
 			<WorkTableWorkSpeedFactor>1.5</WorkTableWorkSpeedFactor>
 		</statBases>
-		<scatterableOnMapGen>false</scatterableOnMapGen>
-		<useHitPoints>false</useHitPoints>
-		<size>(1,1)</size>
+		<size>(3,1)</size>
 		<designationCategory>Production</designationCategory>
 		<passability>Standable</passability>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -156,10 +162,6 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(5,5)</drawSize>
-			<shadowData>
-				<volume>(2.8, 0.35, 0.59)</volume>
-				<offset>(0, 0, 0.08)</offset>
-			</shadowData>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
