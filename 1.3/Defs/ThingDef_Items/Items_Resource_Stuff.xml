@@ -91,15 +91,16 @@
 		</thingCategories>
 	</ThingDef>
 	<ThingDef ParentName="ResourceBase">
-		<defName>VFEC_Concrete</defName>
-		<label>concrete</label>
+		<defName>VFEC_Concrete blocks</defName>
+		<label>concrete blocks</label>
 		<description>Description needed.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/Concrete</texPath>
+			<texPath>Things/Item/Resource/StoneBlocks</texPath> <!--Vanilla texture-->
+			<color>(107,105,107)</color>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
-		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Metal_Drop</soundDrop>
+    <soundInteract>Stone_Drop</soundInteract>
+    <soundDrop>Stone_Drop</soundDrop>
 		<statBases>
 			<MarketValue>1.9</MarketValue>
 			<Mass>0.5</Mass>
