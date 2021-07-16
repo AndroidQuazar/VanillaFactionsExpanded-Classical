@@ -7,7 +7,7 @@
     <ProjectGuid>{5E84ADCE-0BCB-4640-9BA6-03F8279BDD3A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VFERomans</RootNamespace>
+    <RootNamespace>VFEC</RootNamespace>
     <AssemblyName>VFERomans</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -74,6 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlaceWorker_OnWater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VFEC.cs" />
     <Compile Include="VFEC_RepublicFaction.cs" />
