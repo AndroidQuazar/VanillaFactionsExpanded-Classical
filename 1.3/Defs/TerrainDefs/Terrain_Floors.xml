@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<TerrainDef Abstract="True" ParentName="FloorBase" Name="VFEC_MosaicsStoneBase">
+		<renderPrecedence>220</renderPrecedence>
+		<description>Painstakingly carved and laid floors, very beautiful to look at.</description>
+		<texturePath>Terrain/Surfaces/Mosaics</texturePath>
+		<statBases>
+			<WorkToBuild>8000</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+			<li>VFEC_Mosaics</li>
+		</researchPrerequisites>
+		<tags>
+			<li>FineFloor</li>
+		</tags>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</TerrainDef>
+
+	<TerrainDef ParentName="VFEC_MosaicsStoneBase">
+		<defName>VFEC_MosaicsSandstone</defName>
+		<label>fine sandstone tile</label>
+		<color>(147,127,118)</color>
+		<costList>
+			<BlocksSandstone>10</BlocksSandstone>
+		</costList>
+	</TerrainDef>
+
+	<TerrainDef ParentName="VFEC_MosaicsStoneBase">
+		<defName>VFEC_MosaicsGranite</defName>
+		<label>fine granite tile</label>
+		<color>(105,95,97)</color>
+		<costList>
+			<BlocksGranite>10</BlocksGranite>
+		</costList>
+	</TerrainDef>
+
+	<TerrainDef ParentName="VFEC_MosaicsStoneBase">
+		<defName>VFEC_MosaicsLimestone</defName>
+		<label>fine limestone tile</label>
+		<color>(158,153,135)</color>
+		<costList>
+			<BlocksLimestone>10</BlocksLimestone>
+		</costList>
+	</TerrainDef>
+
+	<TerrainDef ParentName="VFEC_MosaicsStoneBase">
+		<defName>VFEC_MosaicsSlate</defName>
+		<label>fine slate tile</label>
+		<color>(70,70,70)</color>
+		<costList>
+			<BlocksSlate>10</BlocksSlate>
+		</costList>
+	</TerrainDef>
+
+	<TerrainDef ParentName="VFEC_MosaicsStoneBase">
+		<defName>VFEC_MosaicsMarble</defName>
+		<label>fine marble tile</label>
+		<color>(180,180,180)</color>
+		<costList>
+			<BlocksMarble>10</BlocksMarble>
+		</costList>
+	</TerrainDef>
+
+</Defs>

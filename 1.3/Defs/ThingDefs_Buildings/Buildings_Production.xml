@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEC_MeatDryingRack</defName>
+		<label>meat drying rack</label>
+		<description>A solid wooden rack featuring a series of dangling metal hooks across a central beam meant to hang slabs of meat. Meat hung by it will very slowly air dry over time, allowing an indefinite form of preservation. The air drying process can be quickened by a warm environment.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<researchPrerequisites>
+			<li>VFEC_MeatDrying</li>
+		</researchPrerequisites>
+		<graphicData>
+			<texPath>Things/Building/Production/MeatDryingRack/MeatDryingRack_a</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,1)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<costList>
+			<WoodLog>80</WoodLog>
+			<Steel>20</Steel>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Cleanliness>-15</Cleanliness>
+		</statBases>
+		<size>(1,1)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<surfaceType>Item</surfaceType>
+		<comps>
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+			</li>
+		</comps>
+		<designationHotKey>Misc3</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+	</ThingDef>
+</Defs>
