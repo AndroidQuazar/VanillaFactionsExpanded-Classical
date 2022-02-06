@@ -39,11 +39,11 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Pilum_Thrown</defaultProjectile>
+        <defaultProjectile>VFEC_Javelin_Thrown</defaultProjectile>
         <warmupTime>4</warmupTime>
         <range>18.9</range>
         <soundCast>Interact_BeatFire</soundCast>
-        <rangedFireRulepack>VFEC_Javelin_Thrown</rangedFireRulepack>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
       </li>
     </verbs>
     <tools>
