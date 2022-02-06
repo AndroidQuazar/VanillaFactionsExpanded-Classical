@@ -20,7 +20,7 @@
 
 	<TerrainDef ParentName="VFEC_MosaicsStoneBase">
 		<defName>VFEC_MosaicsSandstone</defName>
-		<label>fine sandstone tile</label>
+		<label>sandstone mosaics</label>
 		<color>(147,127,118)</color>
 		<costList>
 			<BlocksSandstone>10</BlocksSandstone>
@@ -29,7 +29,7 @@
 
 	<TerrainDef ParentName="VFEC_MosaicsStoneBase">
 		<defName>VFEC_MosaicsGranite</defName>
-		<label>fine granite tile</label>
+		<label>granite mosaics</label>
 		<color>(105,95,97)</color>
 		<costList>
 			<BlocksGranite>10</BlocksGranite>
@@ -38,7 +38,7 @@
 
 	<TerrainDef ParentName="VFEC_MosaicsStoneBase">
 		<defName>VFEC_MosaicsLimestone</defName>
-		<label>fine limestone tile</label>
+		<label>limestone mosaics</label>
 		<color>(158,153,135)</color>
 		<costList>
 			<BlocksLimestone>10</BlocksLimestone>
@@ -47,7 +47,7 @@
 
 	<TerrainDef ParentName="VFEC_MosaicsStoneBase">
 		<defName>VFEC_MosaicsSlate</defName>
-		<label>fine slate tile</label>
+		<label>slate mosaics</label>
 		<color>(70,70,70)</color>
 		<costList>
 			<BlocksSlate>10</BlocksSlate>
@@ -56,7 +56,7 @@
 
 	<TerrainDef ParentName="VFEC_MosaicsStoneBase">
 		<defName>VFEC_MosaicsMarble</defName>
-		<label>fine marble tile</label>
+		<label>marble mosaics</label>
 		<color>(180,180,180)</color>
 		<costList>
 			<BlocksMarble>10</BlocksMarble>
