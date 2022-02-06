@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>VFEC_Tent</defName>
+    <label>tent</label>
+    <description>A simple bed that lays on the floor, usually made of cloth or leather, often lined with fur. It is lightweight and can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/Tent</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1,2)</drawSize>
+    </graphicData>
+    <castEdgeShadows>True</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Mass>3</Mass>
+      <BedRestEffectiveness>0.9</BedRestEffectiveness>
+      <ImmunityGainSpeedFactor>1</ImmunityGainSpeedFactor>
+      <Comfort>0.62</Comfort>
+      <WorkToBuild>1200</WorkToBuild>
+    </statBases>
+    <comps>
+	  <li Class="VFEV.CompProperties_CureHypothermia" />
+    </comps>
+    <size>(1,2)</size>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>60</costStuffCount>
+    <building>
+      <bed_showSleeperBody>false</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+      <bed_caravansCanUse>true</bed_caravansCanUse>
+      <destroySound>BuildingDestroyed_Soft_Medium</destroySound>
+      <destroyShakeAmount>0</destroyShakeAmount>
+    </building>
+    <pathCost>28</pathCost>
+    <passability>PassThroughOnly</passability>
+	<designationCategory>Misc</designationCategory>
+  </ThingDef>
+
+</Defs>
