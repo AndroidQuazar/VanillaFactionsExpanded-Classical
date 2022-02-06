@@ -71,7 +71,7 @@
 			<Steel>35</Steel>
         </costList>
 		<recipeMaker>
-			<researchPrerequisite Inherit='False'>Smithing</researchPrerequisite>
+			<researchPrerequisite Inherit='False'>VFEC_HeavyShieldMaking</researchPrerequisite>
 		</recipeMaker>
         <statBases>
             <MaxHitPoints>150</MaxHitPoints>
