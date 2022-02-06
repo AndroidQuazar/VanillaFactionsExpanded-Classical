@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
 	<ThingDef ParentName="ApparelBase">
 		<defName>VFEC_Wreath</defName>
 		<label>wreath</label>
@@ -54,4 +55,78 @@
 		</apparel>
 		<colorGenerator Class="ColorGenerator_StandardApparel" />
 	</ThingDef>
+	
+  <ThingDef ParentName="ArmorSmithableBase">
+    <defName>VFEC_Apparel_LegionnaireHelmet</defName>
+    <label>legionnaire helmet</label>
+    <description>A carefully designed helmet made out of a single large piece of wood or metal. A wide open gap near the mouth and eyes allows full peripheral vision and unmuffled communication.</description>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>VFEC_LegionnaireArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/LegionnaireHelmet/LegionnaireHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>120</costStuffCount>
+    <statBases>
+      <WorkToMake>42000</WorkToMake>
+      <MaxHitPoints>290</MaxHitPoints>
+      <Mass>12</Mass>
+      <StuffEffectMultiplierArmor>0.68</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.9</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>12</EquipDelay>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <equippedStatOffsets>
+	  <MentalBreakThreshold>0.02</MentalBreakThreshold>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LegionnaireHelmet/LegionnaireHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>ClassicalMilitary</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.33,0.33,0.33)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>(0.65,0.65,0.65)</only>
+        </li>
+        <li>
+          <weight>6</weight>
+          <min>(0.3,0.3,0.3)</min>
+          <max>(0.5,0.5,0.5)</max>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+  
 </Defs>
