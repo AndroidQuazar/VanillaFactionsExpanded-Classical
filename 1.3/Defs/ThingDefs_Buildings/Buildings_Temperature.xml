@@ -77,7 +77,7 @@
 		<description>A thin square box made of stone, perforated with tiny holes at the bottom and top. A small fire can be lit and sustained within. The stone container will slowly dissipate heat, allowing prolonged passive warmth.</description>
 		<category>Building</category>
 		<graphicData>
-			<texPath>Things/Building/Misc/HeatStones</texPath>
+			<texPath>Things/Building/Misc/Heatstones</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawRotated>false</drawRotated>
 			<allowFlip>false</allowFlip>
