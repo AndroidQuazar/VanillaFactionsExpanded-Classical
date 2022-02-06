@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="ApparelBase">
+		<defName>VFEC_Wreath</defName>
+		<label>wreath</label>
+		<description>A polished metallic piece of headgear resembling laurels meant to signify wealth and status, equally appealing to both senators and nobles.</description>
+		<smeltable>true</smeltable>
+		<thingCategories>
+			<li>HeadgearNoble</li>
+		</thingCategories>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<defaultIngredientFilter>
+				<categories>
+					<li>Root</li>
+				</categories>
+			</defaultIngredientFilter>
+			<researchPrerequisite>VFEC_Togas</researchPrerequisite>
+		</recipeMaker>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/Wreath/Wreath</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.8, 0.8)</drawSize>
+		</graphicData>
+		<uiIconScale>1.15</uiIconScale>
+		<costStuffCount>50</costStuffCount>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToMake>8000</WorkToMake>
+			<Mass>0.7</Mass>
+			<EquipDelay>0.8</EquipDelay>
+		</statBases>
+		<apparel>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<bodyPartGroups>
+				<li>UpperHead</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/Wreath/Wreath</wornGraphicPath>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+			<canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_StandardApparel" />
+	</ThingDef>
+</Defs>
