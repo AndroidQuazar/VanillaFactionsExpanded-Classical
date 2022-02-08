@@ -43,7 +43,6 @@
       <comps>
          <li Class="ItemProcessor.CompProperties_ItemProcessor" />
       </comps>
-      <designationHotKey>Misc3</designationHotKey>
       <placeWorkers>
          <li>PlaceWorker_PreventInteractionSpotOverlap</li>
       </placeWorkers>
