@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	
+    <VanillaFactionsExpanded.ConcretePress.InsertFirstItemDesc>Chunk to insert</VanillaFactionsExpanded.ConcretePress.InsertFirstItemDesc>
+    <VanillaFactionsExpanded.ConcretePress.bringIngredientsText>Bring chunk</VanillaFactionsExpanded.ConcretePress.bringIngredientsText>
+    <VanillaFactionsExpanded.ConcretePress.bringIngredientsDesc>Bring chunk to the concrete press to start pressing.</VanillaFactionsExpanded.ConcretePress.bringIngredientsDesc>
+    <VanillaFactionsExpanded.ConcretePress.cancelIngredientsText>Cancel bringing chunk</VanillaFactionsExpanded.ConcretePress.cancelIngredientsText>
+    <VanillaFactionsExpanded.ConcretePress.cancelIngredientsDesc>Cancel bringing chunk to the concrete press.</VanillaFactionsExpanded.ConcretePress.cancelIngredientsDesc>
+  
+</LanguageData>
