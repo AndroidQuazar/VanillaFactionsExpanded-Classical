@@ -50,5 +50,29 @@
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <allowedArchonexusCount>80</allowedArchonexusCount>
   </ThingDef>
+  
+  <ThingDef ParentName="StoneBlocksBase">
+    <defName>VFEC_BlocksConcrete</defName>
+    <label>concrete blocks</label>
+    <description>Sturdy, utilitarian cement blocks for crafting any sort of infrastructure. While not as durable as granite or as gorgeous as marble, it is a clear improvement over weaker materials such as slate or sandstone.</description>
+    <graphicData>
+      <color>(84,84,76)</color>
+    </graphicData>
+    <statBases>
+      <Mass>0.9</Mass>
+    </statBases>
+    <stuffProps>
+      <color>(84,84,76)</color>
+      <soundImpactStuff>BulletImpact_Ground</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+      <stuffAdjective>concrete</stuffAdjective>
+      <statFactors>
+        <Beauty>1.1</Beauty>
+        <MaxHitPoints>1.35</MaxHitPoints>
+      </statFactors>
+      <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
+    </stuffProps>
+  </ThingDef>
 
 </Defs>
