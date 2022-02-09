@@ -43,6 +43,7 @@
       <comps>
          <li Class="ItemProcessor.CompProperties_ItemProcessor">
             <buildingOnGraphic>Things/Building/Production/MeatDryingRack/MeatDryingRack_b</buildingOnGraphic>
+			<buildingFinishedGraphic>Things/Building/Production/MeatDryingRack/MeatDryingRack_c</buildingFinishedGraphic>
             <numberOfInputs>1</numberOfInputs>
             <qualitySelector>false</qualitySelector>
             <isCategoryBuilding>true</isCategoryBuilding>
