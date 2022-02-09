@@ -16,5 +16,24 @@
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>3</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEC_DryMeat</defName>
+		<building>VFEC_MeatDryingRack</building>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<items>
+			<li>MeatRaw</li>
+		</items>
+		<disallowedThingDefs>
+			<li>VFEC_Jerky</li>
+		</disallowedThingDefs>
+		<amount>
+			<li>75</li>
+		</amount>
+		<result>VFEC_Jerky</result>
+		<yield>75</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>15</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
 
 </Defs>

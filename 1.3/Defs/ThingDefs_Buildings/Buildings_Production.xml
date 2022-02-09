@@ -11,7 +11,7 @@
       </researchPrerequisites>
       <graphicData>
          <texPath>Things/Building/Production/MeatDryingRack/MeatDryingRack_a</texPath>
-         <graphicClass>Graphic_Multi</graphicClass>
+         <graphicClass>Graphic_Single</graphicClass>
          <drawSize>(1,1)</drawSize>
          <damageData>
             <cornerTL>Damage/Corner</cornerTL>
@@ -31,7 +31,7 @@
       <useHitPoints>True</useHitPoints>
       <statBases>
          <WorkToBuild>2000</WorkToBuild>
-         <MaxHitPoints>180</MaxHitPoints>
+         <MaxHitPoints>100</MaxHitPoints>
          <Flammability>1.0</Flammability>
          <Cleanliness>-15</Cleanliness>
       </statBases>
@@ -41,7 +41,25 @@
       <pathCost>50</pathCost>
       <surfaceType>Item</surfaceType>
       <comps>
-         <li Class="ItemProcessor.CompProperties_ItemProcessor" />
+         <li Class="ItemProcessor.CompProperties_ItemProcessor">
+            <buildingOnGraphic>Things/Building/Production/MeatDryingRack/MeatDryingRack_b</buildingOnGraphic>
+            <numberOfInputs>1</numberOfInputs>
+            <qualitySelector>false</qualitySelector>
+            <isCategoryBuilding>true</isCategoryBuilding>
+            <InsertFirstItemDesc>VanillaFactionsExpanded.DryingRack.InsertFirstItemDesc</InsertFirstItemDesc>
+            <isSemiAutomaticMachine>true</isSemiAutomaticMachine>
+			<resetSemiautomaticIcon>UI/Meat/VFEC_MeatReset</resetSemiautomaticIcon>
+			<chooseIngredientsIcon>UI/Meat/VFEC_MeatEmpty</chooseIngredientsIcon>
+            <showProgressBar>true</showProgressBar>
+            <bringIngredientsText>VanillaFactionsExpanded.DryingRack.bringIngredientsText</bringIngredientsText>
+            <bringIngredientsDesc>VanillaFactionsExpanded.DryingRack.bringIngredientsDesc</bringIngredientsDesc>
+            <bringIngredientsIcon>UI/Meat/VFEC_InsertMeat</bringIngredientsIcon>
+            <cancelIngredientsText>VanillaFactionsExpanded.DryingRack.cancelIngredientsText</cancelIngredientsText>
+            <cancelIngredientsDesc>VanillaFactionsExpanded.DryingRack.cancelIngredientsDesc</cancelIngredientsDesc>
+            <cancelIngredientsIcon>UI/Meat/VFEC_CancelMeat</cancelIngredientsIcon>
+            <noPowerDestroysProgress>false</noPowerDestroysProgress>
+            <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+         </li>
       </comps>
       <placeWorkers>
          <li>PlaceWorker_PreventInteractionSpotOverlap</li>

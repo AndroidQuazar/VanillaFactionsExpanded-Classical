@@ -8,4 +8,13 @@
 			<li>StoneChunks</li>
 		</items>
 	</ItemProcessor.ItemAcceptedDef>
+	
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>VFEC_MeatDryingRack</defName>
+		<building>VFEC_MeatDryingRack</building>
+		<slot>1</slot>
+		<items>
+			<li>MeatRaw</li>
+		</items>
+	</ItemProcessor.ItemAcceptedDef>
 </Defs>
