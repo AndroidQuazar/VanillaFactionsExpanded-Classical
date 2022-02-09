@@ -82,6 +82,79 @@
     </projectile>
   </ThingDef>
   
+  <ThingDef ParentName="BaseWeapon">
+    <defName>VFEC_Weapon_Scorpion</defName>
+    <label>scorpion</label>
+    <description>A ballista-like turret capable of firing rapidly when set up and manned. Light enough to be used as a handheld weapon at the cost of firing speed, very effective against enemy infantry.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Scorpion</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Large</soundInteract>
+    <statBases>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.3</Mass>
+      <AccuracyTouch>0.74</AccuracyTouch>
+      <AccuracyShort>0.82</AccuracyShort>
+      <AccuracyMedium>0.698</AccuracyMedium>
+      <AccuracyLong>0.3</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+    <weaponClasses>
+      <li>Neolithic</li>
+    </weaponClasses>
+    <thingCategories>
+      <li>ClassicalAssault</li>
+    </thingCategories>
+    <burnableByRecipe>true</burnableByRecipe>
+    <relicChance>0</relicChance>
+    <weaponTags>
+      <li>NeolithicRangedDecent</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>Ranged</li>
+      <li>RangedLight</li>
+	  <li>Neolithic</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VFEC_Arrow_Scorpion</defaultProjectile>
+        <warmupTime>2.4</warmupTime>
+        <range>25.9</range>
+        <soundCast>Bow_Large</soundCast>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>limb</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>VFEC_Arrow_Scorpion</defName>
+    <label>scorpion arrow</label>
+    <graphicData>
+      <texPath>Things/Projectile/Arrow_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>ArrowHighVelocity</damageDef>
+      <damageAmountBase>16</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+	  <armorPenetrationBase>0.05</armorPenetrationBase>
+      <speed>56</speed>
+    </projectile>
+  </ThingDef>
+  
 </Defs>
 
 
