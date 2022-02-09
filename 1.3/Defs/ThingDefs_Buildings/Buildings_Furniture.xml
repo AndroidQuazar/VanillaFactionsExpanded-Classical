@@ -37,6 +37,9 @@
     <pathCost>28</pathCost>
     <passability>PassThroughOnly</passability>
 	<designationCategory>Misc</designationCategory>
+    <researchPrerequisites>
+      <li>VFEC_LegionaryArmaments</li>
+    </researchPrerequisites>
   </ThingDef>
 
 </Defs>
