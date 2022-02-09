@@ -11,7 +11,7 @@
       <graphicData>
          <texPath>Things/Building/Misc/Beacon</texPath>
          <graphicClass>Graphic_Single</graphicClass>
-         <drawSize>(5,5)</drawSize>
+         <drawSize>(3,3)</drawSize>
          <damageData>
             <cornerTL>Damage/Corner</cornerTL>
             <cornerTR>Damage/Corner</cornerTR>

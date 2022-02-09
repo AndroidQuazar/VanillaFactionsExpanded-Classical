@@ -249,8 +249,6 @@
       <size>(3,3)</size>
       <designationCategory>Production</designationCategory>
       <passability>PassThroughOnly</passability>
-      <hasInteractionCell>True</hasInteractionCell>
-      <interactionCellOffset>(0,0,2)</interactionCellOffset>
       <stuffCategories>
          <li>Stony</li>
       </stuffCategories>
@@ -298,7 +296,7 @@
       <graphicData>
          <texPath>Things/Building/Production/TyrianFarm/TyrianFarmEmpty/TyrianFarmEmpty</texPath>
          <graphicClass>Graphic_Multi</graphicClass>
-         <drawSize>(5,5)</drawSize>
+         <drawSize>(4,4)</drawSize>
          <damageData>
             <cornerTL>Damage/Corner</cornerTL>
             <cornerTR>Damage/Corner</cornerTR>
@@ -327,6 +325,7 @@
       <pathCost>80</pathCost>
       <surfaceType>Item</surfaceType>
 	  <defaultPlacingRot>South</defaultPlacingRot>
+	  <terrainAffordanceNeeded inherit="False">ShallowWater</terrainAffordanceNeeded>
       <comps>
          <li Class="ItemProcessor.CompProperties_ItemProcessor">
             <buildingOnGraphic>Things/Building/Production/TyrianFarm/TyrianFarmClothFilled/TyrianFarmClothFilled</buildingOnGraphic>
