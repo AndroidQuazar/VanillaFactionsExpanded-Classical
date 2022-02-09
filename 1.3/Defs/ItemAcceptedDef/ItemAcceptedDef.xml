@@ -17,4 +17,13 @@
 			<li>MeatRaw</li>
 		</items>
 	</ItemProcessor.ItemAcceptedDef>
+	
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>VFEC_TyrianFarm</defName>
+		<building>VFEC_TyrianFarm</building>
+		<slot>1</slot>
+		<items>
+			<li>Cloth</li>
+		</items>
+	</ItemProcessor.ItemAcceptedDef>
 </Defs>

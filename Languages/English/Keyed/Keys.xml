@@ -12,5 +12,11 @@
     <VanillaFactionsExpanded.DryingRack.bringIngredientsDesc>Bring meat to the drying rack to start drying</VanillaFactionsExpanded.DryingRack.bringIngredientsDesc>
     <VanillaFactionsExpanded.DryingRack.cancelIngredientsText>Cancel bringing meat</VanillaFactionsExpanded.DryingRack.cancelIngredientsText>
     <VanillaFactionsExpanded.DryingRack.cancelIngredientsDesc>Cancel bringing meat to the drying rack.</VanillaFactionsExpanded.DryingRack.cancelIngredientsDesc>
+	
+    <VanillaFactionsExpanded.TyrianFarm.InsertFirstItemDesc>Cloth to insert</VanillaFactionsExpanded.TyrianFarm.InsertFirstItemDesc>
+    <VanillaFactionsExpanded.TyrianFarm.bringIngredientsText>Bring cloth</VanillaFactionsExpanded.TyrianFarm.bringIngredientsText>
+    <VanillaFactionsExpanded.TyrianFarm.bringIngredientsDesc>Bring cloth to the tyrian farm to start the process</VanillaFactionsExpanded.TyrianFarm.bringIngredientsDesc>
+    <VanillaFactionsExpanded.TyrianFarm.cancelIngredientsText>Cancel bringing cloth</VanillaFactionsExpanded.TyrianFarm.cancelIngredientsText>
+    <VanillaFactionsExpanded.TyrianFarm.cancelIngredientsDesc>Cancel bringing cloth to the tyrian farm.</VanillaFactionsExpanded.TyrianFarm.cancelIngredientsDesc>
   
 </LanguageData>

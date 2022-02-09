@@ -35,5 +35,20 @@
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>15</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEC_ProcessCloth</defName>
+		<building>VFEC_TyrianFarm</building>
+		<items>
+			<li>Cloth</li>
+		</items>
+		<amount>
+			<li>150</li>
+		</amount>
+		<result>VFEC_Tyrian</result>
+		<yield>150</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>30</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
 
 </Defs>
