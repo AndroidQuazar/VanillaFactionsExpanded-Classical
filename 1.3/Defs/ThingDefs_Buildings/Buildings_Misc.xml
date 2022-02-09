@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+   <ThingDef ParentName="BuildingBase">
+      <defName>VFEC_Beacon</defName>
+      <label>beacon</label>
+      <description>A large pile of wood placed carefully utop a tall platform. Once lit, a slow burning fire will burn brightly for 3 days. Lighting such a beacon will signal to a friendly faction that your settlement is in need of help, auxiliary military engineers usually arrive shortly afterwards, they will both fight and build alongside you. Must be fully rebuilt after extinguishing. Help can only be requests once at a time, and only every 3 days.</description>
+      <researchPrerequisites>
+         <li>VFEC_Beacons</li>
+      </researchPrerequisites>
+      <graphicData>
+         <texPath>Things/Building/Misc/Beacon</texPath>
+         <graphicClass>Graphic_Single</graphicClass>
+         <drawSize>(5,5)</drawSize>
+         <damageData>
+            <cornerTL>Damage/Corner</cornerTL>
+            <cornerTR>Damage/Corner</cornerTR>
+            <cornerBL>Damage/Corner</cornerBL>
+            <cornerBR>Damage/Corner</cornerBR>
+         </damageData>
+      </graphicData>
+      <castEdgeShadows>true</castEdgeShadows>
+      <staticSunShadowHeight>0.20</staticSunShadowHeight>
+      <costList>
+         <WoodLog>150</WoodLog>
+         <Steel>50</Steel>
+      </costList>
+      <altitudeLayer>Building</altitudeLayer>
+      <fillPercent>0.5</fillPercent>
+      <useHitPoints>True</useHitPoints>
+      <statBases>
+         <WorkToBuild>10000</WorkToBuild>
+         <MaxHitPoints>300</MaxHitPoints>
+         <Flammability>1.0</Flammability>
+         <Cleanliness>-10</Cleanliness>
+      </statBases>
+      <size>(3,3)</size>
+      <designationCategory>Misc</designationCategory>
+      <passability>PassThroughOnly</passability>
+      <pathCost>150</pathCost>
+      <surfaceType>Item</surfaceType>
+   </ThingDef>
+
+</Defs>

@@ -74,7 +74,7 @@
       <thingClass>Building_WorkTable</thingClass>
       <graphicData>
          <texPath>Things/Building/Production/CraftingBench/CraftingBench</texPath>
-         <graphicClass>Graphic_Single</graphicClass>
+         <graphicClass>Graphic_Multi</graphicClass>
          <drawSize>(3.5,1.5)</drawSize>
          <shaderType>CutoutComplex</shaderType>
          <damageData>
