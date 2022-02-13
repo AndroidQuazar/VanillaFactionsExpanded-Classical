@@ -2,9 +2,10 @@
 <Defs>
 
   <ThoughtDef>
-    <defName>VFEС_CarpeDiem</defName>
+    <defName>VFEC_CarpeDiem</defName>
     <validWhileDespawned>true</validWhileDespawned>
     <stackLimit>1</stackLimit>
+    <workerClass>VFEC.Perks.ThoughtWorker_Perk</workerClass>
     <stages>
       <li>
         <label>Carpe Diem</label>
@@ -12,6 +13,11 @@
         <baseMoodEffect>3</baseMoodEffect>
       </li>
     </stages>
+    <modExtensions>
+      <li Class="VFEC.Perks.PerkExtension">
+        <perk>CR2</perk>
+      </li>
+    </modExtensions>
   </ThoughtDef>
 
 </Defs>
