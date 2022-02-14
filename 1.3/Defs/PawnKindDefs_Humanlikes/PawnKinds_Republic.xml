@@ -126,6 +126,9 @@
     <apparelRequired>
       <li>VFEC_Toga</li>
     </apparelRequired>
+    <weaponTags>
+	  <li>VFEC_None</li>
+    </weaponTags>
     <apparelMoney>200~300</apparelMoney>
     <weaponMoney>1</weaponMoney>
     <initialWillRange>2~4</initialWillRange>
