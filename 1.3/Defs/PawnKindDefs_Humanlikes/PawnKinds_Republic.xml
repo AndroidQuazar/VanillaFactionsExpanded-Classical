@@ -27,9 +27,9 @@
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>50~100</apparelMoney>
     <weaponMoney>90~150</weaponMoney>
-    <requiredApparel>
+    <apparelRequired>
       <li>Apparel_TribalA</li>
-    </requiredApparel>
+    </apparelRequired>
     <weaponTags>
       <li>NeolithicMeleeBasic</li>
     </weaponTags>
@@ -103,7 +103,7 @@
     <label>auxilia</label>
     <combatPower>65</combatPower>
     <apparelMoney>180~350</apparelMoney>
-    <weaponMoney>80~80</weaponMoney>
+    <weaponMoney>160~160</weaponMoney>
     <apparelRequired>
       <li>VFEC_Apparel_LegionnaireArmor</li>
     </apparelRequired>
@@ -160,7 +160,7 @@
     </apparelRequired>
     <canBeSapper>true</canBeSapper>
     <apparelMoney>200~300</apparelMoney>
-    <weaponMoney>100~300</weaponMoney>
+    <weaponMoney>120~300</weaponMoney>
     <weaponTags>
 	  <li>ClassicalTrader</li>
     </weaponTags>
