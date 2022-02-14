@@ -60,6 +60,11 @@
         <Crafting>4</Crafting>
       </skillRequirements>
     </recipeMaker>
+    <modExtensions>
+	    <li Class="VFECore.ThingDefExtension">
+            <usableWithShields>true</usableWithShields>
+        </li>
+    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
@@ -117,6 +122,11 @@
     <recipeMaker>
       <researchPrerequisite>VFEC_LegionaryArmaments</researchPrerequisite>
     </recipeMaker>
+    <modExtensions>
+	    <li Class="VFECore.ThingDefExtension">
+            <usableWithShields>true</usableWithShields>
+        </li>
+    </modExtensions>
   </ThingDef>
   
 </Defs>

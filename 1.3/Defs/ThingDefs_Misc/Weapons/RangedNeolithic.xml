@@ -65,6 +65,11 @@
          <cooldownTime>2</cooldownTime>
       </li>
     </tools>
+    <modExtensions>
+	    <li Class="VFECore.ThingDefExtension">
+            <usableWithShields>true</usableWithShields>
+        </li>
+    </modExtensions>
   </ThingDef>
   
   <ThingDef ParentName="BaseProjectileNeolithic">
