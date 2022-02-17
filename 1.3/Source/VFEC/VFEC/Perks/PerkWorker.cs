@@ -39,7 +39,8 @@ namespace VFEC.Perks
         }
 
         public virtual bool ShouldModifyStatsOf(StatRequest req, StatDef stat) =>
-            def.statFactors is not null && def.statFactors.Any(factor => factor.stat == stat) || def.statOffsets is not null && def.statOffsets.Any(offset => offset.stat == stat);
+            def.statFactors is not null && def.statFactors.Any(factor => factor.stat == stat) ||
+            def.statOffsets is not null && def.statOffsets.Any(offset => offset.stat == stat);
 
         public virtual void Notify_Removed()
         {

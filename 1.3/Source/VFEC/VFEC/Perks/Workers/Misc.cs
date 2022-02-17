@@ -29,8 +29,8 @@ namespace VFEC.Perks.Workers
         {
         }
 
-        // public override bool ShouldModifyStatsOf(StatRequest req, StatDef stat) =>
-        //     base.ShouldModifyStatsOf(req, stat) && req.HasThing && req.Thing is Pawn {mindState: {mentalBreaker: var breaker}} && !breaker.BreakMinorIsImminent;
+        public override bool ShouldModifyStatsOf(StatRequest req, StatDef stat) =>
+            base.ShouldModifyStatsOf(req, stat) && req.HasThing && req.Thing is Pawn {mindState: {mentalBreaker: var breaker}} && !breaker.BreakMinorIsImminent;
     }
 
     public class PlayerOnly : PerkWorker
@@ -40,6 +40,6 @@ namespace VFEC.Perks.Workers
         }
 
         public override bool ShouldModifyStatsOf(StatRequest req, StatDef stat) =>
-            base.ShouldModifyStatsOf(req, stat) && req.Faction is {IsPlayer: true} || req.Thing is {Faction: {IsPlayer: true}};
+            base.ShouldModifyStatsOf(req, stat) && (req.Faction is {IsPlayer: true} || req.Thing is {Faction: {IsPlayer: true}});
     }
 }
