@@ -16,7 +16,7 @@
         <xpath>/Defs/ThoughtDef[defName="EnvironmentCold" or defName="EnvironmentHot"]</xpath>
         <value>
             <li Class="VFEC.Perks.PerkExtension">
-                <perk>ER5</perk>
+                <perk>NaturaNonConstristatur</perk>
             </li>
         </value>
     </Operation>

@@ -15,7 +15,7 @@
     </stages>
     <modExtensions>
       <li Class="VFEC.Perks.PerkExtension">
-        <perk>CR2</perk>
+        <perk>CarpeDiem</perk>
       </li>
     </modExtensions>
   </ThoughtDef>

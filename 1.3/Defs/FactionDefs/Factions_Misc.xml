@@ -230,6 +230,28 @@
     </disallowedMemes>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
     <configurationListOrderPriority>40</configurationListOrderPriority>
+    <modExtensions>
+      <li Class="VFEC.Senators.FactionExtension_SenatorInfo">
+        <numSenators>5</numSenators>
+        <senatorPerks>
+          <li>AmorVincitOmnia</li>
+          <li>CarpeDiem</li>
+          <li>NilDesperandum</li>
+          <li>PanemEtCircenses</li>
+          <li>ArsLongaVitaBrevis</li>
+        </senatorPerks>
+        <senatorResearch>
+          <li>VFEC_Togas</li>
+          <li>VFEC_TemperatureControl</li>
+          <li>VFEC_MeatDrying</li>
+          <li>VFEC_Mosaics</li>
+          <li>VFEC_Thermaebath</li>
+        </senatorResearch>
+        <finalResearch>VFEC_DramaAndComedy</finalResearch>
+        <finalPerk>Tributum</finalPerk>
+        <perkBGPath>UI/Perks/PerkBG_CentralRepublic</perkBGPath>
+      </li>
+    </modExtensions>
   </FactionDef>
 
   <FactionDef ParentName="VFEC_RepublicBase">
@@ -250,6 +272,28 @@
     </disallowedMemes>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
     <configurationListOrderPriority>40</configurationListOrderPriority>
+    <modExtensions>
+      <li Class="VFEC.Senators.FactionExtension_SenatorInfo">
+        <numSenators>5</numSenators>
+        <senatorPerks>
+          <li>ExitusActaProbat</li>
+          <li>AleaIactaEst</li>
+          <li>PecuniaNervusBelli</li>
+          <li>SiVisPacemParaBellum</li>
+          <li>NosMorituriTeSalutant</li>
+        </senatorPerks>
+        <senatorResearch>
+          <li>VFEC_HeavyShieldMaking</li>
+          <li>VFEC_LegionaryArmaments</li>
+          <li>VFEC_LegionnaireArmor</li>
+          <li>VFEC_CenturionArmor</li>
+          <li>VFEC_Scorpion</li>
+        </senatorResearch>
+        <finalResearch>VFEC_Beacons</finalResearch>
+        <finalPerk>Auxilia</finalPerk>
+        <perkBGPath>UI/Perks/PerkBG_WesternRepublic</perkBGPath>
+      </li>
+    </modExtensions>
   </FactionDef>
 
   <FactionDef ParentName="VFEC_RepublicBase">
@@ -271,6 +315,28 @@
     </disallowedMemes>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
     <configurationListOrderPriority>40</configurationListOrderPriority>
+    <modExtensions>
+      <li Class="VFEC.Senators.FactionExtension_SenatorInfo">
+        <numSenators>5</numSenators>
+        <senatorPerks>
+          <li>NonOmniaPossumusOmnes</li>
+          <li>TimendiCausaEstNescire</li>
+          <li>MensSanaInCorporeSano</li>
+          <li>ActaNonVerba</li>
+          <li>NaturaNonConstristatur</li>
+        </senatorPerks>
+        <senatorResearch>
+          <li>VFEC_BronzeWorking</li>
+          <li>VFEC_CraftingBench</li>
+          <li>VFEC_CementMaking</li>
+          <li>VFEC_WoodfiredCrematorium</li>
+          <li>VFEC_TyrianProduction</li>
+        </senatorResearch>
+        <finalResearch>VFEC_RoadBuilding</finalResearch>
+        <finalPerk>Profectus</finalPerk>
+        <perkBGPath>UI/Perks/PerkBG_EasternRepublic</perkBGPath>
+      </li>
+    </modExtensions>
   </FactionDef>
 
 </Defs>

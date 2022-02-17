@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <VFEC.UI.SenatorsOf>Senators of {0}</VFEC.UI.SenatorsOf>
+    <VFEC.UI.GainingFavor>Gaining the favor of this senator will unlock:</VFEC.UI.GainingFavor>
+    <VFEC.UI.Perk>{0} perk</VFEC.UI.Perk>
+    <VFEC.UI.Research>{0} research project</VFEC.UI.Research>
+    <VFEC.UI.ReQuest>Request a quest</VFEC.UI.ReQuest>
+    <VFEC.UI.Bribe>Bribe ({0} silver)</VFEC.UI.Bribe>
+    <VFEC.UI.GainingFavorAll>Gaining the favor of all senators will unlock:</VFEC.UI.GainingFavorAll>
+    <VFEC.UI.SenatorsInFavor>Senators in favor: {0}/{1}</VFEC.UI.SenatorsInFavor>
+</LanguageData>
