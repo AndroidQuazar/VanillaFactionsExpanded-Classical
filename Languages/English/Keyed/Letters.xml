@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <VFEC.Letters.SenatorJoins>Senator Joins: {0}</VFEC.Letters.SenatorJoins>
+    <VFEC.Letters.SenatorJoins.Desc>{0}, a senator from {1}, has agreed to join you. This has unlocked the perk {2}.</VFEC.Letters.SenatorJoins.Desc>
+    <VFEC.Letters.SenatorJoins.Desc.Research>They have also shared some knowledge with you, automatically researching {0}.</VFEC.Letters.SenatorJoins.Desc.Research>
+    <VFEC.Letters.SenatorJoins.Desc.All>Since you now have all senators from {0}, you have now unlocked the perk {1}. Additionally, perks will no longer be lost if a senator dies.</VFEC.Letters.SenatorJoins.Desc.All>
+    <VFEC.Letters.SenatorJoins.Desc.All.Research>Finally, combining the knowledge of all {0} senators means you have automatically researched {1}.</VFEC.Letters.SenatorJoins.Desc.All.Research>
+</LanguageData>

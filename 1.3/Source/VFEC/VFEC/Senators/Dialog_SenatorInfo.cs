@@ -118,7 +118,7 @@ namespace VFEC.Senators
                     {
                         if (Rand.Chance(0.15f))
                         {
-                            Messages.Message("VFEC.UI.BribeReject".Translate(), MessageTypeDefOf.RejectInput);
+                            Messages.Message("VFEC.UI.BribeReject".Translate(info.Pawn.Name.ToStringFull), MessageTypeDefOf.RejectInput);
                             info.CanBribe = false;
                             WorldComponent_Senators.Instance.InfoFor(info.Pawn, Faction).CanBribe = false;
                         }

@@ -87,9 +87,9 @@ namespace VFEC.Senators
 
     public class Reward_SenatorFavor : Reward
     {
-        private readonly Faction faction;
+        private Faction faction;
 
-        private readonly Pawn pawn;
+        private Pawn pawn;
 
         public Reward_SenatorFavor(SenatorQuests.SenatorInfoWithFaction info)
         {
@@ -102,9 +102,9 @@ namespace VFEC.Senators
         }
 
         public override IEnumerable<GenUI.AnonymousStackElement> StackElements => Gen.YieldSingle(QuestPartUtility.GetStandardRewardStackElement(
-            "VFEC.Senators.FavorOf".Translate(pawn.Name?.ToStringFull ?? pawn.LabelCap),
+            "VFEC.Senators.FavorOf".Translate(pawn.Name.ToStringFull),
             rect => GUI.DrawTexture(rect, PortraitsCache.Get(pawn, rect.size, Rot4.South)),
-            () => "VFEC.Senators.FavorTip".Translate(pawn.Name?.ToStringFull ?? pawn.LabelCap),
+            () => "VFEC.Senators.FavorTip".Translate(pawn.Name.ToStringFull),
             () => Find.WindowStack.Add(new Dialog_InfoCard(pawn))));
 
         public override void InitFromValue(float rewardValue, RewardsGeneratorParams parms, out float valueActuallyUsed)
@@ -117,6 +117,13 @@ namespace VFEC.Senators
             RulePack customLetterTextRules)
         {
             yield return new QuestPart_GainFavor(pawn, faction);
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_References.Look(ref pawn, "pawn");
+            Scribe_References.Look(ref faction, "faction");
         }
 
         public override string GetDescription(RewardsGeneratorParams parms) => "VFEC.Senators.GainFavor".Translate(pawn.Name.ToStringFull, faction.Name);

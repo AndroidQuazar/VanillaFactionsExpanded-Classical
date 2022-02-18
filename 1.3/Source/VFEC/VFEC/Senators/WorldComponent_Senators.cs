@@ -4,6 +4,7 @@ using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
+using VFEC.Perks;
 
 namespace VFEC.Senators
 {
@@ -14,6 +15,7 @@ namespace VFEC.Senators
 
         private List<FactionInfos> infos = new();
         public int NumBribes;
+        public Dictionary<Faction, bool> Permanent = new();
 
         public Dictionary<Faction, List<SenatorInfo>> SenatorInfo = new();
 
@@ -31,6 +33,7 @@ namespace VFEC.Senators
             if (Current.CreatingWorld is null) return;
             foreach (var faction in world.factionManager.AllFactions)
                 if (faction.def.HasModExtension<FactionExtension_SenatorInfo>())
+                {
                     SenatorInfo.Add(faction, Enumerable.Repeat((false, true), faction.def.GetModExtension<FactionExtension_SenatorInfo>().numSenators).Select(info =>
                         new SenatorInfo
                         {
@@ -39,6 +42,8 @@ namespace VFEC.Senators
                             CanBribe = info.Item2,
                             Quest = null
                         }).ToList());
+                    Permanent.Add(faction, false);
+                }
         }
 
         public Pawn GenerateSenator(Faction faction)
@@ -52,19 +57,26 @@ namespace VFEC.Senators
         public override void ExposeData()
         {
             base.ExposeData();
+
             Scribe_Values.Look(ref NumBribes, "numBribes");
+
             if (Scribe.mode == LoadSaveMode.Saving)
             {
                 infos.Clear();
                 infos.AddRange(SenatorInfo.Select(kv => new FactionInfos
                 {
                     Faction = kv.Key,
-                    Infos = kv.Value
+                    Infos = kv.Value,
+                    Permanent = Permanent[kv.Key]
                 }));
             }
 
             Scribe_Collections.Look(ref infos, "infos", LookMode.Deep);
-            if (Scribe.mode == LoadSaveMode.PostLoadInit) SenatorInfo = infos.ToDictionary(info => info.Faction, info => info.Infos);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                SenatorInfo = infos.ToDictionary(info => info.Faction, info => info.Infos);
+                Permanent = infos.ToDictionary(info => info.Faction, info => info.Permanent);
+            }
         }
 
         public static IEnumerable<FloatMenuOption> AddSenatorsOption(IEnumerable<FloatMenuOption> options, Settlement __instance, Caravan caravan) =>
@@ -81,7 +93,42 @@ namespace VFEC.Senators
         {
             var info = InfoFor(pawn, faction);
             info.Favored = true;
-            // TODO: Senator joins you, and get a letter
+            var ext = faction.def.GetModExtension<FactionExtension_SenatorInfo>();
+            var perk = ext.senatorPerks[SenatorInfo[faction].IndexOf(info)];
+            var research = ext.senatorResearch[SenatorInfo[faction].IndexOf(info)];
+            var letterLabel = "VFEC.Letters.SenatorJoins".Translate(pawn.Name.ToStringFull);
+            var letterDesc = "VFEC.Letters.SenatorJoins.Desc".Translate(pawn.Name.ToStringFull, faction.Name, perk.LabelCap);
+            GameComponent_PerkManager.Instance.AddPerk(perk);
+            if (!research.IsFinished)
+            {
+                Find.ResearchManager.FinishProject(research, false, pawn);
+                letterDesc += " ";
+                letterDesc += "VFEC.Letters.SenatorJoins.Desc.Research".Translate(research.LabelCap);
+            }
+
+            if (SenatorInfo[faction].All(i => i.Favored))
+            {
+                Permanent[faction] = true;
+                var finalPerk = ext.finalPerk;
+                var finalResearch = ext.finalResearch;
+                GameComponent_PerkManager.Instance.AddPerk(finalPerk);
+                letterDesc += " ";
+                letterDesc += "VFEC.Letters.SenatorJoins.Desc.All".Translate(faction.Name, finalPerk.LabelCap);
+                if (!finalResearch.IsFinished)
+                {
+                    Find.ResearchManager.FinishProject(finalResearch, false, pawn);
+                    letterDesc += " ";
+                    letterDesc += "VFEC.Letters.SenatorJoins.Desc.All.Research".Translate(ext.numSenators, finalResearch.LabelCap);
+                }
+            }
+
+            pawn.SetFaction(Faction.OfPlayer);
+
+            var parms = new IncidentParms {target = Find.Maps.Where(m => m.IsPlayerHome).RandomElement(), spawnCenter = IntVec3.Invalid};
+            PawnsArrivalModeDefOf.EdgeWalkIn.Worker.TryResolveRaidSpawnCenter(parms);
+            PawnsArrivalModeDefOf.EdgeWalkIn.Worker.Arrive(new List<Pawn> {pawn}, parms);
+
+            Find.LetterStack.ReceiveLetter(letterLabel, letterDesc, LetterDefOf.PositiveEvent, new LookTargets(Gen.YieldSingle(pawn)), faction, info.Quest);
         }
 
         public SenatorInfo InfoFor(Pawn pawn, Faction faction)
@@ -93,11 +140,13 @@ namespace VFEC.Senators
         {
             public Faction Faction;
             public List<SenatorInfo> Infos;
+            public bool Permanent;
 
             public void ExposeData()
             {
                 Scribe_References.Look(ref Faction, "faction");
                 Scribe_Collections.Look(ref Infos, "infos", LookMode.Deep);
+                Scribe_Values.Look(ref Permanent, "permanent");
             }
         }
     }
