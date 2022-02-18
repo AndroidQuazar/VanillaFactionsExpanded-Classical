@@ -59,6 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Senators\Dialog_SenatorInfo.cs" />
     <Compile Include="Senators\FactionExtension_SenatorInfo.cs" />
+    <Compile Include="Senators\SenatorQuests.cs" />
     <Compile Include="Senators\WorldComponent_Senators.cs" />
     <Compile Include="VFEC_DefOf.cs" />
   </ItemGroup>

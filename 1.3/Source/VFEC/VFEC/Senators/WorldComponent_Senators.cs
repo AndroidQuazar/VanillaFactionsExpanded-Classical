@@ -31,11 +31,11 @@ namespace VFEC.Senators
             if (Current.CreatingWorld is null) return;
             foreach (var faction in world.factionManager.AllFactions)
                 if (faction.def.HasModExtension<FactionExtension_SenatorInfo>())
-                    SenatorInfo.Add(faction, Enumerable.Repeat((0, true), faction.def.GetModExtension<FactionExtension_SenatorInfo>().numSenators).Select(info =>
+                    SenatorInfo.Add(faction, Enumerable.Repeat((false, true), faction.def.GetModExtension<FactionExtension_SenatorInfo>().numSenators).Select(info =>
                         new SenatorInfo
                         {
                             Pawn = GenerateSenator(faction),
-                            Favor = info.Item1,
+                            Favored = info.Item1,
                             CanBribe = info.Item2,
                             Quest = null
                         }).ToList());
@@ -77,6 +77,18 @@ namespace VFEC.Senators
                     })))
                 : options;
 
+        public void GainFavorOf(Pawn pawn, Faction faction)
+        {
+            var info = InfoFor(pawn, faction);
+            info.Favored = true;
+            // TODO: Senator joins you, and get a letter
+        }
+
+        public SenatorInfo InfoFor(Pawn pawn, Faction faction)
+        {
+            return SenatorInfo[faction].Find(i => i.Pawn == pawn);
+        }
+
         private class FactionInfos : IExposable
         {
             public Faction Faction;
@@ -93,7 +105,7 @@ namespace VFEC.Senators
     public class SenatorInfo : IExposable
     {
         public bool CanBribe;
-        public float Favor;
+        public bool Favored;
         public Pawn Pawn;
         public Quest Quest;
 
@@ -101,7 +113,7 @@ namespace VFEC.Senators
         {
             Scribe_References.Look(ref Pawn, "pawn");
             Scribe_References.Look(ref Quest, "quest");
-            Scribe_Values.Look(ref Favor, "favor");
+            Scribe_Values.Look(ref Favored, "favored");
             Scribe_Values.Look(ref CanBribe, "canBribe");
         }
     }

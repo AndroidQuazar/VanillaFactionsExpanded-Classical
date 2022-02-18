@@ -17,10 +17,14 @@ namespace VFEC.Senators
         private static readonly Color DisplayBGColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, 15);
         private readonly PerkDef finalPerk;
         private readonly ResearchProjectDef finalResearch;
+
         private readonly Texture2D perkBG_Unlocked;
         private readonly List<AllSenatorInfo> senatorInfo;
         public Caravan Caravan;
         public Faction Faction;
+
+        private float moneyNeeded = 1000f + 0.05f * WorldComponent_Senators.Instance.NumBribes *
+            Find.WorldObjects.Settlements.Where(s => s.Faction is {IsPlayer: true} && s.HasMap).Sum(s => s.Map.wealthWatcher.WealthTotal);
 
         private RenderTexture pawnTexture;
 
@@ -30,13 +34,6 @@ namespace VFEC.Senators
             finalPerk = senatorInfo1.finalPerk;
             finalResearch = senatorInfo1.finalResearch;
             perkBG_Unlocked = senatorInfo1.PerkBG;
-            Log.Message($"Found {senatorInfo1.numSenators} senators");
-            Log.Message("Perks:");
-            GenDebug.LogList(senatorInfo1.senatorPerks);
-            Log.Message("Researches:");
-            GenDebug.LogList(senatorInfo1.senatorResearch);
-            Log.Message("Infos:");
-            foreach (var info in senatorInfo2) Log.Message($"  pawn={info.Pawn},favor={info.Favor},canBribe={info.CanBribe},quest={info.Quest}");
             for (var i = 0; i < senatorInfo1.numSenators; i++)
                 senatorInfo.Add(AllSenatorInfo.FromSenatorInfo(senatorInfo2[i], senatorInfo1.senatorPerks[i], senatorInfo1.senatorResearch[i]));
             doCloseButton = false;
@@ -45,7 +42,7 @@ namespace VFEC.Senators
         }
 
         protected override float Margin => 12f;
-        public override Vector2 InitialSize => new(1150, 750);
+        public override Vector2 InitialSize => new(1150, 800);
 
         private Texture2D PerkBG(bool locked) => locked ? PerkBG_Locked : perkBG_Unlocked;
 
@@ -56,7 +53,7 @@ namespace VFEC.Senators
             Text.Font = GameFont.Medium;
             Text.Anchor = TextAnchor.MiddleLeft;
             Widgets.Label(inRect.TakeTopPart(40f), "VFEC.UI.SenatorsOf".Translate(Faction.Name));
-            foreach (var (info, rect) in senatorInfo.Zip(UIUtility.Divide(inRect.TakeTopPart(550f), senatorInfo.Count, senatorInfo.Count, 1, false),
+            foreach (var (info, rect) in senatorInfo.Zip(UIUtility.Divide(inRect.TakeTopPart(575f), senatorInfo.Count, senatorInfo.Count, 1, false),
                 (info, rect) => (info, rect.ContractedBy(7f, 0))))
                 DrawSenatorInfo(info, rect);
 
@@ -67,14 +64,17 @@ namespace VFEC.Senators
             Text.Anchor = TextAnchor.MiddleLeft;
             DoRewardsInfo(allInfo.TakeTopPart(40f), finalPerk, finalResearch);
 
-            DoPerkInfo(inRect.TakeLeftPart(100f), finalPerk, true);
+            DoPerkInfo(inRect.TakeLeftPart(100f), finalPerk, !senatorInfo.All(info => info.Favored));
+            inRect.xMin += 20f;
 
             Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.UpperLeft;
             var textRect = inRect.TakeLeftPart(500f);
-            Widgets.Label(textRect.TakeTopPart(20f), "VFEC.UI.SenatorsInFavor".Translate(0, senatorInfo.Count));
-            Widgets.Label(textRect, "");
+            Widgets.Label(textRect.TakeTopPart(20f), "VFEC.UI.SenatorsInFavor".Translate(senatorInfo.Count(info => info.Favored), senatorInfo.Count));
+            Text.Font = GameFont.Tiny;
+            Widgets.Label(textRect, "VFEC.UI.Info".Translate().Colorize(ColoredText.SubtleGrayColor));
 
+            Text.Font = GameFont.Small;
             if (Widgets.ButtonText(inRect.TakeBottomPart(40f).ContractedBy(10f, 0), "Close".Translate())) Close();
 
             Text.Font = font;
@@ -99,8 +99,50 @@ namespace VFEC.Senators
             inRect.yMin += 7f;
 
             Text.Font = GameFont.Small;
-            Widgets.ButtonText(inRect.TakeTopPart(40f).ContractedBy(10f, 0f), "VFEC.UI.ReQuest".Translate());
-            if (info.CanBribe) Widgets.ButtonText(inRect.TakeTopPart(40f).ContractedBy(10f, 0f), "VFEC.UI.Bribe".Translate(1000));
+            if (Widgets.ButtonText(inRect.TakeTopPart(40f).ContractedBy(10f, 0f), "VFEC.UI.ReQuest".Translate()))
+            {
+                if (info.Quest is not null) Messages.Message("VFEC.UI.AlreadyQuest".Translate(), MessageTypeDefOf.RejectInput, false);
+                else
+                {
+                    var info2 = WorldComponent_Senators.Instance.InfoFor(info.Pawn, Faction);
+                    info.Quest = info2.Quest = SenatorQuests.GenerateQuestFor(info2, Faction);
+                    Find.QuestManager.Add(info2.Quest);
+                }
+            }
+
+            if (info.CanBribe)
+            {
+                if (Widgets.ButtonText(inRect.TakeTopPart(40f).ContractedBy(10f, 0f), "VFEC.UI.Bribe".Translate(moneyNeeded)))
+                {
+                    if (CaravanInventoryUtility.HasThings(Caravan, ThingDefOf.Silver, Mathf.CeilToInt(moneyNeeded)))
+                    {
+                        if (Rand.Chance(0.15f))
+                        {
+                            Messages.Message("VFEC.UI.BribeReject".Translate(), MessageTypeDefOf.RejectInput);
+                            info.CanBribe = false;
+                            WorldComponent_Senators.Instance.InfoFor(info.Pawn, Faction).CanBribe = false;
+                        }
+                        else
+                        {
+                            var remaining = Mathf.CeilToInt(moneyNeeded);
+                            CaravanInventoryUtility.TakeThings(Caravan, thing =>
+                            {
+                                if (thing.def != ThingDefOf.Silver) return 0;
+
+                                var num = Mathf.Min(remaining, thing.stackCount);
+                                remaining -= num;
+                                return num;
+                            }).ForEach(t => t.Destroy());
+                            info.Favored = true;
+                            WorldComponent_Senators.Instance.NumBribes++;
+                            moneyNeeded = 1000f + 0.05f * WorldComponent_Senators.Instance.NumBribes *
+                                Find.WorldObjects.Settlements.Where(s => s.Faction is {IsPlayer: true} && s.HasMap).Sum(s => s.Map.wealthWatcher.WealthTotal);
+                            WorldComponent_Senators.Instance.GainFavorOf(info.Pawn, Faction);
+                        }
+                    }
+                    else Messages.Message("VFEC.UI.NotEnoughMoney".Translate(), MessageTypeDefOf.RejectInput, false);
+                }
+            }
             else inRect.yMin += 40f;
 
             Text.Font = GameFont.Small;
@@ -108,7 +150,7 @@ namespace VFEC.Senators
 
             DoRewardsInfo(inRect.TakeTopPart(50f), info.Perk, info.Research);
 
-            DoPerkInfo(inRect.TakeTopPart(100f).ContractedBy((inRect.width - 100f) / 2, 0f), info.Perk, true);
+            DoPerkInfo(inRect.TakeTopPart(100f).ContractedBy((inRect.width - 100f) / 2, 0f), info.Perk, !info.Favored);
         }
 
         private void DoPerkInfo(Rect inRect, PerkDef perk, bool locked)
@@ -170,7 +212,7 @@ namespace VFEC.Senators
                 new()
                 {
                     Pawn = info.Pawn,
-                    Favor = info.Favor,
+                    Favored = info.Favored,
                     CanBribe = info.CanBribe,
                     Quest = info.Quest,
                     Perk = perk,
