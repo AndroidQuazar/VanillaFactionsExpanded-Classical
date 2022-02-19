@@ -39,7 +39,7 @@
     </building>
     <pathCost>28</pathCost>
     <passability>PassThroughOnly</passability>
-	<designationCategory>Misc</designationCategory>
+    <designationCategory>Misc</designationCategory>
     <researchPrerequisites>
       <li>VFEC_LegionaryArmaments</li>
     </researchPrerequisites>
@@ -50,6 +50,7 @@
         <drawAssignmentOverlay>false</drawAssignmentOverlay>
         <compClass>CompAssignableToPawn_Bed</compClass>
       </li>
+      <li><compClass>VFEC.Comps.CompTent</compClass></li>
     </comps>
     <drawGUIOverlay>true</drawGUIOverlay>
     <canOverlapZones>false</canOverlapZones>
