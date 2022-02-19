@@ -8,5 +8,23 @@
         <joyMaxParticipants>8</joyMaxParticipants>
         <joyKind>VFEC_Relaxing_Bath</joyKind>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-      </JobDef>
+    </JobDef>
+    <JobDef>
+        <defName>VFEC_Stage_Performance</defName>
+        <driverClass>VFEC.Jobs.JobDriver_Performance</driverClass>
+        <reportString>performing on stage.</reportString>
+        <joyDuration>4000</joyDuration>
+        <joyMaxParticipants>2</joyMaxParticipants>
+        <joyKind>VFEC_Performance</joyKind>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+    <JobDef>
+        <defName>VFEC_Stage_WatchPerformance</defName>
+        <driverClass>JobDriver_WatchBuilding</driverClass>
+        <reportString>watching a stage performance.</reportString>
+        <joyDuration>4000</joyDuration>
+        <joyMaxParticipants>10</joyMaxParticipants>
+        <joyKind>Television</joyKind>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
 </Defs>

@@ -57,6 +57,7 @@
 		<defName>VFEC_TheatreStage</defName>
 		<label>theatre stage</label>
 		<description>A lightly decorated wooden stage meant to provide area for props and actors both to create compelling scenes. Such performances are quite fun for both those on stage and those casting their eyes upon it.</description>
+		<thingClass>VFEC.Buildings.Stage</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Joy/TheatreStage/TheatreStage</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -85,7 +86,6 @@
 		<passability>Standable</passability>
 		<size>(3,2)</size>
 		<building>
-			<joyKind>Television</joyKind>
 			<spawnedConceptLearnOpportunity>TVForSickPeople</spawnedConceptLearnOpportunity>
 			<boughtConceptLearnOpportunity>TVForSickPeople</boughtConceptLearnOpportunity>
 			<watchBuildingStandDistanceRange>2~5</watchBuildingStandDistanceRange>

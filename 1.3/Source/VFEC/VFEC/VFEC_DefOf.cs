@@ -11,5 +11,6 @@ namespace VFEC
         public static FactionDef VFEC_WesternRepublic;
         public static FactionDef VFEC_EasternRepublic;
         public static HistoryEventDef VFEC_GainedFavor;
+        public static JobDef VFEC_Stage_Performance;
     }
 }

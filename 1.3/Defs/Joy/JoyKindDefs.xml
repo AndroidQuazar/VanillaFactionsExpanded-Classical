@@ -4,4 +4,8 @@
         <defName>VFEC_Relaxing_Bath</defName>
         <label>bath relaxing</label>
     </JoyKindDef>
+    <JoyKindDef>
+        <defName>VFEC_Performance</defName>
+        <label>performing</label>
+    </JoyKindDef>
 </Defs>
