@@ -9,7 +9,7 @@
 			<texPath>Things/Pawn/Humanlike/Apparel/Toga/Toga</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<techLevel>Medieval</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<costStuffCount>70</costStuffCount>
 		<stuffCategories>
 			<li>Fabric</li>
@@ -38,7 +38,7 @@
 				<li>OnSkin</li>
 			</layers>
 			<tags>
-				<li>Neolithic</li>
+				<li>Classical</li>
 			</tags>
 			<canBeDesiredForIdeo>true</canBeDesiredForIdeo>
 		</apparel>
