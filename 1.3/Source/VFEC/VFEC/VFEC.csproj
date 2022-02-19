@@ -44,7 +44,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buildings\Thermaebath.cs" />
     <Compile Include="ClassicMod.cs" />
+    <Compile Include="Jobs\JobDriver_SitInBuilding.cs" />
+    <Compile Include="Jobs\JoyGiver_InteractBuildingSitInside.cs" />
     <Compile Include="Perks\GameComponent_PerkManager.cs" />
     <Compile Include="Perks\PerkDef.cs" />
     <Compile Include="Perks\PerkPatches.cs" />

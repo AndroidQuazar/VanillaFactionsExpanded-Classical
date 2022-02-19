@@ -5,7 +5,7 @@
 		<defName>VFEC_Thermaebath</defName>
 		<label>thermaebath</label>
 		<description>A very large, heated stone bath meant to be shared by several patrons. Provides a temporary respite from an otherwise discomforting world. When in high numbers, bathers are known to lose themselves in the moment and share more than they normally would.</description>
-		<thingClass>Building</thingClass>
+		<thingClass>VFEC.Buildings.Thermaebath</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Joy/Thermaebath/Thermaebath</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -25,6 +25,7 @@
 		<passability>Standable</passability>
 		<fillPercent>1</fillPercent>
 		<blockLight>true</blockLight>
+		<pathCost>200</pathCost>
 		<statBases>
 			<Mass>500</Mass>
 			<MaxHitPoints>500</MaxHitPoints>
@@ -44,7 +45,7 @@
 			<ai_chillDestination>false</ai_chillDestination>
 			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
 			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
-			<joyKind>Social</joyKind>
+			<joyKind>VFEC_Relaxing_Bath</joyKind>
 		</building>
 		<researchPrerequisites>
 			<li>VFEC_Thermaebath</li>

@@ -71,7 +71,7 @@ namespace VFEC.Senators
             base.ExposeData();
 
             Scribe_Values.Look(ref NumBribes, "numBribes");
-            Scribe_Collections.Look(ref united, "united");
+            Scribe_Collections.Look(ref united, "united", LookMode.Reference);
 
             if (Scribe.mode == LoadSaveMode.Saving)
             {
