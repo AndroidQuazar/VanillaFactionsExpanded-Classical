@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<KCSG.SymbolDef>
+  <defName>VFEC_Tent_Cloth_South</defName>
+  <thing>VFEC_Tent</thing>
+  <stuff>Cloth</stuff>
+  <rotation>South</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VFEC_Tent_Cloth_North</defName>
+  <thing>VFEC_Tent</thing>
+  <stuff>Cloth</stuff>
+  <rotation>North</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VFEC_Tent_Cloth_East</defName>
+  <thing>VFEC_Tent</thing>
+  <stuff>Cloth</stuff>
+  <rotation>East</rotation>
+</KCSG.SymbolDef>
+
+<KCSG.SymbolDef>
+  <defName>VFEC_Tent_Cloth_West</defName>
+  <thing>VFEC_Tent</thing>
+  <stuff>Cloth</stuff>
+  <rotation>West</rotation>
+</KCSG.SymbolDef>
+
+</Defs>
