@@ -7,7 +7,7 @@
     <description>Neron Neolithic believes that to be worthy, one needs to be tested in fire. He will bombard you with a constant stream of threats and only give you a short moment to catch your breath, before striking you once again. Most factions and all research will be limited to the pre-medieval era.</description>
     <portraitLarge>UI/HeroArt/NeronNeolithic</portraitLarge>
     <portraitTiny>UI/HeroArt/NeronNeolithicTiny</portraitTiny>
-    <listOrder>20</listOrder>
+    <listOrder>61</listOrder>
     <populationIntentFactorFromPopCurve>
       <points>
         <li>0,  8.0</li>
