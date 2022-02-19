@@ -51,11 +51,14 @@
     <Compile Include="Perks\PerkWorker.cs" />
     <Compile Include="Perks\ThoughtWorkers_Patched.cs" />
     <Compile Include="Perks\Workers\Amor.cs" />
+    <Compile Include="Perks\Workers\Auxilia.cs" />
     <Compile Include="Perks\Workers\DebugActionsPerks.cs" />
     <Compile Include="Perks\Workers\Misc.cs" />
     <Compile Include="Perks\Workers\AffectMemories.cs" />
     <Compile Include="Perks\ThoughtWorker_Perk.cs" />
     <Compile Include="Perks\Workers\Pacem.cs" />
+    <Compile Include="Perks\Workers\Profectus.cs" />
+    <Compile Include="Perks\Workers\Tributum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Senators\Dialog_SenatorInfo.cs" />
     <Compile Include="Senators\FactionExtension_SenatorInfo.cs" />

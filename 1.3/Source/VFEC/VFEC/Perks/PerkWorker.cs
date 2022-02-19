@@ -8,7 +8,7 @@ using Verse;
 
 namespace VFEC.Perks
 {
-    public class PerkWorker
+    public class PerkWorker : IExposable
     {
         private static readonly HashSet<Patch> APPLIED = new();
 
@@ -18,6 +18,15 @@ namespace VFEC.Perks
         public PerkWorker(PerkDef def) => this.def = def;
 
         public IEnumerable<Patch> Patches => PerkPatches.GetPatches().Concat(GetPatches());
+
+        public virtual void ExposeData()
+        {
+            throw new NotImplementedException("PerkWorker.ExposeData");
+        }
+
+        public virtual void Initialize()
+        {
+        }
 
         public virtual void Notify_Added()
         {
@@ -36,6 +45,9 @@ namespace VFEC.Perks
 
                     APPLIED.Add(patch);
                 }
+
+
+            if (def.tickerType != TickerType.Never) GameComponent_PerkManager.Instance.TickLists[def.tickerType].Add(def);
         }
 
         public virtual bool ShouldModifyStatsOf(StatRequest req, StatDef stat) =>
@@ -50,11 +62,28 @@ namespace VFEC.Perks
                     patch.Unapply(ClassicMod.Harm);
                     APPLIED.Remove(patch);
                 }
+
+            if (def.tickerType != TickerType.Never) GameComponent_PerkManager.Instance.TickLists[def.tickerType].Remove(def);
         }
 
         public virtual IEnumerable<Patch> GetPatches()
         {
             yield break;
+        }
+
+        public virtual void Tick()
+        {
+            throw new NotImplementedException("PerkWorker.Tick");
+        }
+
+        public virtual void TickRare()
+        {
+            throw new NotImplementedException("PerkWorker.TickRare");
+        }
+
+        public virtual void TickLong()
+        {
+            throw new NotImplementedException("PerkWorker.TickLong");
         }
 
         public struct Patch

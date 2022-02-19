@@ -132,17 +132,24 @@
         <defName>Tributum</defName>
         <description>Gain annual silver donation equal to 5% of the player wealth. Prices at Central Republic vendors get halved.</description>
         <texPath>UI/Perks/Perk_Tributum</texPath>
+        <needsSaving>true</needsSaving>
+        <tickerType>Long</tickerType>
+        <workerClass>VFEC.Perks.Workers.Tributum</workerClass>
     </VFEC.Perks.PerkDef>
     <VFEC.Perks.PerkDef>
         <label>Auxilia</label>
         <defName>Auxilia</defName>
         <description>Every time a raid occurs, there is a 25% chance reinforcement legion will show up to help. After that, reinforcement legion leaves the map.</description>
         <texPath>UI/Perks/Perk_Auxilia</texPath>
+        <workerClass>VFEC.Perks.Workers.Auxilia</workerClass>
     </VFEC.Perks.PerkDef>
     <VFEC.Perks.PerkDef>
         <label>Profectus</label>
         <defName>Profectus</defName>
-        <description>Every X amount of time a random research project that’s achievable by the player (Player meets prerequisites) gets automatically unlocked.</description>
+        <description>Every so often a random research project that's achievable by the player (Player meets prerequisites) gets automatically unlocked.</description>
         <texPath>UI/Perks/Perk_Profectus</texPath>
+        <needsSaving>true</needsSaving>
+        <tickerType>Long</tickerType>
+        <workerClass>VFEC.Perks.Workers.Profectus</workerClass>
     </VFEC.Perks.PerkDef>
 </Defs>

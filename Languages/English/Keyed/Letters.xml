@@ -7,4 +7,10 @@
     <VFEC.Letters.SenatorJoins.Desc.All.Research>Finally, combining the knowledge of all {0} senators means you have automatically researched {1}.</VFEC.Letters.SenatorJoins.Desc.All.Research>
     <VFEC.Letters.SenatorLost>Senator Lost: {0}</VFEC.Letters.SenatorLost>
     <VFEC.Letters.SenatorLost.Desc>{0}, a senator from {1}, has died in your care. {1} will no elect a new senator, who you will have to gain the favor of. As such, the perk {2} has been lost.</VFEC.Letters.SenatorLost.Desc>
+    <VFEC.Letters.Donation>Tribute Recieved from {0}</VFEC.Letters.Donation>
+    <VFEC.Letters.Donation.Desc>{0} has provided tribute of {1}.</VFEC.Letters.Donation.Desc>
+    <VFEC.Letters.Researched>Technology Gained: {0}</VFEC.Letters.Researched>
+    <VFEC.Letters.Researched.Desc>{1} has recently made a breakthrough in their technological advancements, and they have shared the technology with you.
+Technology unlocked:
+{0}</VFEC.Letters.Researched.Desc>
 </LanguageData>

@@ -8,12 +8,21 @@ namespace VFEC.Perks
     {
         public static GameComponent_PerkManager Instance;
         public HashSet<PerkDef> ActivePerks = new();
+
+        public Dictionary<TickerType, List<PerkDef>> TickLists = new()
+        {
+            {TickerType.Normal, new List<PerkDef>()},
+            {TickerType.Rare, new List<PerkDef>()},
+            {TickerType.Long, new List<PerkDef>()}
+        };
+
         public GameComponent_PerkManager(Game game) => Instance = this;
 
         public void AddPerk(PerkDef perk)
         {
             ActivePerks.Add(perk);
             perk.Worker.Notify_Added();
+            perk.Worker.Initialize();
         }
 
         public PerkDef FirstPerk<T>() where T : PerkWorker
@@ -27,6 +36,20 @@ namespace VFEC.Perks
             perk.Worker.Notify_Removed();
         }
 
+        public override void GameComponentTick()
+        {
+            base.GameComponentTick();
+            foreach (var def in TickLists[TickerType.Normal]) def.Worker.Tick();
+
+            if (Find.TickManager.TicksGame % 250 == 3)
+                foreach (var def in TickLists[TickerType.Rare])
+                    def.Worker.TickRare();
+
+            if (Find.TickManager.TicksGame % 2000 == 6)
+                foreach (var def in TickLists[TickerType.Long])
+                    def.Worker.TickLong();
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();
@@ -34,6 +57,19 @@ namespace VFEC.Perks
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
                 foreach (var perk in ActivePerks)
                     perk.Worker.Notify_Added();
+
+            foreach (var perkDef in ActivePerks.Where(def => def.needsSaving))
+            {
+                Scribe.EnterNode(perkDef.defName);
+                try
+                {
+                    perkDef.Worker.ExposeData();
+                }
+                finally
+                {
+                    Scribe.ExitNode();
+                }
+            }
         }
 
         public override void FinalizeInit()
