@@ -23,6 +23,7 @@ namespace VFEC.Senators
         {
             ClassicMod.Harm.Patch(AccessTools.Method(typeof(Settlement), nameof(Settlement.GetFloatMenuOptions)),
                 postfix: new HarmonyMethod(typeof(WorldComponent_Senators), nameof(AddSenatorsOption)));
+            ClassicMod.Harm.Patch(AccessTools.Method(typeof(Pawn), nameof(Pawn.Kill)), postfix: new HarmonyMethod(typeof(WorldComponent_Senators), nameof(Notify_PawnDied)));
         }
 
         public WorldComponent_Senators(World world) : base(world) => Instance = this;
@@ -123,12 +124,33 @@ namespace VFEC.Senators
             }
 
             pawn.SetFaction(Faction.OfPlayer);
+            if (pawn.ideo is not null && Faction.OfPlayer.ideos is not null)
+                pawn.ideo.SetIdeo(Faction.OfPlayer.ideos.PrimaryIdeo);
 
             var parms = new IncidentParms {target = Find.Maps.Where(m => m.IsPlayerHome).RandomElement(), spawnCenter = IntVec3.Invalid};
             PawnsArrivalModeDefOf.EdgeWalkIn.Worker.TryResolveRaidSpawnCenter(parms);
             PawnsArrivalModeDefOf.EdgeWalkIn.Worker.Arrive(new List<Pawn> {pawn}, parms);
 
-            Find.LetterStack.ReceiveLetter(letterLabel, letterDesc, LetterDefOf.PositiveEvent, new LookTargets(Gen.YieldSingle(pawn)), faction, info.Quest);
+            Find.LetterStack.ReceiveLetter(letterLabel, letterDesc, LetterDefOf.PositiveEvent, pawn, faction, info.Quest);
+        }
+
+        public static void Notify_PawnDied(Pawn __instance)
+        {
+            var info = Instance.SenatorInfo.SelectMany(kv => kv.Value.Where(senator => __instance == senator.Pawn)).FirstOrDefault();
+            if (info is null) return;
+            var faction = Instance.SenatorInfo.FirstOrDefault(kv => kv.Value.Contains(info)).Key;
+            if (Instance.Permanent[faction])
+                info.Pawn = null;
+            else
+            {
+                info.Pawn = Instance.GenerateSenator(faction);
+                info.Favored = false;
+                var ext = faction.def.GetModExtension<FactionExtension_SenatorInfo>();
+                var perk = ext.senatorPerks[Instance.SenatorInfo[faction].IndexOf(info)];
+                GameComponent_PerkManager.Instance.RemovePerk(perk);
+                Find.LetterStack.ReceiveLetter("VFEC.Letters.SenatorLost".Translate(__instance.Name.ToStringFull),
+                    "VFEC.Letters.SenatorLost.Desc".Translate(__instance.Name.ToStringFull, faction.Name, perk.LabelCap), LetterDefOf.NegativeEvent, __instance, faction);
+            }
         }
 
         public SenatorInfo InfoFor(Pawn pawn, Faction faction)

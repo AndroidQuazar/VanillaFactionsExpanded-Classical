@@ -5,4 +5,6 @@
     <VFEC.Letters.SenatorJoins.Desc.Research>They have also shared some knowledge with you, automatically researching {0}.</VFEC.Letters.SenatorJoins.Desc.Research>
     <VFEC.Letters.SenatorJoins.Desc.All>Since you now have all senators from {0}, you have now unlocked the perk {1}. Additionally, perks will no longer be lost if a senator dies.</VFEC.Letters.SenatorJoins.Desc.All>
     <VFEC.Letters.SenatorJoins.Desc.All.Research>Finally, combining the knowledge of all {0} senators means you have automatically researched {1}.</VFEC.Letters.SenatorJoins.Desc.All.Research>
+    <VFEC.Letters.SenatorLost>Senator Lost: {0}</VFEC.Letters.SenatorLost>
+    <VFEC.Letters.SenatorLost.Desc>{0}, a senator from {1}, has died in your care. {1} will no elect a new senator, who you will have to gain the favor of. As such, the perk {2} has been lost.</VFEC.Letters.SenatorLost.Desc>
 </LanguageData>

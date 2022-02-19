@@ -86,64 +86,72 @@ namespace VFEC.Senators
             var portraitRect = inRect.TakeTopPart(200f);
             Widgets.DrawBoxSolid(portraitRect, DisplayBGColor);
             portraitRect = portraitRect.ContractedBy(3f);
-            var pawnTexture = GetPawnTexture(info.Pawn, portraitRect.size, Rot4.South);
-            GUI.DrawTexture(portraitRect, pawnTexture);
+            if (info.Pawn is not null)
+            {
+                var pawnTex = GetPawnTexture(info.Pawn, portraitRect.size, Rot4.South);
+                GUI.DrawTexture(portraitRect, pawnTex);
 
-            Text.Font = GameFont.Medium;
-            Widgets.Label(inRect.TakeTopPart(30f), info.Pawn.Name.ToStringFull);
+                Text.Font = GameFont.Medium;
+                Widgets.Label(inRect.TakeTopPart(30f), info.Pawn.Name.ToStringFull);
 
-            Text.Font = GameFont.Tiny;
-            Widgets.Label(inRect.TakeTopPart(20f), "PawnMainDescFactionedWrap".Translate(VFEC_DefOf.VFEC_RepublicSenator.LabelCap, Faction.Name));
+                Text.Font = GameFont.Tiny;
+                Widgets.Label(inRect.TakeTopPart(20f), "PawnMainDescFactionedWrap".Translate(VFEC_DefOf.VFEC_RepublicSenator.LabelCap, Faction.Name));
+            }
+            else inRect.yMin += 50f;
 
             Widgets.DrawLineHorizontal(inRect.x, inRect.y, inRect.width);
             inRect.yMin += 7f;
 
             Text.Font = GameFont.Small;
-            if (Widgets.ButtonText(inRect.TakeTopPart(40f).ContractedBy(10f, 0f), "VFEC.UI.ReQuest".Translate()))
+            if (info.Favored) inRect.yMin += 80f;
+            else
             {
-                if (info.Quest is not null) Messages.Message("VFEC.UI.AlreadyQuest".Translate(), MessageTypeDefOf.RejectInput, false);
-                else
+                if (Widgets.ButtonText(inRect.TakeTopPart(40f).ContractedBy(10f, 0f), "VFEC.UI.ReQuest".Translate()))
                 {
-                    var info2 = WorldComponent_Senators.Instance.InfoFor(info.Pawn, Faction);
-                    info.Quest = info2.Quest = SenatorQuests.GenerateQuestFor(info2, Faction);
-                    Find.QuestManager.Add(info2.Quest);
-                }
-            }
-
-            if (info.CanBribe)
-            {
-                if (Widgets.ButtonText(inRect.TakeTopPart(40f).ContractedBy(10f, 0f), "VFEC.UI.Bribe".Translate(moneyNeeded)))
-                {
-                    if (CaravanInventoryUtility.HasThings(Caravan, ThingDefOf.Silver, Mathf.CeilToInt(moneyNeeded)))
+                    if (info.Quest is not null) Messages.Message("VFEC.UI.AlreadyQuest".Translate(), MessageTypeDefOf.RejectInput, false);
+                    else
                     {
-                        if (Rand.Chance(0.15f))
-                        {
-                            Messages.Message("VFEC.UI.BribeReject".Translate(info.Pawn.Name.ToStringFull), MessageTypeDefOf.RejectInput);
-                            info.CanBribe = false;
-                            WorldComponent_Senators.Instance.InfoFor(info.Pawn, Faction).CanBribe = false;
-                        }
-                        else
-                        {
-                            var remaining = Mathf.CeilToInt(moneyNeeded);
-                            CaravanInventoryUtility.TakeThings(Caravan, thing =>
-                            {
-                                if (thing.def != ThingDefOf.Silver) return 0;
-
-                                var num = Mathf.Min(remaining, thing.stackCount);
-                                remaining -= num;
-                                return num;
-                            }).ForEach(t => t.Destroy());
-                            info.Favored = true;
-                            WorldComponent_Senators.Instance.NumBribes++;
-                            moneyNeeded = 1000f + 0.05f * WorldComponent_Senators.Instance.NumBribes *
-                                Find.WorldObjects.Settlements.Where(s => s.Faction is {IsPlayer: true} && s.HasMap).Sum(s => s.Map.wealthWatcher.WealthTotal);
-                            WorldComponent_Senators.Instance.GainFavorOf(info.Pawn, Faction);
-                        }
+                        var info2 = WorldComponent_Senators.Instance.InfoFor(info.Pawn, Faction);
+                        info.Quest = info2.Quest = SenatorQuests.GenerateQuestFor(info2, Faction);
+                        Find.QuestManager.Add(info2.Quest);
                     }
-                    else Messages.Message("VFEC.UI.NotEnoughMoney".Translate(), MessageTypeDefOf.RejectInput, false);
                 }
+
+                if (info.CanBribe)
+                {
+                    if (Widgets.ButtonText(inRect.TakeTopPart(40f).ContractedBy(10f, 0f), "VFEC.UI.Bribe".Translate(moneyNeeded)))
+                    {
+                        if (CaravanInventoryUtility.HasThings(Caravan, ThingDefOf.Silver, Mathf.CeilToInt(moneyNeeded)))
+                        {
+                            if (Rand.Chance(0.15f))
+                            {
+                                Messages.Message("VFEC.UI.BribeReject".Translate(info.Pawn.Name.ToStringFull), MessageTypeDefOf.RejectInput);
+                                info.CanBribe = false;
+                                WorldComponent_Senators.Instance.InfoFor(info.Pawn, Faction).CanBribe = false;
+                            }
+                            else
+                            {
+                                var remaining = Mathf.CeilToInt(moneyNeeded);
+                                CaravanInventoryUtility.TakeThings(Caravan, thing =>
+                                {
+                                    if (thing.def != ThingDefOf.Silver) return 0;
+
+                                    var num = Mathf.Min(remaining, thing.stackCount);
+                                    remaining -= num;
+                                    return num;
+                                }).ForEach(t => t.Destroy());
+                                info.Favored = true;
+                                WorldComponent_Senators.Instance.NumBribes++;
+                                moneyNeeded = 1000f + 0.05f * WorldComponent_Senators.Instance.NumBribes *
+                                    Find.WorldObjects.Settlements.Where(s => s.Faction is {IsPlayer: true} && s.HasMap).Sum(s => s.Map.wealthWatcher.WealthTotal);
+                                WorldComponent_Senators.Instance.GainFavorOf(info.Pawn, Faction);
+                            }
+                        }
+                        else Messages.Message("VFEC.UI.NotEnoughMoney".Translate(), MessageTypeDefOf.RejectInput, false);
+                    }
+                }
+                else inRect.yMin += 40f;
             }
-            else inRect.yMin += 40f;
 
             Text.Font = GameFont.Small;
             Widgets.Label(inRect.TakeTopPart(40f), "VFEC.UI.GainingFavor".Translate());
