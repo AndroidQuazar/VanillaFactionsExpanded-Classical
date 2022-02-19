@@ -10,7 +10,7 @@ Note: Since you start being hostile to the Republic factions, this is a difficul
       <summary>A gathering of nobility with a grand purpose. A default Classical experience.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
-        <factionDef>PlayerTribe</factionDef>
+        <factionDef>VFEC_NewEmpire</factionDef>
       </playerFaction>
       <parts>
 
