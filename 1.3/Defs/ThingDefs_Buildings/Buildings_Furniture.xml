@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef ParentName="BedWithQualityBase">
+  <ThingDef ParentName="FurnitureBase">
     <defName>VFEC_Tent</defName>
     <label>tent</label>
     <description>A simple bed that lays on the floor, usually made of cloth or leather, often lined with fur. It is lightweight and can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep.</description>
@@ -9,7 +9,7 @@
       <texPath>Things/Building/Furniture/Bed/Tent/Tent</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1,2)</drawSize>
+      <drawSize>(2,3)</drawSize>
     </graphicData>
     <castEdgeShadows>True</castEdgeShadows>
     <statBases>
@@ -33,6 +33,9 @@
       <bed_caravansCanUse>true</bed_caravansCanUse>
       <destroySound>BuildingDestroyed_Soft_Medium</destroySound>
       <destroyShakeAmount>0</destroyShakeAmount>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
     </building>
     <pathCost>28</pathCost>
     <passability>PassThroughOnly</passability>
@@ -40,7 +43,18 @@
     <researchPrerequisites>
       <li>VFEC_LegionaryArmaments</li>
     </researchPrerequisites>
-    <placeWorkers>
+    <thingClass>Building_Bed</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <canOverlapZones>false</canOverlapZones>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <placeWorkers inheriit="False">
       <li>PlaceWorker_NotUnderRoof</li>
     </placeWorkers>
   </ThingDef>
