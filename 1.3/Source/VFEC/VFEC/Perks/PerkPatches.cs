@@ -24,7 +24,8 @@ namespace VFEC.Perks
 
         public static void PerkModifyStat(StatDef ___stat, StatRequest req, ref float __result)
         {
-            foreach (var perk in GameComponent_PerkManager.Instance.ActivePerks.Where(perk => perk.Worker.ShouldModifyStatsOf(req, ___stat)))
+            foreach (var perk in GameComponent_PerkManager.Instance.ActivePerks.Where(perk =>
+                (perk.statFactors != null || perk.statOffsets != null) && perk.Worker.ShouldModifyStatsOf(req, ___stat)))
             {
                 if (perk.statFactors != null) __result *= perk.statFactors.GetStatFactorFromList(___stat);
                 if (perk.statOffsets != null) __result += perk.statOffsets.GetStatOffsetFromList(___stat);
@@ -33,7 +34,8 @@ namespace VFEC.Perks
 
         public static void PerkModifyExplanation(StatWorker __instance, StatDef ___stat, StatRequest req, ref string __result)
         {
-            foreach (var perk in GameComponent_PerkManager.Instance.ActivePerks.Where(perk => perk.Worker.ShouldModifyStatsOf(req, ___stat)))
+            foreach (var perk in GameComponent_PerkManager.Instance.ActivePerks.Where(perk =>
+                (perk.statFactors != null || perk.statOffsets != null) && perk.Worker.ShouldModifyStatsOf(req, ___stat)))
             {
                 if (perk.statFactors != null)
                 {

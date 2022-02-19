@@ -58,7 +58,7 @@ namespace VFEC.Perks
                 foreach (var perk in ActivePerks)
                     perk.Worker.Notify_Added();
 
-            foreach (var perkDef in ActivePerks.Where(def => def.needsSaving))
+            foreach (var perkDef in DefDatabase<PerkDef>.AllDefs.Where(def => def.needsSaving))
             {
                 Scribe.EnterNode(perkDef.defName);
                 try
@@ -72,9 +72,9 @@ namespace VFEC.Perks
             }
         }
 
-        public override void FinalizeInit()
+        public override void StartedNewGame()
         {
-            base.FinalizeInit();
+            base.StartedNewGame();
             foreach (var perk in ActivePerks.ToList()) RemovePerk(perk);
         }
     }

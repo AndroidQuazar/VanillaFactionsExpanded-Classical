@@ -92,7 +92,9 @@ namespace VFEC.Perks
             private readonly MethodInfo prefix;
             private readonly MethodInfo postfix;
             private readonly MethodInfo transpiler;
-            public override string ToString() => $"{target} with:\nPrefix: {prefix}\nPostfix: {postfix}\nTranspiler: {transpiler}";
+
+            public override string ToString() =>
+                $"{target.FullDescription()} with:\nPrefix: {prefix.FullDescription()}\nPostfix: {postfix.FullDescription()}\nTranspiler: {transpiler.FullDescription()}";
 
             public static Patch Prefix(MethodInfo target, MethodInfo prefix) => new(target, prefix);
             public static Patch Postfix(MethodInfo target, MethodInfo postfix) => new(target, postfix: postfix);

@@ -2,7 +2,7 @@
 using System.Linq;
 using Verse;
 
-namespace VFEC.Perks.Workers
+namespace VFEC.Perks
 {
     public static class DebugActionsPerks
     {

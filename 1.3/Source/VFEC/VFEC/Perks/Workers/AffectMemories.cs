@@ -37,7 +37,7 @@ namespace VFEC.Perks.Workers
 
         public override void DoEffect(Thought_Memory newThought)
         {
-            if (newThought.MoodOffset() > 0)
+            if (newThought.CurStage.baseMoodEffect > 0)
                 newThought.durationTicksOverride = Mathf.RoundToInt(newThought.DurationTicks * 1.1f);
         }
     }
@@ -50,7 +50,7 @@ namespace VFEC.Perks.Workers
 
         public override void DoEffect(Thought_Memory newThought)
         {
-            if (newThought.MoodOffset() < 0)
+            if (newThought.CurStage.baseMoodEffect < 0)
                 newThought.durationTicksOverride = Mathf.RoundToInt(newThought.DurationTicks * 0.9f);
         }
     }

@@ -7,9 +7,9 @@ namespace VFEC.Perks.Workers
     public class Profectus : PerkWorker
     {
         public const int INTERVAL = 60000;
-        private int nextResearchTick;
+        private int nextResearchTick = -1;
 
-        private int researchesUnlocked;
+        private int researchesUnlocked = -1;
 
         public Profectus(PerkDef def) : base(def)
         {

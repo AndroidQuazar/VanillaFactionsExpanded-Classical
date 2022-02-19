@@ -12,7 +12,7 @@ namespace VFEC.Perks.Workers
         public const int INTERVAL = 3600000;
 
         private static bool shouldModify;
-        private int lastTickDonated;
+        private int lastTickDonated = -1;
 
         public Tributum(PerkDef def) : base(def)
         {

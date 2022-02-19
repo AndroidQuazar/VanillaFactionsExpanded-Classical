@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VFEC.Senators.RepublicDef>
+        <defName>VFEC_Republic</defName>
+        <label>republic</label>
+        <description>.</description>
+        <parts>
+            <li>VFEC_CentralRepublic</li>
+            <li>VFEC_WesternRepublic</li>
+            <li>VFEC_EasternRepublic</li>
+        </parts>
+        <letterLabel>Republics United</letterLabel>
+        <letterText>After gaining the support of all 3 parts of the republic, it has now united under your rule. You have now become Emperor.</letterText>
+        <perk>VeniVidiVici</perk>
+    </VFEC.Senators.RepublicDef>
+
+    <HistoryEventDef>
+      <defName>VFEC_GainedFavor</defName>
+      <label>gained favor of all senators</label>
+    </HistoryEventDef>
+</Defs>

@@ -4,4 +4,6 @@
     <VFEC.Senators.GainFavor>You gain the favor of Senator {0} from {1}.</VFEC.Senators.GainFavor>
     <VFEC.Senators.FavorOf>Favor of {0}</VFEC.Senators.FavorOf>
     <VFEC.Senators.FavorTip>You will be favored by {0}, who will join your colony. This will activate their associated perk, along with automatically researching their associated project.</VFEC.Senators.FavorTip>
+    <VFEC.TransferToColony>Transfer to Colony</VFEC.TransferToColony>
+    <VFEC.PerkUnlocked>The perk {0} has been unlocked.</VFEC.PerkUnlocked>
 </LanguageData>

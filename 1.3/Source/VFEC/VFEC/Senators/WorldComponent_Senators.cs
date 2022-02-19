@@ -3,6 +3,7 @@ using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
+using UnityEngine;
 using Verse;
 using VFEC.Perks;
 
@@ -19,11 +20,21 @@ namespace VFEC.Senators
 
         public Dictionary<Faction, List<SenatorInfo>> SenatorInfo = new();
 
+        private HashSet<Faction> united = new();
+
         static WorldComponent_Senators()
         {
             ClassicMod.Harm.Patch(AccessTools.Method(typeof(Settlement), nameof(Settlement.GetFloatMenuOptions)),
                 postfix: new HarmonyMethod(typeof(WorldComponent_Senators), nameof(AddSenatorsOption)));
             ClassicMod.Harm.Patch(AccessTools.Method(typeof(Pawn), nameof(Pawn.Kill)), postfix: new HarmonyMethod(typeof(WorldComponent_Senators), nameof(Notify_PawnDied)));
+            ClassicMod.Harm.Patch(AccessTools.PropertyGetter(typeof(Faction), nameof(Faction.Color)),
+                postfix: new HarmonyMethod(typeof(WorldComponent_Senators), nameof(OverrideColor)));
+            ClassicMod.Harm.Patch(AccessTools.Method(typeof(Faction), nameof(Faction.GoodwillWith)),
+                postfix: new HarmonyMethod(typeof(WorldComponent_Senators), nameof(LockGoodwill1)));
+            ClassicMod.Harm.Patch(AccessTools.Method(typeof(Faction), nameof(Faction.CanChangeGoodwillFor)),
+                postfix: new HarmonyMethod(typeof(WorldComponent_Senators), nameof(LockGoodwill2)));
+            ClassicMod.Harm.Patch(AccessTools.Method(typeof(Faction), nameof(Faction.RelationKindWith)),
+                postfix: new HarmonyMethod(typeof(WorldComponent_Senators), nameof(ForceAlly)));
         }
 
         public WorldComponent_Senators(World world) : base(world) => Instance = this;
@@ -60,6 +71,7 @@ namespace VFEC.Senators
             base.ExposeData();
 
             Scribe_Values.Look(ref NumBribes, "numBribes");
+            Scribe_Collections.Look(ref united, "united");
 
             if (Scribe.mode == LoadSaveMode.Saving)
             {
@@ -109,6 +121,7 @@ namespace VFEC.Senators
 
             if (SenatorInfo[faction].All(i => i.Favored))
             {
+                faction.TryAffectGoodwillWith(Faction.OfPlayer, 1000, reason: VFEC_DefOf.VFEC_GainedFavor);
                 Permanent[faction] = true;
                 var finalPerk = ext.finalPerk;
                 var finalResearch = ext.finalResearch;
@@ -121,6 +134,17 @@ namespace VFEC.Senators
                     letterDesc += " ";
                     letterDesc += "VFEC.Letters.SenatorJoins.Desc.All.Research".Translate(ext.numSenators, finalResearch.LabelCap);
                 }
+
+                if (faction.ideos is not null && Faction.OfPlayer.ideos is not null) faction.ideos.SetPrimary(Faction.OfPlayer.ideos.PrimaryIdeo);
+
+                foreach (var republicDef in DefDatabase<RepublicDef>.AllDefs)
+                    if (republicDef.parts.Contains(faction.def) && republicDef.United)
+                    {
+                        GameComponent_PerkManager.Instance.AddPerk(republicDef.perk);
+                        Find.LetterStack.ReceiveLetter(republicDef.letterLabel, republicDef.letterText + "\n" + "VFEC.PerkUnlocked".Translate(republicDef.perk.LabelCap),
+                            LetterDefOf.PositiveEvent);
+                        foreach (var factionDef in republicDef.parts) united.Add(Find.FactionManager.FirstFactionOfDef(factionDef));
+                    }
             }
 
             pawn.SetFaction(Faction.OfPlayer);
@@ -133,6 +157,8 @@ namespace VFEC.Senators
 
             Find.LetterStack.ReceiveLetter(letterLabel, letterDesc, LetterDefOf.PositiveEvent, pawn, faction, info.Quest);
         }
+
+        public bool United(Faction faction) => united.Contains(faction);
 
         public static void Notify_PawnDied(Pawn __instance)
         {
@@ -158,6 +184,29 @@ namespace VFEC.Senators
             return SenatorInfo[faction].Find(i => i.Pawn == pawn);
         }
 
+        public static void OverrideColor(Faction __instance, ref Color __result)
+        {
+            if (Instance.Permanent.TryGetValue(__instance, out var perm) && perm) __result = Faction.OfPlayer.Color;
+        }
+
+        public static void LockGoodwill1(Faction __instance, Faction other, ref int __result)
+        {
+            if (__instance.IsPlayer && Instance.Permanent.TryGetValue(other, out var perm1) && perm1) __result = 100;
+            if (other.IsPlayer && Instance.Permanent.TryGetValue(__instance, out var perm2) && perm2) __result = 100;
+        }
+
+        public static void LockGoodwill2(Faction __instance, Faction other, ref bool __result)
+        {
+            if (__instance.IsPlayer && Instance.Permanent.TryGetValue(other, out var perm1) && perm1) __result = false;
+            if (other.IsPlayer && Instance.Permanent.TryGetValue(__instance, out var perm2) && perm2) __result = false;
+        }
+
+        public static void ForceAlly(Faction __instance, Faction other, ref FactionRelationKind __result)
+        {
+            if (__instance.IsPlayer && Instance.Permanent.TryGetValue(other, out var perm1) && perm1) __result = FactionRelationKind.Ally;
+            if (other.IsPlayer && Instance.Permanent.TryGetValue(__instance, out var perm2) && perm2) __result = FactionRelationKind.Ally;
+        }
+
         private class FactionInfos : IExposable
         {
             public Faction Faction;
@@ -171,6 +220,21 @@ namespace VFEC.Senators
                 Scribe_Values.Look(ref Permanent, "permanent");
             }
         }
+    }
+
+    public class RepublicDef : Def
+    {
+        public string letterLabel;
+        public string letterText;
+        public List<FactionDef> parts;
+        public PerkDef perk;
+
+        public bool United => WorldComponent_Senators.Instance is not null && parts.All(part =>
+        {
+            var faction = Find.FactionManager?.FirstFactionOfDef(part);
+            if (faction is null) return false;
+            return WorldComponent_Senators.Instance.Permanent.TryGetValue(faction, out var perm) && perm;
+        });
     }
 
     public class SenatorInfo : IExposable

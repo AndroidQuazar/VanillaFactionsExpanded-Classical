@@ -152,4 +152,11 @@
         <tickerType>Long</tickerType>
         <workerClass>VFEC.Perks.Workers.Profectus</workerClass>
     </VFEC.Perks.PerkDef>
+    <VFEC.Perks.PerkDef>
+        <label>Veni, Vidi, Vici</label>
+        <defName>VeniVidiVici</defName>
+        <description>Every time a raid occurs, there is a 25% chance reinforcement legion will show up to help. After that, reinforcement legion leaves the map.</description>
+        <texPath>UI/Perks/Perk_VeniVidiVici</texPath>
+        <workerClass>VFEC.Perks.Workers.VeniVidiVici</workerClass>
+    </VFEC.Perks.PerkDef>
 </Defs>

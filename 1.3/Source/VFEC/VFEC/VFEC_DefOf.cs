@@ -10,5 +10,6 @@ namespace VFEC
         public static FactionDef VFEC_CentralRepublic;
         public static FactionDef VFEC_WesternRepublic;
         public static FactionDef VFEC_EasternRepublic;
+        public static HistoryEventDef VFEC_GainedFavor;
     }
 }
