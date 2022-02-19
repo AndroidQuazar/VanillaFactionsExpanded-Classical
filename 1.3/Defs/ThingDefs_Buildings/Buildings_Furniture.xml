@@ -40,6 +40,9 @@
     <researchPrerequisites>
       <li>VFEC_LegionaryArmaments</li>
     </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
   </ThingDef>
 
 </Defs>
