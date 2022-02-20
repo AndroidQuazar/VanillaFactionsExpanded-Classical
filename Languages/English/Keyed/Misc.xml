@@ -8,4 +8,9 @@
     <VFEC.PerkUnlocked>The perk {0} has been unlocked.</VFEC.PerkUnlocked>
     <VFEC.Scorpion.PickUp>Pick Up Scorpion</VFEC.Scorpion.PickUp>
     <VFEC.Scorpion.SetUp>Set Up Scorpion</VFEC.Scorpion.SetUp>
+    <VFEC.LightTheBeacon>Light the Beacon</VFEC.LightTheBeacon>
+    <VFEC.Cooldown>Still on cooldown.</VFEC.Cooldown>
+    <VFEC.NoAllies>No allies.</VFEC.NoAllies>
+    <VFEC.NoReinforce>No reinforcements available.</VFEC.NoReinforce>
+    <VFEC.LightTheBeacon.Desc>Light this beacon to call reiforcements.</VFEC.LightTheBeacon.Desc>
 </LanguageData>

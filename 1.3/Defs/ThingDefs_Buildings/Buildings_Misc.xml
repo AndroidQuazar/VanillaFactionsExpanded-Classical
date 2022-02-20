@@ -5,6 +5,7 @@
       <defName>VFEC_Beacon</defName>
       <label>beacon</label>
       <description>A large pile of wood placed carefully utop a tall platform. Once lit, a slow burning fire will burn brightly for 3 days. Lighting such a beacon will signal to a friendly faction that your settlement is in need of help, auxiliary military engineers usually arrive shortly afterwards, they will both fight and build alongside you. Must be fully rebuilt after extinguishing. Help can only be requests once at a time, and only every 3 days.</description>
+      <thingClass>VFEC.Buildings.Beacon</thingClass>
       <researchPrerequisites>
          <li>VFEC_Beacons</li>
       </researchPrerequisites>
@@ -34,11 +35,22 @@
          <Flammability>1.0</Flammability>
          <Cleanliness>-10</Cleanliness>
       </statBases>
+      <tickerType>Normal</tickerType>
+      <drawerType>RealtimeOnly</drawerType>
+      <killedLeavings>
+         <ChunkSlagSteel>2</ChunkSlagSteel>
+      </killedLeavings>
       <size>(3,3)</size>
       <designationCategory>Misc</designationCategory>
       <passability>PassThroughOnly</passability>
       <pathCost>150</pathCost>
       <surfaceType>Item</surfaceType>
+      <comps>
+         <li Class="CompProperties_FireOverlay">
+            <fireSize>2.8</fireSize>
+            <offset>(0, 0, 0.25)</offset>
+         </li>
+      </comps>
    </ThingDef>
 
 </Defs>
