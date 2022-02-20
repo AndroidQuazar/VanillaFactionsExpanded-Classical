@@ -50,6 +50,7 @@
     <Compile Include="Buildings\Thermaebath.cs" />
     <Compile Include="ClassicMod.cs" />
     <Compile Include="Comps\CompTent.cs" />
+    <Compile Include="Comps\CompToggleHediff.cs" />
     <Compile Include="Jobs\JobDriver_Performance.cs" />
     <Compile Include="Jobs\JobDriver_SetUpScorpion.cs" />
     <Compile Include="Jobs\JobDriver_SitInBuilding.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Senators\SenatorQuests.cs" />
     <Compile Include="Senators\WorldComponent_Senators.cs" />
     <Compile Include="VFEC_DefOf.cs" />
+    <Compile Include="WorldComponent_RoadBuilding.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">

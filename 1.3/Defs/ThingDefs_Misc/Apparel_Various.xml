@@ -193,6 +193,13 @@
         <li>Soldier</li>
       </defaultOutfitTags>
     </apparel>
+    <comps>
+      <li Class="VFEC.Comps.CompProperties_ToggleHediff">
+        <hediff>VFEC_CenturionArmor</hediff>
+        <label>Toggle buff</label>
+        <description>Toggle buffing nearby allies, turn off when not in combat if performance is a concern</description>
+      </li>
+    </comps>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
         <li>

@@ -13,5 +13,6 @@ namespace VFEC
         public static HistoryEventDef VFEC_GainedFavor;
         public static JobDef VFEC_Stage_Performance;
         public static JobDef VFEC_SetupScorpion;
+        public static ResearchProjectDef VFEC_RoadBuilding;
     }
 }
