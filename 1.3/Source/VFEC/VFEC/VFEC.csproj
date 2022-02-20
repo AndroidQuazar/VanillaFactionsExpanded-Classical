@@ -44,11 +44,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buildings\Scorpion.cs" />
     <Compile Include="Buildings\Stage.cs" />
     <Compile Include="Buildings\Thermaebath.cs" />
     <Compile Include="ClassicMod.cs" />
     <Compile Include="Comps\CompTent.cs" />
     <Compile Include="Jobs\JobDriver_Performance.cs" />
+    <Compile Include="Jobs\JobDriver_SetUpScorpion.cs" />
     <Compile Include="Jobs\JobDriver_SitInBuilding.cs" />
     <Compile Include="Jobs\JoyGiver_InteractBuildingSitInside.cs" />
     <Compile Include="Jobs\JoyGiver_Stage.cs" />

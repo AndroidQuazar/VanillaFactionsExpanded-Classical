@@ -6,4 +6,6 @@
     <VFEC.Senators.FavorTip>You will be favored by {0}, who will join your colony. This will activate their associated perk, along with automatically researching their associated project.</VFEC.Senators.FavorTip>
     <VFEC.TransferToColony>Transfer to Colony</VFEC.TransferToColony>
     <VFEC.PerkUnlocked>The perk {0} has been unlocked.</VFEC.PerkUnlocked>
+    <VFEC.Scorpion.PickUp>Pick Up Scorpion</VFEC.Scorpion.PickUp>
+    <VFEC.Scorpion.SetUp>Set Up Scorpion</VFEC.Scorpion.SetUp>
 </LanguageData>
