@@ -198,7 +198,7 @@
     </apparelRequired>
     <canBeSapper>true</canBeSapper>
     <apparelMoney>200~300</apparelMoney>
-    <weaponMoney>100~300</weaponMoney>
+    <weaponMoney>300~300</weaponMoney>
     <weaponTags>
 	  <li>ClassicalScorpion</li>
     </weaponTags>

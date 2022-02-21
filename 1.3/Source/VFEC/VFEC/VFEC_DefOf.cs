@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace VFEC
 {
@@ -14,5 +15,8 @@ namespace VFEC
         public static JobDef VFEC_Stage_Performance;
         public static JobDef VFEC_SetupScorpion;
         public static ResearchProjectDef VFEC_RoadBuilding;
+        public static ThingDef VFEC_Weapon_Scorpion;
+        public static DutyDef VFEC_ScorpionOperator;
+        public static ThingDef VFEC_Turret_Scorpion;
     }
 }

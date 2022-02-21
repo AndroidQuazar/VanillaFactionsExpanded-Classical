@@ -31,6 +31,12 @@ namespace VFEC.Buildings
             };
         }
 
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            if (!respawningAfterLoad && InnerThing is null) InnerThing = ThingMaker.MakeThing(VFEC_DefOf.VFEC_Turret_Scorpion);
+        }
+
         public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             Graphic.Draw(drawLoc, Rotation, this);

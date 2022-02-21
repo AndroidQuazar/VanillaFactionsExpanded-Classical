@@ -54,8 +54,11 @@
     <Compile Include="Jobs\JobDriver_Performance.cs" />
     <Compile Include="Jobs\JobDriver_SetUpScorpion.cs" />
     <Compile Include="Jobs\JobDriver_SitInBuilding.cs" />
+    <Compile Include="Jobs\JobGiver_SetupScorpion.cs" />
     <Compile Include="Jobs\JoyGiver_InteractBuildingSitInside.cs" />
     <Compile Include="Jobs\JoyGiver_Stage.cs" />
+    <Compile Include="LordJob_ScorpionRaid.cs" />
+    <Compile Include="LordToil_ScorpionCamp.cs" />
     <Compile Include="Perks\GameComponent_PerkManager.cs" />
     <Compile Include="Perks\PerkDef.cs" />
     <Compile Include="Perks\PerkPatches.cs" />
@@ -72,6 +75,7 @@
     <Compile Include="Perks\Workers\Tributum.cs" />
     <Compile Include="Perks\Workers\VeniVidiVici.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaidStrategyWorker_ScorpionRaid.cs" />
     <Compile Include="Senators\DebugActionsSenators.cs" />
     <Compile Include="Senators\Dialog_SenatorInfo.cs" />
     <Compile Include="Senators\FactionExtension_SenatorInfo.cs" />
