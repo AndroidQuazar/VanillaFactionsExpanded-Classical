@@ -233,7 +233,7 @@
          <texPath>Things/Building/Production/CementPress/CementPress</texPath>
          <graphicClass>Graphic_Multi</graphicClass>
          <shaderType>CutoutComplex</shaderType>
-         <drawSize>(5,5)</drawSize>
+         <drawSize>(3,3)</drawSize>
       </graphicData>
       <altitudeLayer>Building</altitudeLayer>
       <statBases>
@@ -294,9 +294,9 @@
          <li>VFEC_TyrianProduction</li>
       </researchPrerequisites>
       <graphicData>
-         <texPath>Things/Building/Production/TyrianFarm/TyrianFarmEmpty/TyrianFarmEmpty</texPath>
+         <texPath>Things/Building/Production/TyrianFarm/TyrianFarmEmpty</texPath>
          <graphicClass>Graphic_Multi</graphicClass>
-         <drawSize>(4,4)</drawSize>
+         <drawSize>(3,3)</drawSize>
          <damageData>
             <cornerTL>Damage/Corner</cornerTL>
             <cornerTR>Damage/Corner</cornerTR>
@@ -321,6 +321,7 @@
       <size>(3,3)</size>
 	  <interactionCellOffset>(0,0,2)</interactionCellOffset>
       <designationCategory>Production</designationCategory>
+	  <rotatable>False</rotatable>
       <passability>PassThroughOnly</passability>
       <pathCost>80</pathCost>
       <surfaceType>Item</surfaceType>
@@ -328,8 +329,8 @@
 	  <terrainAffordanceNeeded inherit="False">ShallowWater</terrainAffordanceNeeded>
       <comps>
          <li Class="ItemProcessor.CompProperties_ItemProcessor">
-            <buildingOnGraphic>Things/Building/Production/TyrianFarm/TyrianFarmClothFilled/TyrianFarmClothFilled</buildingOnGraphic>
-			<buildingFinishedGraphic>Things/Building/Production/TyrianFarm/TyrianFarmTyrianFilled/TyrianFarmTyrianFilled</buildingFinishedGraphic>
+            <buildingOnGraphic>Things/Building/Production/TyrianFarm/TyrianFarmClothFilled</buildingOnGraphic>
+			<buildingFinishedGraphic>Things/Building/Production/TyrianFarm/TyrianFarmRoyalFabric</buildingFinishedGraphic>
             <numberOfInputs>1</numberOfInputs>
             <qualitySelector>false</qualitySelector>
             <InsertFirstItemDesc>VanillaFactionsExpanded.TyrianFarm.InsertFirstItemDesc</InsertFirstItemDesc>

@@ -8,8 +8,9 @@
 		<thingClass>VFEC.Buildings.Thermaebath</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Joy/Thermaebath/Thermaebath</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(6,6)</drawSize>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(4,4)</drawSize>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
@@ -22,6 +23,7 @@
 		</stuffCategories>
 		<costStuffCount>250</costStuffCount>
 		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>false</rotatable>
 		<passability>Standable</passability>
 		<fillPercent>1</fillPercent>
 		<blockLight>true</blockLight>

@@ -6,7 +6,7 @@
     <label>tent</label>
     <description>A simple bed that lays on the floor, usually made of cloth or leather, often lined with fur. It is lightweight and can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep.</description>
     <graphicData>
-      <texPath>Things/Building/Furniture/Bed/Tent/Tent</texPath>
+      <texPath>Things/Building/Furniture/Bed/Tent/BedTent</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,3)</drawSize>

@@ -12,7 +12,7 @@
       <Nutrition>0.1</Nutrition>
     </statBases>
     <graphicData>
-      <texPath>Things/Plant/Rose</texPath>
+      <texPath>Things/Plant/Poppy</texPath>
       <graphicClass>Graphic_Random</graphicClass>
     </graphicData>
     <altitudeLayer>Item</altitudeLayer> 
