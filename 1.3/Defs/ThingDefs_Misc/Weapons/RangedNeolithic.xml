@@ -6,7 +6,7 @@
     <label>javelin</label>
     <description>A long-tipped throwing spear specifically designed to break armor and shield alike.</description>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/Pilum</texPath>
+      <texPath>Things/Item/Equipment/WeaponRanged/Javelin</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_BeatFire</soundInteract>
