@@ -136,6 +136,9 @@
         <soundCast>Bow_Large</soundCast>
       </li>
     </verbs>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.75</MoveSpeed>
+    </equippedStatOffsets>
     <tools>
       <li>
         <label>limb</label>
