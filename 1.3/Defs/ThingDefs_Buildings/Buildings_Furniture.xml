@@ -9,7 +9,7 @@
       <texPath>Things/Building/Furniture/Bed/Tent/BedTent</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(2,3)</drawSize>
+      <drawSize>(2,2)</drawSize>
     </graphicData>
     <castEdgeShadows>True</castEdgeShadows>
     <statBases>

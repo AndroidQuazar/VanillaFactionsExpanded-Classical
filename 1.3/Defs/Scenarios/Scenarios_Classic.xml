@@ -110,7 +110,7 @@ Note: Since you start being hostile to the Republic factions, this is a difficul
 		
         <li Class="KCSG.ScenPart_AddStartingStructure">
           <def>VFEC_AddStartingStructure</def>
-          <structureLabel>An abandoned Alliance colony</structureLabel>
+          <structureLabel>A small camp</structureLabel>
           <nearMapCenter>True</nearMapCenter>
           <chooseFrom>
             <li>VFEC_Camp1</li>

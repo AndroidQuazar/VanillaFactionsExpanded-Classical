@@ -220,7 +220,7 @@
       <li>(0.39, 0.48, 0.38)</li>
     </colorSpectrum>
     <factionIconPath>World/WorldObjects/Expanding/CentralRepublic</factionIconPath>
-	<settlementTexturePath>World/WorldObjects/Expanding/CentralRepublic</settlementTexturePath>
+	<settlementTexturePath>World/WorldObjects/RepublicSettlement</settlementTexturePath>
     <disallowedMemes>
       <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
@@ -263,7 +263,7 @@
       <li>(0.79, 0.30, 0.30)</li>
     </colorSpectrum>
     <factionIconPath>World/WorldObjects/Expanding/WesternRepublic</factionIconPath>
-	<settlementTexturePath>World/WorldObjects/Expanding/WesternRepublic</settlementTexturePath>
+	<settlementTexturePath>World/WorldObjects/RepublicSettlement</settlementTexturePath>
     <disallowedMemes>
       <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
@@ -305,7 +305,7 @@
       <li>(0.34, 0.39, 0.76)</li>
     </colorSpectrum>
     <factionIconPath>World/WorldObjects/Expanding/EasternRepublic</factionIconPath>
-	<settlementTexturePath>World/WorldObjects/Expanding/EasternRepublic</settlementTexturePath>
+	<settlementTexturePath>World/WorldObjects/RepublicSettlement</settlementTexturePath>
     <disallowedMemes>
       <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
