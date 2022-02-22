@@ -115,6 +115,10 @@
     <weaponTags>
       <li>ClassicalScorpion</li>
     </weaponTags>
+    <costList>
+      <WoodLog>70</WoodLog>
+      <Steel>25</Steel>
+    </costList>
     <weaponClasses>
       <li>Ranged</li>
       <li>RangedLight</li>
