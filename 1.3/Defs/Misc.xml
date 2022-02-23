@@ -82,9 +82,7 @@
             <li Class="VFEC.Jobs.JobGiver_SetupScorpion">
               <maxDistFromPoint>16</maxDistFromPoint>
             </li>
-            <li Class="JobGiver_ManTurretsNearPoint">
-              <maxDistFromPoint>25</maxDistFromPoint>
-            </li>
+            <li Class="VFEC.Jobs.JobGiver_ManScorpion" />
             <li Class="JobGiver_AIDefendPoint">
               <targetAcquireRadius>35</targetAcquireRadius>
               <targetKeepRadius>40</targetKeepRadius>

@@ -23,9 +23,15 @@ namespace VFEC.Jobs
             if (pawn.equipment.Primary is Scorpion scorpion)
             {
                 var rect = CellRect.CenteredOn(pawn.GetLord().CurLordToil.FlagLoc, Mathf.FloorToInt(maxDistFromPoint / 2));
+
                 var c = rect.RandomCell;
                 var placingRot = Rot4.FromAngleFlat((c - rect.CenterCell).AngleFlat);
-                GenSpawn.WipeExistingThings(c, placingRot, scorpion.def.installBlueprintDef, pawn.Map, DestroyMode.Deconstruct);
+                while (!GenConstruct.CanPlaceBlueprintAt(scorpion.InnerThing.def, c, placingRot, pawn.Map))
+                {
+                    c = rect.RandomCell;
+                    placingRot = Rot4.FromAngleFlat((c - rect.CenterCell).AngleFlat);
+                }
+
                 var blueprint = GenConstruct.PlaceBlueprintForInstall(scorpion, c, pawn.Map, placingRot, Faction.OfPlayer);
                 return JobMaker.MakeJob(VFEC_DefOf.VFEC_SetupScorpion, null, blueprint);
             }

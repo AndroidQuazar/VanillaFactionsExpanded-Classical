@@ -23,18 +23,28 @@ namespace VFEC.Buildings
 
         public IEnumerable<Gizmo> GetEquipGizmos(Pawn pawn)
         {
-            yield return new Designator_InstallScorpion
+            var des = new Designator_InstallScorpion
             {
                 icon = SetupTex,
                 Scorpion = this,
                 GiveJobTo = pawn
             };
+
+            if (pawn.Faction is not {IsPlayer: true}) des.Disable("CannotOrderNonControlled".Translate());
+
+            yield return des;
         }
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            if (!respawningAfterLoad && InnerThing is null) InnerThing = ThingMaker.MakeThing(VFEC_DefOf.VFEC_Turret_Scorpion);
+            InnerThing ??= ThingMaker.MakeThing(VFEC_DefOf.VFEC_Turret_Scorpion);
+        }
+
+        public override void Notify_Equipped(Pawn pawn)
+        {
+            base.Notify_Equipped(pawn);
+            InnerThing ??= ThingMaker.MakeThing(VFEC_DefOf.VFEC_Turret_Scorpion);
         }
 
         public override void DrawAt(Vector3 drawLoc, bool flip = false)

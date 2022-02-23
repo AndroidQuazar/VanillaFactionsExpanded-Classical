@@ -54,6 +54,7 @@
     <Compile Include="Jobs\JobDriver_Performance.cs" />
     <Compile Include="Jobs\JobDriver_SetUpScorpion.cs" />
     <Compile Include="Jobs\JobDriver_SitInBuilding.cs" />
+    <Compile Include="Jobs\JobGiver_ManScorpion.cs" />
     <Compile Include="Jobs\JobGiver_SetupScorpion.cs" />
     <Compile Include="Jobs\JoyGiver_InteractBuildingSitInside.cs" />
     <Compile Include="Jobs\JoyGiver_Stage.cs" />
