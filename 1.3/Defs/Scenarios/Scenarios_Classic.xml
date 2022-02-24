@@ -107,7 +107,7 @@ Note: Since you start being hostile to the Republic factions, this is a difficul
           <text>Squabbling in the senate and cutthroat politics left you with distaste for anything regarding the will of the people. You deserve so much more - as your blood is royal and your wreath is golden. You gathered a few of the senators that sided with you and left the comforts of the Republic. It is time you unite them on your terms, under your rule.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
-		
+
         <li Class="KCSG.ScenPart_AddStartingStructure">
           <def>VFEC_AddStartingStructure</def>
           <structureLabel>A small camp</structureLabel>
@@ -120,27 +120,32 @@ Note: Since you start being hostile to the Republic factions, this is a difficul
             <li>VFEC_Camp5</li>
           </chooseFrom>
         </li>
-		
-		<li Class="VFECore.ScenPart_ForcedFactionGoodwill">
-		    <factionDef>VFEC_CentralRepublic</factionDef>
-			<affectStartingGoodwill>True</affectStartingGoodwill>
-			<startingGoodwillRange>-10~-10</startingGoodwillRange>
-			<def>VFEC_ForcedFactionGoodwill</def>
-		</li>
-		
-		<li Class="VFECore.ScenPart_ForcedFactionGoodwill">
-		    <factionDef>VFEC_WesternRepublic</factionDef>
-			<affectStartingGoodwill>True</affectStartingGoodwill>
-			<startingGoodwillRange>-10~-10</startingGoodwillRange>
-			<def>VFEC_ForcedFactionGoodwill</def>
-		</li>
-		
-		<li Class="VFECore.ScenPart_ForcedFactionGoodwill">
-		    <factionDef>VFEC_EasternRepublic</factionDef>
-			<affectStartingGoodwill>True</affectStartingGoodwill>
-			<startingGoodwillRange>-10~-10</startingGoodwillRange>
-			<def>VFEC_ForcedFactionGoodwill</def>
-		</li>
+
+        <li Class="VFECore.ScenPart_ForcedFactionGoodwill">
+          <factionDef>VFEC_CentralRepublic</factionDef>
+          <affectStartingGoodwill>True</affectStartingGoodwill>
+          <startingGoodwillRange>-10~-10</startingGoodwillRange>
+          <def>VFEC_ForcedFactionGoodwill</def>
+        </li>
+
+        <li Class="VFECore.ScenPart_ForcedFactionGoodwill">
+          <factionDef>VFEC_WesternRepublic</factionDef>
+          <affectStartingGoodwill>True</affectStartingGoodwill>
+          <startingGoodwillRange>-10~-10</startingGoodwillRange>
+          <def>VFEC_ForcedFactionGoodwill</def>
+        </li>
+
+        <li Class="VFECore.ScenPart_ForcedFactionGoodwill">
+          <factionDef>VFEC_EasternRepublic</factionDef>
+          <affectStartingGoodwill>True</affectStartingGoodwill>
+          <startingGoodwillRange>-10~-10</startingGoodwillRange>
+          <def>VFEC_ForcedFactionGoodwill</def>
+        </li>
+
+        <li Class="VFEC.ScenPart_Senators">
+          <def>VFEC_Senators</def>
+          <numSenators>3</numSenators>
+        </li>
 
       </parts>
     </scenario>

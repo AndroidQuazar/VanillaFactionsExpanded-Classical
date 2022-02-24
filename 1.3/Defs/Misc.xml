@@ -114,4 +114,14 @@
     <isRanged>true</isRanged>
     <makesAnimalsFlee>false</makesAnimalsFlee>
   </DamageDef>
+
+  <ScenPartDef>
+    <defName>VFEC_Senators</defName>
+    <label>start with senators</label>
+    <scenPartClass>VFEC.ScenPart_Senators</scenPartClass>
+    <category>PlayerPawnModifier</category>
+    <selectionWeight>0.0</selectionWeight>
+    <summaryPriority>501</summaryPriority>
+    <maxUses>1</maxUses>
+  </ScenPartDef>
 </Defs>
