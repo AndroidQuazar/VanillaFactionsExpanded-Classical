@@ -51,6 +51,7 @@
     <Compile Include="ClassicMod.cs" />
     <Compile Include="Comps\CompTent.cs" />
     <Compile Include="Comps\CompToggleHediff.cs" />
+    <Compile Include="DamageWorker_ApparelDamage.cs" />
     <Compile Include="Jobs\JobDriver_Performance.cs" />
     <Compile Include="Jobs\JobDriver_SetUpScorpion.cs" />
     <Compile Include="Jobs\JobDriver_SitInBuilding.cs" />

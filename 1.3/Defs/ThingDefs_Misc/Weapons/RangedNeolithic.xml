@@ -85,6 +85,12 @@
       <stoppingPower>2.5</stoppingPower>
       <armorPenetrationBase>0.10</armorPenetrationBase>
       <speed>26</speed>
+      <extraDamages>
+        <li>
+          <def>VFEC_ApparelDamage</def>
+          <amount>20</amount>
+        </li>
+      </extraDamages>
     </projectile>
   </ThingDef>
   
