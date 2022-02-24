@@ -23,7 +23,7 @@
 	<ResearchProjectDef>
 		<defName>VFEC_LegionnaireArmor</defName>
 		<label>legionary armor</label>
-		<description>Create heavy armor of legionnaires, capable of withstanding a high degree of sharp damage.</description>
+		<description>Create heavy armor of legionaries, capable of withstanding a high degree of sharp damage.</description>
 		<baseCost>100000</baseCost>
 		<techLevel>Neolithic</techLevel>
 		<researchViewX>12.00</researchViewX>
