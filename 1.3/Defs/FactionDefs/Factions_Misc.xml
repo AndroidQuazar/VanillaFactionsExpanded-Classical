@@ -14,8 +14,7 @@
     <canStageAttacks>true</canStageAttacks>
     <geneticVariance>0.1</geneticVariance>
     <techLevel>Neolithic</techLevel>
-    <factionNameMaker>NamerFactionTribal</factionNameMaker>
-    <settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
+    <settlementNameMaker>VFEC_NamerSettlementClassical</settlementNameMaker>
     <allowedCultures><li>VFEC_Roman</li></allowedCultures>
     <fixedLeaderKinds>
         <li>VFEC_RepublicSenator</li>

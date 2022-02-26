@@ -5,12 +5,13 @@
     <defName>VFEC_Roman</defName>
     <label>roman</label>
     <description>An ancient culture common among republics.</description>
-    <pawnNameMaker>NamerPersonCorunan</pawnNameMaker>
+    <pawnNameMaker>VFEC_NamerPersonClassical</pawnNameMaker>
+    <pawnNameMakerFemale>VFEC_NamerPersonClassicalFemale</pawnNameMakerFemale>
     <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoCorunan</ideoNameMaker>
     <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerDeityCorunan</deityNameMaker>
     <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMakerCorunan</deityTypeMaker>
     <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestivalCorunan</festivalNameMaker>
-    <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">LeaderTitleMaker_Corunan</leaderTitleMaker>
+    <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">VFEC_LeaderTitleMaker_Classical</leaderTitleMaker>
     <allowedPlaceTags>
       <li>OriginTribal</li>
     </allowedPlaceTags>
