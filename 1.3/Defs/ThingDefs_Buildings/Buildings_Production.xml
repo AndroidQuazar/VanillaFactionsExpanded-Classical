@@ -60,6 +60,10 @@
             <cancelIngredientsIcon>UI/Meat/VFEC_CancelMeat</cancelIngredientsIcon>
             <noPowerDestroysProgress>false</noPowerDestroysProgress>
             <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+			<isTemperatureAcceleratingMachine>true</isTemperatureAcceleratingMachine>
+			<maxAccelerationTemp>999</maxAccelerationTemp>
+			<minAccelerationTemp>28</minAccelerationTemp>
+			<accelerationFactor>0.7</accelerationFactor>
          </li>
       </comps>
       <placeWorkers>
