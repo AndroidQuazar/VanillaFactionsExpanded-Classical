@@ -33,6 +33,10 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Outposts">
+      <HintPath>..\..\..\..\..\VanillaExpandedFramework\1.3\Assemblies\Outposts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -86,6 +90,9 @@
     <Compile Include="Senators\WorldComponent_Senators.cs" />
     <Compile Include="VFEC_DefOf.cs" />
     <Compile Include="WorldComponent_RoadBuilding.cs" />
+    <Compile Include="Outposts\Outpost_Farming.cs" />
+    <Compile Include="Outposts\Outpost_Hunting.cs" />
+    <Compile Include="Outposts\Outpost_Mining.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
