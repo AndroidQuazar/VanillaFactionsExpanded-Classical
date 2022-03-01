@@ -220,6 +220,7 @@
     </colorSpectrum>
     <factionIconPath>World/WorldObjects/Expanding/CentralRepublic</factionIconPath>
 	<settlementTexturePath>World/WorldObjects/RepublicSettlement</settlementTexturePath>
+	<factionNameMaker>VFEC_NamerFactionCentral</factionNameMaker>
     <disallowedMemes>
       <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
@@ -263,6 +264,7 @@
     </colorSpectrum>
     <factionIconPath>World/WorldObjects/Expanding/WesternRepublic</factionIconPath>
 	<settlementTexturePath>World/WorldObjects/RepublicSettlement</settlementTexturePath>
+	<factionNameMaker>VFEC_NamerFactionWestern</factionNameMaker>
     <disallowedMemes>
       <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
@@ -305,6 +307,7 @@
     </colorSpectrum>
     <factionIconPath>World/WorldObjects/Expanding/EasternRepublic</factionIconPath>
 	<settlementTexturePath>World/WorldObjects/RepublicSettlement</settlementTexturePath>
+	<factionNameMaker>VFEC_NamerFactionEastern</factionNameMaker>
     <disallowedMemes>
       <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>

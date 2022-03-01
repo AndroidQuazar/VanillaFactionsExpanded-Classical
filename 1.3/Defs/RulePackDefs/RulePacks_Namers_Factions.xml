@@ -5,8 +5,11 @@
     <defName>VFEC_NamerSettlementClassical</defName>
     <rulePack>
       <rulesStrings>
-        <li>r_name->Names/Classical_Towns</li>
+        <li>r_name->[ClassicalName]</li>
       </rulesStrings>
+      <rulesFiles>
+        <li>ClassicalName->Names/Classical_Towns</li>
+      </rulesFiles>
     </rulePack>
   </RulePackDef>
   
@@ -50,6 +53,34 @@
     <rulePack>
       <rulesStrings>
         <li>r_leaderTitle->Senator</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <!-- republics --> 
+  <RulePackDef>
+    <defName>VFEC_NamerFactionCentral</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->Central Republic</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>VFEC_NamerFactionWestern</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->Western Republic</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>VFEC_NamerFactionEastern</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->Eastern Republic</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
