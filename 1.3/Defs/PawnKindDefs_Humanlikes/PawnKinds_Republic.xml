@@ -27,6 +27,9 @@
     <gearHealthRange>0.2~1.1</gearHealthRange>
     <apparelMoney>50~100</apparelMoney>
     <weaponMoney>90~150</weaponMoney>
+    <apparelTags>
+	    <li>Classical</li>
+	</apparelTags>
     <apparelRequired>
       <li>Apparel_TribalA</li>
     </apparelRequired>
@@ -48,6 +51,9 @@
     <gearHealthRange>0.5~1.8</gearHealthRange>
     <apparelMoney>200~300</apparelMoney>
     <weaponMoney>100~100</weaponMoney>
+    <apparelTags>
+	    <li>Classical</li>
+	</apparelTags>
     <weaponTags>
       <li>NeolithicMeleeBasic</li>
 	  <li>ClassicalSimple</li>
@@ -65,6 +71,10 @@
       <li>VFEC_Apparel_LegionnaireArmor</li>
 	  <li>VFEC_Apparel_LegionnaireHelmet</li>
     </apparelRequired>
+    <apparelTags>
+	    <li>Classical</li>
+		<li>ClassicalMilitary</li>
+	</apparelTags>
     <itemQuality>Poor</itemQuality>
     <canBeSapper>true</canBeSapper>
     <gearHealthRange>0.5~1.8</gearHealthRange>
@@ -88,6 +98,10 @@
     <apparelRequired>
       <li>VFEC_Apparel_LegionnaireArmor</li>
     </apparelRequired>
+    <apparelTags>
+	    <li>Classical</li>
+		<li>ClassicalMilitary</li>
+	</apparelTags>
     <weaponTags>
       <li>ClassicalArcher</li>
     </weaponTags>
@@ -107,6 +121,10 @@
     <apparelRequired>
       <li>VFEC_Apparel_LegionnaireArmor</li>
     </apparelRequired>
+    <apparelTags>
+	    <li>Classical</li>
+		<li>ClassicalMilitary</li>
+	</apparelTags>
     <weaponTags>
       <li>ClassicalRangedJavelin</li>
     </weaponTags>
@@ -126,6 +144,10 @@
     <apparelRequired>
       <li>VFEC_Toga</li>
     </apparelRequired>
+    <apparelTags>
+	    <li>Classical</li>
+		<li>ClassicalWreath</li>
+	</apparelTags>
     <weaponTags>
 	  <li>VFEC_None</li>
     </weaponTags>
@@ -161,6 +183,10 @@
       <li>VFEC_Apparel_LegionnaireArmor</li>
 	  <li>VFEC_Apparel_LegionnaireHelmet</li>
     </apparelRequired>
+    <apparelTags>
+	    <li>Classical</li>
+		<li>ClassicalMilitary</li>
+	</apparelTags>
     <canBeSapper>true</canBeSapper>
     <apparelMoney>200~300</apparelMoney>
     <weaponMoney>120~300</weaponMoney>
@@ -196,6 +222,10 @@
       <li>VFEC_Apparel_LegionnaireArmor</li>
 	  <li>VFEC_Apparel_LegionnaireHelmet</li>
     </apparelRequired>
+    <apparelTags>
+	    <li>Classical</li>
+		<li>ClassicalMilitary</li>
+	</apparelTags>
     <canBeSapper>true</canBeSapper>
     <apparelMoney>200~300</apparelMoney>
     <weaponMoney>1000~1000</weaponMoney>
@@ -217,6 +247,10 @@
       <li>VFEC_Apparel_CenturionArmor</li>
       <li>VFEC_Apparel_CenturionHelmet</li>
     </apparelRequired>
+    <apparelTags>
+	    <li>Classical</li>
+		<li>ClassicalMilitaryClassy</li>
+	</apparelTags>
     <weaponMoney>500~1000</weaponMoney>
     <initialWillRange>2~4</initialWillRange>
     <initialResistanceRange>16~24</initialResistanceRange>
@@ -253,6 +287,10 @@
       <li>VFEC_Apparel_CenturionArmor</li>
       <li>VFEC_Apparel_CenturionHelmet</li>
     </apparelRequired>
+    <apparelTags>
+	    <li>Classical</li>
+		<li>ClassicalMilitaryClassy</li>
+	</apparelTags>
     <weaponMoney>500~1000</weaponMoney>
     <initialWillRange>2~4</initialWillRange>
     <initialResistanceRange>16~24</initialResistanceRange>

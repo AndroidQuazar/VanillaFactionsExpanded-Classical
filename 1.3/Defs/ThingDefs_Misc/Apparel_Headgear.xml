@@ -52,6 +52,9 @@
 			</layers>
 			<canBeDesiredForIdeo>true</canBeDesiredForIdeo>
 			<canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+			<tags>
+				<li>ClassicalWreath</li>
+			</tags>
 		</apparel>
 		<colorGenerator Class="ColorGenerator_StandardApparel" />
 	</ThingDef>
