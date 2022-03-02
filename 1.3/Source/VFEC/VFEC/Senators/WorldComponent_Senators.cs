@@ -15,6 +15,7 @@ namespace VFEC.Senators
         public static WorldComponent_Senators Instance;
 
         private List<FactionInfos> infos = new();
+        private bool initialized;
         public int NumBribes;
         public Dictionary<Faction, bool> Permanent = new();
 
@@ -42,7 +43,8 @@ namespace VFEC.Senators
         public override void FinalizeInit()
         {
             base.FinalizeInit();
-            if (Current.CreatingWorld is null) return;
+            if (initialized) return;
+            initialized = true;
             foreach (var faction in world.factionManager.AllFactions)
                 if (faction.def.HasModExtension<FactionExtension_SenatorInfo>())
                 {
@@ -71,6 +73,7 @@ namespace VFEC.Senators
             base.ExposeData();
 
             Scribe_Values.Look(ref NumBribes, "numBribes");
+            Scribe_Values.Look(ref initialized, "initialized");
             Scribe_Collections.Look(ref united, "united", LookMode.Reference);
 
             if (Scribe.mode == LoadSaveMode.Saving)
