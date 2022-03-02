@@ -114,6 +114,7 @@ namespace VFEC.Senators
                         var info2 = WorldComponent_Senators.Instance.InfoFor(info.Pawn, Faction);
                         info.Quest = info2.Quest = SenatorQuests.GenerateQuestFor(info2, Faction);
                         Find.QuestManager.Add(info2.Quest);
+                        QuestUtility.SendLetterQuestAvailable(info2.Quest);
                     }
                 }
 
