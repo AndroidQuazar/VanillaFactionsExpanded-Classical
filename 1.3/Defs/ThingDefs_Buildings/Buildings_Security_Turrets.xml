@@ -24,7 +24,7 @@
     <minifiedDef>VFEC_Weapon_Scorpion</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
-    <rotatable>false</rotatable>
+    <rotatable>true</rotatable>
     <thingCategories>
       <li>BuildingsSecurity</li>
     </thingCategories>
