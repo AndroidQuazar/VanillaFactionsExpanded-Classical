@@ -36,6 +36,8 @@
 			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/Toga/Toga</wornGraphicPath>
 			<layers>
 				<li>OnSkin</li>
+				<li>Middle</li>
+				<li>Shell</li>
 			</layers>
 			<tags>
 				<li>Classical</li>
