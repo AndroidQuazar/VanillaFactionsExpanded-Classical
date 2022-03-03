@@ -36,10 +36,12 @@
     <forageabilityFactor>1.7</forageabilityFactor>
     <startingResearchTags>
       <li>TribalStart</li>
+	  <li>ClassicalStart</li>
     </startingResearchTags>
     <startingTechprintsResearchTags>
       <li>TribalStart</li>
       <li>TribalStartTechprints</li>
+	  <li>ClassicalStart</li>
     </startingTechprintsResearchTags>
     <apparelStuffFilter>
       <thingDefs>
