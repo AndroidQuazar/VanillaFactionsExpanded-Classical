@@ -107,8 +107,8 @@
         <li>Fabric</li>
       </categories>
       <color>(84,28,123)</color>
-      <commonality>1.4</commonality>
-      <allowColorGenerators>true</allowColorGenerators>
+      <commonality>0.4</commonality>
+      <allowColorGenerators>false</allowColorGenerators>
       <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
     </stuffProps>
     <thingCategories>
