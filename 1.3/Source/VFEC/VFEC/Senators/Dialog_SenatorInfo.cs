@@ -18,9 +18,12 @@ namespace VFEC.Senators
         private readonly PerkDef finalPerk;
         private readonly ResearchProjectDef finalResearch;
 
+        private readonly float[] heights = new float[4];
+
         private readonly Texture2D perkBG_Unlocked;
         private readonly List<AllSenatorInfo> senatorInfo;
         public Caravan Caravan;
+        private int curIdx;
         public Faction Faction;
 
         private float moneyNeeded = 1000f + 0.05f * WorldComponent_Senators.Instance.NumBribes *
@@ -62,7 +65,7 @@ namespace VFEC.Senators
             Text.Font = GameFont.Small;
             Widgets.Label(allInfo.TakeTopPart(40f), "VFEC.UI.GainingFavorAll".Translate());
             Text.Anchor = TextAnchor.MiddleLeft;
-            DoRewardsInfo(allInfo.TakeTopPart(40f), finalPerk, finalResearch);
+            DoRewardsInfo(allInfo.TakeTopPart(60f), finalPerk, finalResearch);
 
             DoPerkInfo(inRect.TakeLeftPart(100f), finalPerk, !senatorInfo.All(info => info.Favored));
             inRect.xMin += 20f;
@@ -81,8 +84,18 @@ namespace VFEC.Senators
             Text.Anchor = anchor;
         }
 
+        private void Column() => curIdx = 0;
+
+        private void Label(ref Rect inRect, string text)
+        {
+            heights[curIdx] = Mathf.Max(heights[curIdx], Text.CalcHeight(text, inRect.width));
+            Widgets.Label(inRect.TakeTopPart(heights[curIdx]), text);
+            ++curIdx;
+        }
+
         private void DrawSenatorInfo(AllSenatorInfo info, Rect inRect)
         {
+            Column();
             var portraitRect = inRect.TakeTopPart(200f);
             Widgets.DrawBoxSolid(portraitRect, DisplayBGColor);
             portraitRect = portraitRect.ContractedBy(3f);
@@ -92,10 +105,10 @@ namespace VFEC.Senators
                 GUI.DrawTexture(portraitRect, pawnTex);
 
                 Text.Font = GameFont.Medium;
-                Widgets.Label(inRect.TakeTopPart(30f), info.Pawn.Name.ToStringFull);
+                Label(ref inRect, info.Pawn.Name.ToStringFull);
 
                 Text.Font = GameFont.Tiny;
-                Widgets.Label(inRect.TakeTopPart(20f), "PawnMainDescFactionedWrap".Translate(VFEC_DefOf.VFEC_RepublicSenator.LabelCap, Faction.Name));
+                Label(ref inRect, "PawnMainDescFactionedWrap".Translate(VFEC_DefOf.VFEC_RepublicSenator.LabelCap, Faction.Name));
             }
             else inRect.yMin += 50f;
 
@@ -155,9 +168,10 @@ namespace VFEC.Senators
             }
 
             Text.Font = GameFont.Small;
-            Widgets.Label(inRect.TakeTopPart(40f), "VFEC.UI.GainingFavor".Translate());
+            Label(ref inRect, "VFEC.UI.GainingFavor".Translate());
 
-            DoRewardsInfo(inRect.TakeTopPart(50f), info.Perk, info.Research);
+            heights[curIdx] = Mathf.Max(heights[curIdx], Text.CalcHeight(info.Perk.LabelCap, inRect.width) + 30f + Text.CalcHeight(info.Research.LabelCap, inRect.width));
+            DoRewardsInfo(inRect.TakeTopPart(heights[curIdx]), info.Perk, info.Research);
 
             DoPerkInfo(inRect.TakeTopPart(100f).ContractedBy((inRect.width - 100f) / 2, 0f), info.Perk, !info.Favored);
         }
