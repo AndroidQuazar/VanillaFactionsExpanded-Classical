@@ -114,7 +114,7 @@
     <VFEC.Perks.PerkDef>
         <label>Acta Non Verba</label>
         <defName>ActaNonVerba</defName>
-        <description>Research Speed increased by 5%.</description>
+        <description>Global work speed increased by 5%.</description>
         <texPath>UI/Perks/Perk_ActaNonVerba</texPath>
         <workerClass>VFEC.Perks.Workers.PlayerOnly</workerClass>
         <statOffsets>
@@ -139,7 +139,7 @@
     <VFEC.Perks.PerkDef>
         <label>Auxilia</label>
         <defName>Auxilia</defName>
-        <description>Every time a raid occurs, there is a 25% chance reinforcement legion will show up to help. After that, reinforcement legion leaves the map.</description>
+        <description>Every time a raid occurs, there is a 25% chance a reinforcement legion will show up to help. After that, the reinforcement legion leaves the map.</description>
         <texPath>UI/Perks/Perk_Auxilia</texPath>
         <workerClass>VFEC.Perks.Workers.Auxilia</workerClass>
     </VFEC.Perks.PerkDef>
@@ -155,7 +155,7 @@
     <VFEC.Perks.PerkDef>
         <label>Veni, Vidi, Vici</label>
         <defName>VeniVidiVici</defName>
-        <description>Every time a raid occurs, there is a 25% chance reinforcement legion will show up to help. After that, reinforcement legion leaves the map.</description>
+        <description>Any pawn from any of these three factions will now have a special gizmo that player can click. Clicking it automatically recruits that pawn.</description>
         <texPath>UI/Perks/Perk_VeniVidiVici</texPath>
         <workerClass>VFEC.Perks.Workers.VeniVidiVici</workerClass>
     </VFEC.Perks.PerkDef>
