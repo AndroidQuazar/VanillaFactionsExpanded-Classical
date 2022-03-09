@@ -34,7 +34,7 @@
         <li>Metallic</li>
       </categories>
       <appearance>Metal</appearance>
-      <commonality>0.4</commonality>
+      <commonality>0.15</commonality>
       <constructEffect>ConstructMetal</constructEffect>
       <color>(132,80,52)</color>
       <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
@@ -107,7 +107,7 @@
         <li>Fabric</li>
       </categories>
       <color>(84,28,123)</color>
-      <commonality>0.4</commonality>
+      <commonality>0.3</commonality>
       <allowColorGenerators>false</allowColorGenerators>
       <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
     </stuffProps>
