@@ -155,7 +155,7 @@
     <VFEC.Perks.PerkDef>
         <label>Veni, Vidi, Vici</label>
         <defName>VeniVidiVici</defName>
-        <description>Any pawn from any of these three factions will now have a special gizmo that player can click. Clicking it automatically recruits that pawn.</description>
+        <description>Any pawn from any of the three Republics will now be instantly recruitable.</description>
         <texPath>UI/Perks/Perk_VeniVidiVici</texPath>
         <workerClass>VFEC.Perks.Workers.VeniVidiVici</workerClass>
     </VFEC.Perks.PerkDef>
