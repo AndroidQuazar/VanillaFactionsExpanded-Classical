@@ -329,11 +329,11 @@
       <passability>PassThroughOnly</passability>
       <pathCost>80</pathCost>
       <surfaceType>Item</surfaceType>
-	  <defaultPlacingRot>South</defaultPlacingRot>
+	  <defaultPlacingRot>North</defaultPlacingRot>
 	  <terrainAffordanceNeeded inherit="False">ShallowWater</terrainAffordanceNeeded>
       <comps>
          <li Class="ItemProcessor.CompProperties_ItemProcessor">
-            <buildingOnGraphic>Things/Building/Production/TyrianFarm/TyrianFarmClothFilled</buildingOnGraphic>
+            <buildingOnGraphic>Things/Building/Production/TyrianFarm/TyrianFarmCloth</buildingOnGraphic>
 			<buildingFinishedGraphic>Things/Building/Production/TyrianFarm/TyrianFarmRoyalFabric</buildingFinishedGraphic>
             <numberOfInputs>1</numberOfInputs>
             <qualitySelector>false</qualitySelector>

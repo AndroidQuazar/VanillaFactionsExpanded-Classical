@@ -14,7 +14,7 @@
 		<result>VFEC_BlocksConcrete</result>
 		<yield>75</yield>
 		<useQualityIncreasing>false</useQualityIncreasing>
-		<singleTimeIfNotQualityIncreasing>3</singleTimeIfNotQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>5</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	
 	<ItemProcessor.CombinationDef>
