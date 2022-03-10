@@ -49,15 +49,15 @@
             <isCategoryBuilding>true</isCategoryBuilding>
             <InsertFirstItemDesc>VanillaFactionsExpanded.DryingRack.InsertFirstItemDesc</InsertFirstItemDesc>
             <isSemiAutomaticMachine>true</isSemiAutomaticMachine>
-			<resetSemiautomaticIcon>UI/Meat/VFEC_MeatReset</resetSemiautomaticIcon>
-			<chooseIngredientsIcon>UI/Meat/VFEC_MeatEmpty</chooseIngredientsIcon>
+			<resetSemiautomaticIcon>UI/Gizmos/MeatDryingRack_ResetRecipes</resetSemiautomaticIcon>
+			<chooseIngredientsIcon>UI/Gizmos/MeatDryingRack_ChooseIngredient</chooseIngredientsIcon>
             <showProgressBar>true</showProgressBar>
             <bringIngredientsText>VanillaFactionsExpanded.DryingRack.bringIngredientsText</bringIngredientsText>
             <bringIngredientsDesc>VanillaFactionsExpanded.DryingRack.bringIngredientsDesc</bringIngredientsDesc>
-            <bringIngredientsIcon>UI/Meat/VFEC_InsertMeat</bringIngredientsIcon>
+            <bringIngredientsIcon>UI/Gizmos/MeatDryingRack_ChooseIngredient</bringIngredientsIcon>
             <cancelIngredientsText>VanillaFactionsExpanded.DryingRack.cancelIngredientsText</cancelIngredientsText>
             <cancelIngredientsDesc>VanillaFactionsExpanded.DryingRack.cancelIngredientsDesc</cancelIngredientsDesc>
-            <cancelIngredientsIcon>UI/Meat/VFEC_CancelMeat</cancelIngredientsIcon>
+            <cancelIngredientsIcon>UI/Gizmos/MeatDryingRack_Cancel</cancelIngredientsIcon>
             <noPowerDestroysProgress>false</noPowerDestroysProgress>
             <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
 			<isTemperatureAcceleratingMachine>true</isTemperatureAcceleratingMachine>
@@ -274,15 +274,15 @@
             <isCategoryBuilding>true</isCategoryBuilding>
             <InsertFirstItemDesc>VanillaFactionsExpanded.ConcretePress.InsertFirstItemDesc</InsertFirstItemDesc>
             <isSemiAutomaticMachine>true</isSemiAutomaticMachine>
-            <resetSemiautomaticIcon>MonkeyPlaceholder</resetSemiautomaticIcon>
-            <chooseIngredientsIcon>MonkeyPlaceholder</chooseIngredientsIcon>
+            <resetSemiautomaticIcon>UI/Gizmos/CementPress_ResetRecipes</resetSemiautomaticIcon>
+            <chooseIngredientsIcon>UI/Gizmos/CementPress_ChooseIngredient</chooseIngredientsIcon>
             <showProgressBar>true</showProgressBar>
             <bringIngredientsText>VanillaFactionsExpanded.ConcretePress.bringIngredientsText</bringIngredientsText>
             <bringIngredientsDesc>VanillaFactionsExpanded.ConcretePress.bringIngredientsDesc</bringIngredientsDesc>
-            <bringIngredientsIcon>MonkeyPlaceholder</bringIngredientsIcon>
+            <bringIngredientsIcon>UI/Gizmos/CementPress_ChooseIngredient</bringIngredientsIcon>
             <cancelIngredientsText>VanillaFactionsExpanded.ConcretePress.cancelIngredientsText</cancelIngredientsText>
             <cancelIngredientsDesc>VanillaFactionsExpanded.ConcretePress.cancelIngredientsDesc</cancelIngredientsDesc>
-            <cancelIngredientsIcon>MonkeyPlaceholder</cancelIngredientsIcon>
+            <cancelIngredientsIcon>UI/Gizmos/CementPress_Cancel</cancelIngredientsIcon>
             <noPowerDestroysProgress>false</noPowerDestroysProgress>
             <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
          </li>
@@ -339,15 +339,15 @@
             <qualitySelector>false</qualitySelector>
             <InsertFirstItemDesc>VanillaFactionsExpanded.TyrianFarm.InsertFirstItemDesc</InsertFirstItemDesc>
             <isSemiAutomaticMachine>true</isSemiAutomaticMachine>
-			<resetSemiautomaticIcon>MonkeyPlaceholder</resetSemiautomaticIcon>
-			<chooseIngredientsIcon>MonkeyPlaceholder</chooseIngredientsIcon>
+			<resetSemiautomaticIcon>UI/Gizmos/TyrianFarm_ResetRecipes</resetSemiautomaticIcon>
+			<chooseIngredientsIcon>UI/Gizmos/TyrianFarm_ChooseIngredient</chooseIngredientsIcon>
             <showProgressBar>true</showProgressBar>
             <bringIngredientsText>VanillaFactionsExpanded.TyrianFarm.bringIngredientsText</bringIngredientsText>
             <bringIngredientsDesc>VanillaFactionsExpanded.TyrianFarm.bringIngredientsDesc</bringIngredientsDesc>
-            <bringIngredientsIcon>MonkeyPlaceholder</bringIngredientsIcon>
+            <bringIngredientsIcon>UI/Gizmos/TyrianFarm_ChooseIngredient</bringIngredientsIcon>
             <cancelIngredientsText>VanillaFactionsExpanded.TyrianFarm.cancelIngredientsText</cancelIngredientsText>
             <cancelIngredientsDesc>VanillaFactionsExpanded.TyrianFarm.cancelIngredientsDesc</cancelIngredientsDesc>
-            <cancelIngredientsIcon>MonkeyPlaceholder</cancelIngredientsIcon>
+            <cancelIngredientsIcon>UI/Gizmos/TyrianFarm_Cancel</cancelIngredientsIcon>
             <noPowerDestroysProgress>false</noPowerDestroysProgress>
             <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
          </li>
