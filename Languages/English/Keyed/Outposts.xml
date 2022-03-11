@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <Outposts.MustBeMade>Must be made in the {0}</Outposts.MustBeMade>
+    <Outposts.MustBeMade.Hill>Must be made in mountains or hills</Outposts.MustBeMade.Hill>
+    <Outposts.SkillTooLow>Total skill too low, needs {0}</Outposts.SkillTooLow>
+</LanguageData>
