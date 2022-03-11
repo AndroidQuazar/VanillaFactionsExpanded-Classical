@@ -30,5 +30,11 @@ namespace VFEC.Senators
 
             Find.WindowStack.Add(new Dialog_DebugOptionListLister(list));
         }
+
+        [DebugAction("General", "Regenerate Senators", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.Playing)]
+        public static void RegenerateSenators()
+        {
+            WorldComponent_Senators.Instance.Initialize();
+        }
     }
 }

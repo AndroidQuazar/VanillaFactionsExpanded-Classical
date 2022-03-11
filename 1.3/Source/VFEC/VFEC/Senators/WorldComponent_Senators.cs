@@ -45,6 +45,13 @@ namespace VFEC.Senators
             base.FinalizeInit();
             if (initialized) return;
             initialized = true;
+            Initialize();
+        }
+
+        public void Initialize()
+        {
+            SenatorInfo.Clear();
+            Permanent.Clear();
             foreach (var faction in world.factionManager.AllFactions)
                 if (faction.def.HasModExtension<FactionExtension_SenatorInfo>())
                 {
@@ -62,8 +69,7 @@ namespace VFEC.Senators
 
         public Pawn GenerateSenator(Faction faction)
         {
-            var pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest
-                {KindDef = VFEC_DefOf.VFEC_RepublicSenator, Faction = faction, AllowDead = false, ForceGenerateNewPawn = true, Context = PawnGenerationContext.NonPlayer});
+            var pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(VFEC_DefOf.VFEC_RepublicSenator, faction, forceGenerateNewPawn: true));
             world.worldPawns.PassToWorld(pawn, PawnDiscardDecideMode.KeepForever);
             return pawn;
         }
