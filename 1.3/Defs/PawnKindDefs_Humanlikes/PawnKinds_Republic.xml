@@ -149,10 +149,10 @@
 		<li>ClassicalWreath</li>
 	</apparelTags>
     <weaponTags>
-	  <li>VFEC_None</li>
+	  <li>ClassicalAdvanced</li>
     </weaponTags>
-    <apparelMoney>200~300</apparelMoney>
-    <weaponMoney>1</weaponMoney>
+    <apparelMoney>200~500</apparelMoney>
+    <weaponMoney>174~200</weaponMoney>
     <initialWillRange>2~4</initialWillRange>
     <initialResistanceRange>9~15</initialResistanceRange>
     <modExtensions>
