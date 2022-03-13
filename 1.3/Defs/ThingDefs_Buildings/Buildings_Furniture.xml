@@ -4,7 +4,7 @@
   <ThingDef ParentName="FurnitureBase">
     <defName>VFEC_Tent</defName>
     <label>tent</label>
-    <description>A simple bed that lays on the floor, usually made of cloth or leather, often lined with fur. It is lightweight and can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep.</description>
+    <description>A small, personal tent no larger than a single person bed. When pitched, such a tent will easily protect a pawn from elements such as heat or cold, however it’s not quite as restful, as one is still laying directly on the ground.</description>
     <graphicData>
       <texPath>Things/Building/Furniture/Bed/Tent/BedTent</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
