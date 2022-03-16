@@ -43,6 +43,7 @@ namespace VFEC.Comps
         public static IEnumerable<CodeInstruction> GetBodyPos_Transpile(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
             var labelNext = false;
+            var doneInsert = false;
             var label = generator.DefineLabel();
             foreach (var instruction in instructions)
             {
@@ -53,9 +54,10 @@ namespace VFEC.Comps
                 }
                 else yield return instruction;
 
-                if (instruction.opcode == OpCodes.Stind_I1)
+                if (!doneInsert && instruction.opcode == OpCodes.Stind_I1)
                 {
                     labelNext = true;
+                    doneInsert = true;
                     yield return CodeInstruction.LoadField(typeof(CompTent), nameof(tents));
                     yield return new CodeInstruction(OpCodes.Ldloc_1);
                     yield return CodeInstruction.LoadField(typeof(Thing), nameof(Thing.def));
