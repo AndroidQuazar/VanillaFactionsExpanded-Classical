@@ -3,4 +3,9 @@
     <Outposts.MustBeMade>Must be made in the {0}</Outposts.MustBeMade>
     <Outposts.MustBeMade.Hill>Must be made in mountains or hills</Outposts.MustBeMade.Hill>
     <Outposts.SkillTooLow>Total skill too low, needs {0}</Outposts.SkillTooLow>
+    <Outposts.Settings.Shooting>Shooting Importance</Outposts.Settings.Shooting>
+    <Outposts.Settings.Animals>Animals Importance</Outposts.Settings.Animals>
+    <Outposts.Settings.NeedPods>Need Transport Pods Tech to Deploy Reinforcements?</Outposts.Settings.NeedPods>
+    <Outposts.Settings.Leather>Leather Multiplier</Outposts.Settings.Leather>
+    <Outposts.Settings.Meat>Meat Multiplier</Outposts.Settings.Meat>
 </LanguageData>

@@ -31,7 +31,7 @@ namespace VFEC.Perks.Workers
 
         private void DoResearch()
         {
-            var research = DefDatabase<ResearchProjectDef>.AllDefs.Where(proj => proj.TechprintCount <= 0 && !proj.IsFinished && proj.PrerequisitesCompleted).RandomElement();
+            var research = DefDatabase<ResearchProjectDef>.AllDefs.Where(proj => proj.TechprintCount <= 0 && proj.CanStartNow).RandomElement();
             Find.ResearchManager.FinishProject(research);
             var faction = Find.FactionManager.FirstFactionOfDef(VFEC_DefOf.VFEC_EasternRepublic);
             Find.LetterStack.ReceiveLetter("VFEC.Letters.Researched".Translate(research.LabelCap),
