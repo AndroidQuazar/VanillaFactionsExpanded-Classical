@@ -154,6 +154,10 @@ namespace VFEC.Senators
                             LetterDefOf.PositiveEvent);
                         foreach (var factionDef in republicDef.parts) united.Add(Find.FactionManager.FirstFactionOfDef(factionDef));
                     }
+
+                var cachedMat = AccessTools.FieldRefAccess<Settlement, Material>("cachedMat");
+                foreach (var settlement in Find.WorldObjects.Settlements.Where(settlement => settlement.Faction == faction))
+                    cachedMat(settlement) = null;
             }
 
             pawn.SetFaction(Faction.OfPlayer);

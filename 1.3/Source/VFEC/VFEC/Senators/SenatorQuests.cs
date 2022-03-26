@@ -20,7 +20,7 @@ namespace VFEC.Senators
             .CreateDelegate<Func<QuestNode_GetPawn, Pawn, Slate, bool>>();
 
         private static readonly List<QuestScriptDef> ValidQuests = DefDatabase<QuestScriptDef>.AllDefs.Where(root =>
-            root.root is QuestNode_Sequence {nodes: var nodes} && HasValidNode(nodes)).ToList();
+            root.root is QuestNode_Sequence {nodes: var nodes} && HasValidNode(nodes, IsAsker) && HasValidNode(nodes, IsRewards)).ToList();
 
         static SenatorQuests()
         {
@@ -30,11 +30,38 @@ namespace VFEC.Senators
             ClassicMod.Harm.Patch(AccessTools.PropertyGetter(typeof(Faction), nameof(Faction.LeaderTitle)), new HarmonyMethod(typeof(SenatorQuests), nameof(ForceTitle)));
         }
 
-        private static bool HasValidNode(List<QuestNode> nodes) => nodes.Any(IsValidNode);
+        private static bool HasOrIsValidNode(QuestNode node, Func<QuestNode, bool> isValidNode) =>
+            isValidNode(node) || node is QuestNode_Sequence {nodes: { } nodes} && HasValidNode(nodes, isValidNode) ||
+            node is QuestNode_HasRoyalTitleInCurrentFaction {node: { } trueNode, elseNode: { } falseNode} &&
+            (HasOrIsValidNode(trueNode, isValidNode) || HasOrIsValidNode(falseNode, isValidNode));
 
-        private static bool IsValidNode(QuestNode node) => node is QuestNode_GetPawn {storeAs: var storeAs} && storeAs.ToString() == "asker"
-        // || node is QuestNode_RandomNode {nodes: var nodes} && HasValidNode(nodes)
-        ;
+        private static bool HasValidNode(List<QuestNode> nodes, Func<QuestNode, bool> isValidNode) => nodes.Any(isValidNode);
+
+        private static bool IsAsker(QuestNode node) => node is QuestNode_GetPawn {storeAs: var storeAs} && storeAs.ToString() == "asker";
+
+        private static bool IsRewards(QuestNode node) => node is QuestNode_GiveRewards || node.TryGetChild(out var child) && HasOrIsValidNode(child, IsRewards);
+
+        private static bool TryGetChild(this QuestNode node, out QuestNode child)
+        {
+            switch (node)
+            {
+                case QuestNode_Signal {node: { } signal}:
+                    child = signal;
+                    return true;
+                case QuestNode_Delay {node: { } delay}:
+                    child = delay;
+                    return true;
+                case QuestNode_IsTrue {node: { } isTrue}:
+                    child = isTrue;
+                    return true;
+                case QuestNode_AllSignals {node: { } allSignals}:
+                    child = allSignals;
+                    return true;
+                default:
+                    child = null;
+                    return false;
+            }
+        }
 
         public static Quest GenerateQuestFor(SenatorInfo senatorInfo, Faction faction)
         {
@@ -58,6 +85,7 @@ namespace VFEC.Senators
         public static bool SetSenatorPawn(QuestNode_GetPawn __instance)
         {
             if (info is null) return true;
+            if (__instance.storeAs.GetValue(QuestGen.slate) != "asker") return true;
             QuestGen.slate.Set(__instance.storeAs.GetValue(QuestGen.slate), info.Value.Info.Pawn);
             return false;
         }
@@ -65,6 +93,7 @@ namespace VFEC.Senators
         public static bool CheckSenatorPawn(QuestNode_GetPawn __instance, Slate slate, ref bool __result)
         {
             if (info is null) return true;
+            if (__instance.storeAs.GetValue(QuestGen.slate) != "asker") return true;
             __result = isGoodPawn(__instance, info.Value.Info.Pawn, slate);
             return false;
         }

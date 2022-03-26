@@ -26,7 +26,7 @@ namespace VFEC.Senators
         private int curIdx;
         public Faction Faction;
 
-        private float moneyNeeded = 1000f + 0.05f * WorldComponent_Senators.Instance.NumBribes *
+        private float moneyNeeded = 1000f + 0.05f * WorldComponent_Senators.Instance.NumBribes * 0.5f *
             Find.WorldObjects.Settlements.Where(s => s.HasMap && s.Map.IsPlayerHome).Sum(s => s.Map.wealthWatcher.WealthTotal);
 
         private RenderTexture pawnTexture;
@@ -156,7 +156,7 @@ namespace VFEC.Senators
                                 }).ForEach(t => t.Destroy());
                                 info.Favored = true;
                                 WorldComponent_Senators.Instance.NumBribes++;
-                                moneyNeeded = 1000f + 0.05f * WorldComponent_Senators.Instance.NumBribes *
+                                moneyNeeded = 1000f + 0.05f * WorldComponent_Senators.Instance.NumBribes * 0.5f *
                                     Find.WorldObjects.Settlements.Where(s => s.HasMap && s.Map.IsPlayerHome).Sum(s => s.Map.wealthWatcher.WealthTotal);
                                 WorldComponent_Senators.Instance.GainFavorOf(info.Pawn, Faction);
                             }

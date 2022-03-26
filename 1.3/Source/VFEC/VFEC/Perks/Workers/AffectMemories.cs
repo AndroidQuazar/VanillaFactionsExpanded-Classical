@@ -38,7 +38,7 @@ namespace VFEC.Perks.Workers
         public override void DoEffect(Thought_Memory newThought)
         {
             if (newThought.CurStage.baseMoodEffect > 0)
-                newThought.durationTicksOverride = Mathf.RoundToInt(newThought.DurationTicks * 1.1f);
+                newThought.durationTicksOverride = Mathf.RoundToInt(newThought.DurationTicks * 1.2f);
         }
     }
 

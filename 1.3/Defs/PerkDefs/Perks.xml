@@ -16,17 +16,17 @@
     <VFEC.Perks.PerkDef>
         <label>Nil Desperandum</label>
         <defName>NilDesperandum</defName>
-        <description>Mental break threshold increased by 10%.</description>
+        <description>Mental break threshold decreased by 10%.</description>
         <texPath>UI/Perks/Perk_NilDesperandum</texPath>
         <workerClass>VFEC.Perks.Workers.PlayerOnly</workerClass>
         <statOffsets>
-            <MentalBreakThreshold>0.1</MentalBreakThreshold>
+            <MentalBreakThreshold>-0.1</MentalBreakThreshold>
         </statOffsets>
     </VFEC.Perks.PerkDef>
     <VFEC.Perks.PerkDef>
         <label>Panem Et Circenses</label>
         <defName>PanemEtCircenses</defName>
-        <description>All positive mood thoughts last 10% longer.</description>
+        <description>All positive mood thoughts last 20% longer.</description>
         <texPath>UI/Perks/Perk_PanemEtCircenses</texPath>
         <workerClass>VFEC.Perks.Workers.Panem</workerClass>
     </VFEC.Perks.PerkDef>
