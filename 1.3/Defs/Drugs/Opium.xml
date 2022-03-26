@@ -88,7 +88,7 @@
       <li>
         <label>high on opium</label>
         <description>I feel no pain! Let's do this!</description>
-        <baseMoodEffect>15</baseMoodEffect>
+        <baseMoodEffect>20</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
