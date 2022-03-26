@@ -29,6 +29,7 @@
       <altitudeLayer>Building</altitudeLayer>
       <fillPercent>0.5</fillPercent>
       <useHitPoints>True</useHitPoints>
+      <tickerType>Rare</tickerType>
       <statBases>
          <WorkToBuild>2000</WorkToBuild>
          <MaxHitPoints>100</MaxHitPoints>
