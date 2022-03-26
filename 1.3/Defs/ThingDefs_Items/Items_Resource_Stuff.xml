@@ -68,7 +68,7 @@
       <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
       <stuffAdjective>concrete</stuffAdjective>
       <statFactors>
-        <Beauty>1.1</Beauty>
+        <Beauty>0</Beauty>
         <MaxHitPoints>1.35</MaxHitPoints>
       </statFactors>
       <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
