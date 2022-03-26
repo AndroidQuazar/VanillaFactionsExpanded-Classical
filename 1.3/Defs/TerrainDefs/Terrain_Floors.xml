@@ -62,5 +62,24 @@
 			<BlocksMarble>10</BlocksMarble>
 		</costList>
 	</TerrainDef>
+	
+	<!-- Vanilla -->
+  <TerrainDef ParentName="TileStoneBase">
+    <defName>VFEC_TileConcrete</defName>
+    <label>concrete tile</label>
+    <color>(84,84,76)</color>
+    <costList>
+      <VFEC_BlocksConcrete>4</VFEC_BlocksConcrete>
+    </costList>
+  </TerrainDef>
+  
+  <TerrainDef ParentName="FlagstoneBase">
+    <defName>VFEC_FlagstoneConcrete</defName>
+    <label>concrete flagstone</label>
+    <color>(84,84,76)</color>
+    <costList>
+      <VFEC_BlocksConcrete>4</VFEC_BlocksConcrete>
+    </costList>
+  </TerrainDef>
 
 </Defs>
