@@ -2,20 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using HarmonyLib;
 using RimWorld;
 using Verse;
 
 namespace VFEC.Perks
 {
+    [StaticConstructorOnStartup]
     public class PerkWorker : IExposable
     {
         private static readonly HashSet<Patch> APPLIED = new();
+        private static readonly byte[] cachedStatsToModify;
+        private readonly Dictionary<StatDef, float> statFactors = new();
+        private readonly Dictionary<StatDef, float> statOffsets = new();
 
         // ReSharper disable once InconsistentNaming
         public PerkDef def;
 
-        public PerkWorker(PerkDef def) => this.def = def;
+        static PerkWorker() => cachedStatsToModify = new byte[DefDatabase<StatDef>.DefCount];
+
+        public PerkWorker(PerkDef def)
+        {
+            this.def = def;
+            foreach (var factor in def.statFactors) statFactors.Add(factor.stat, factor.value);
+
+            foreach (var offset in def.statOffsets) statOffsets.Add(offset.stat, offset.value);
+        }
 
         public IEnumerable<Patch> Patches => PerkPatches.GetPatches().Concat(GetPatches());
 
@@ -48,11 +61,30 @@ namespace VFEC.Perks
 
 
             if (def.tickerType != TickerType.Never) GameComponent_PerkManager.Instance.TickLists[def.tickerType].Add(def);
+            foreach (var factor in def.statFactors) cachedStatsToModify[factor.stat.index]++;
+
+            foreach (var offset in def.statOffsets) cachedStatsToModify[offset.stat.index]++;
         }
 
-        public virtual bool ShouldModifyStatsOf(StatRequest req, StatDef stat) =>
-            def.statFactors is not null && def.statFactors.Any(factor => factor.stat == stat) ||
-            def.statOffsets is not null && def.statOffsets.Any(offset => offset.stat == stat);
+        public virtual bool ShouldModifyStatsOf(StatRequest req, StatDef stat) => statFactors.ContainsKey(stat) || statOffsets.ContainsKey(stat);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void ModifyStat(StatRequest req, StatDef stat, ref float value)
+        {
+            if (!ShouldModifyStatsOf(req, stat)) return;
+            if (statFactors.TryGetValue(stat, out var factor)) value *= factor;
+            if (statOffsets.TryGetValue(stat, out var offset)) value += offset;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void ModifyStatExplain(StatRequest req, StatDef stat, StatWorker worker, ref string explanation)
+        {
+            if (!ShouldModifyStatsOf(req, stat)) return;
+            if (statFactors.TryGetValue(stat, out var factor) && Math.Abs(factor - 1f) > 0.0001f)
+                explanation += "\n" + (def.LabelCap + ": " + worker.ValueToString(factor, false, ToStringNumberSense.Factor));
+            if (statOffsets.TryGetValue(stat, out var offset) && offset != 0f)
+                explanation += "\n" + (def.LabelCap + ": " + worker.ValueToString(offset, false, ToStringNumberSense.Offset));
+        }
 
         public virtual void Notify_Removed()
         {
@@ -64,7 +96,13 @@ namespace VFEC.Perks
                 }
 
             if (def.tickerType != TickerType.Never) GameComponent_PerkManager.Instance.TickLists[def.tickerType].Remove(def);
+            foreach (var factor in def.statFactors) cachedStatsToModify[factor.stat.index]--;
+
+            foreach (var offset in def.statOffsets) cachedStatsToModify[offset.stat.index]--;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool ShouldModifyStatEver(StatDef stat) => cachedStatsToModify[stat.index] > 0;
 
         public virtual IEnumerable<Patch> GetPatches()
         {

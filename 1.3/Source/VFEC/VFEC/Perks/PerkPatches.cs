@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
-using Verse;
 
 namespace VFEC.Perks
 {
@@ -24,33 +21,14 @@ namespace VFEC.Perks
 
         public static void PerkModifyStat(StatDef ___stat, StatRequest req, ref float __result)
         {
-            foreach (var perk in GameComponent_PerkManager.Instance.ActivePerks.Where(perk =>
-                (perk.statFactors != null || perk.statOffsets != null) && perk.Worker.ShouldModifyStatsOf(req, ___stat)))
-            {
-                if (perk.statFactors != null) __result *= perk.statFactors.GetStatFactorFromList(___stat);
-                if (perk.statOffsets != null) __result += perk.statOffsets.GetStatOffsetFromList(___stat);
-            }
+            if (!PerkWorker.ShouldModifyStatEver(___stat)) return;
+            foreach (var perk in GameComponent_PerkManager.Instance.ActivePerks) perk.Worker.ModifyStat(req, ___stat, ref __result);
         }
 
         public static void PerkModifyExplanation(StatWorker __instance, StatDef ___stat, StatRequest req, ref string __result)
         {
-            foreach (var perk in GameComponent_PerkManager.Instance.ActivePerks.Where(perk =>
-                (perk.statFactors != null || perk.statOffsets != null) && perk.Worker.ShouldModifyStatsOf(req, ___stat)))
-            {
-                if (perk.statFactors != null)
-                {
-                    var factor = perk.statFactors.GetStatFactorFromList(___stat);
-                    if (Math.Abs(factor - 1f) > 0.0001f)
-                        __result += "\n" + (perk.LabelCap + ": " + __instance.ValueToString(factor, false, ToStringNumberSense.Factor));
-                }
-
-                if (perk.statOffsets != null)
-                {
-                    var offset = perk.statOffsets.GetStatOffsetFromList(___stat);
-                    if (offset != 0f)
-                        __result += "\n" + (perk.LabelCap + ": " + __instance.ValueToString(offset, false, ToStringNumberSense.Offset));
-                }
-            }
+            if (!PerkWorker.ShouldModifyStatEver(___stat)) return;
+            foreach (var perk in GameComponent_PerkManager.Instance.ActivePerks) perk.Worker.ModifyStatExplain(req, ___stat, __instance, ref __result);
         }
     }
 }
