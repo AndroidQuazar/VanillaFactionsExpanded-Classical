@@ -12,9 +12,8 @@ namespace VFEC.Senators
     [StaticConstructorOnStartup]
     public class Dialog_SenatorInfo : Window
     {
-        public static Texture2D PerkBG_Locked = ContentFinder<Texture2D>.Get("UI/Perks/PerkBG_Locked");
-
         private static readonly Color DisplayBGColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, 15);
+        private readonly bool canInteract;
         private readonly PerkDef finalPerk;
         private readonly ResearchProjectDef finalResearch;
 
@@ -31,7 +30,7 @@ namespace VFEC.Senators
 
         private RenderTexture pawnTexture;
 
-        public Dialog_SenatorInfo(FactionExtension_SenatorInfo senatorInfo1, List<SenatorInfo> senatorInfo2)
+        public Dialog_SenatorInfo(FactionExtension_SenatorInfo senatorInfo1, List<SenatorInfo> senatorInfo2, bool canInteract = true)
         {
             senatorInfo = new List<AllSenatorInfo>();
             finalPerk = senatorInfo1.finalPerk;
@@ -42,12 +41,13 @@ namespace VFEC.Senators
             doCloseButton = false;
             doCloseX = false;
             forcePause = true;
+            this.canInteract = canInteract;
         }
 
         protected override float Margin => 12f;
         public override Vector2 InitialSize => new(1150, 800);
 
-        private Texture2D PerkBG(bool locked) => locked ? PerkBG_Locked : perkBG_Unlocked;
+        private Texture2D PerkBG(bool locked) => locked ? SenatorUIUtility.PerkBG_Locked : perkBG_Unlocked;
 
         public override void DoWindowContents(Rect inRect)
         {
@@ -116,7 +116,7 @@ namespace VFEC.Senators
             inRect.yMin += 7f;
 
             Text.Font = GameFont.Small;
-            if (info.Favored) inRect.yMin += 80f;
+            if (info.Favored || !canInteract) inRect.yMin += 80f;
             else
             {
                 if (Widgets.ButtonText(inRect.TakeTopPart(40f).ContractedBy(10f, 0f), "VFEC.UI.ReQuest".Translate()))
