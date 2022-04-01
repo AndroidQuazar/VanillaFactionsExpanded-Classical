@@ -84,9 +84,11 @@
     <Compile Include="RaidStrategyWorker_ScorpionRaid.cs" />
     <Compile Include="ScenPart_Senators.cs" />
     <Compile Include="Senators\DebugActionsSenators.cs" />
+    <Compile Include="Senators\Dialog_PerkInfo.cs" />
     <Compile Include="Senators\Dialog_SenatorInfo.cs" />
     <Compile Include="Senators\FactionExtension_SenatorInfo.cs" />
     <Compile Include="Senators\SenatorQuests.cs" />
+    <Compile Include="Senators\SenatorUIUtility.cs" />
     <Compile Include="Senators\WorldComponent_Senators.cs" />
     <Compile Include="VFEC_DefOf.cs" />
     <Compile Include="WorldComponent_RoadBuilding.cs" />
