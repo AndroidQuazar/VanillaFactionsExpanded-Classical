@@ -190,6 +190,14 @@
         </options>
       </li>
     </pawnGroupMakers>
+    <modExtensions>
+        <li Class="KCSG.FactionSettlement">
+          <useStructureLayout>True</useStructureLayout>
+          <chooseFromlayouts>
+            <li>VFEC_ClassicalSettlement1</li>
+          </chooseFromlayouts>
+        </li>
+    </modExtensions>
   </FactionDef>
 
   <ThingSetMakerDef>
