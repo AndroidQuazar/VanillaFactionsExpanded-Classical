@@ -10,6 +10,9 @@
       <xpath>/Defs/FactionDef[defName="Empire"]/permanentEnemyToEveryoneExcept</xpath>
       <value>
         <li>VFEC_NewEmpire</li>
+		<li>VFEC_CentralRepublic</li>
+		<li>VFEC_WesternRepublic</li>
+		<li>VFEC_EasternRepublic</li>
       </value>
     </match>
   </Operation>
