@@ -43,18 +43,30 @@ namespace VFEC.Senators
         public override void FinalizeInit()
         {
             base.FinalizeInit();
-            if (initialized) return;
-            initialized = true;
-            Initialize();
+            if (!initialized) InitFromZero();
         }
 
-        public void Initialize()
+        public void InitFromZero()
         {
             SenatorInfo.Clear();
             Permanent.Clear();
+            CheckInit();
+            initialized = true;
+        }
+
+        public void CheckInit()
+        {
             foreach (var faction in world.factionManager.AllFactions)
                 if (faction.def.HasModExtension<FactionExtension_SenatorInfo>())
                 {
+                    if (SenatorInfo.ContainsKey(faction) != Permanent.ContainsKey(faction))
+                    {
+                        Log.Warning("[VFE - Classical] SenatorInfo and Permanent dictionaries are out of sync! Clearing data.");
+                        SenatorInfo.Remove(faction);
+                        Permanent.Remove(faction);
+                    }
+                    else if (SenatorInfo.ContainsKey(faction)) continue;
+
                     SenatorInfo.Add(faction, Enumerable.Repeat((false, true), faction.def.GetModExtension<FactionExtension_SenatorInfo>().numSenators).Select(info =>
                         new SenatorInfo
                         {
@@ -103,12 +115,15 @@ namespace VFEC.Senators
 
         public static IEnumerable<FloatMenuOption> AddSenatorsOption(IEnumerable<FloatMenuOption> options, Settlement __instance, Caravan caravan) =>
             __instance.Faction.def.HasModExtension<FactionExtension_SenatorInfo>() && __instance.Tile == caravan.Tile
-                ? options.Append(new FloatMenuOption("VFEC.Senators.Open".Translate(), () =>
+                ? options.Append(new FloatMenuOption("VFEC.Senators.Open".Translate(), delegate
+                {
+                    Instance.CheckInit();
                     Find.WindowStack.Add(new Dialog_SenatorInfo(__instance.Faction.def.GetModExtension<FactionExtension_SenatorInfo>(), Instance.SenatorInfo[__instance.Faction])
                     {
                         Caravan = caravan,
                         Faction = __instance.Faction
-                    })))
+                    });
+                }))
                 : options;
 
         public void GainFavorOf(Pawn pawn, Faction faction)

@@ -29,11 +29,14 @@ namespace VFEC.Senators
             {
                 fillRect.width -= 130f;
                 if (Widgets.ButtonText(new Rect(fillRect.width + 5f, rowY + 25f, 120f, 30f), "View Senators"))
+                {
+                    WorldComponent_Senators.Instance.CheckInit();
                     Find.WindowStack.Add(new Dialog_SenatorInfo(faction.def.GetModExtension<FactionExtension_SenatorInfo>(), WorldComponent_Senators.Instance.SenatorInfo[faction],
                         false)
                     {
                         Faction = faction
                     });
+                }
             }
         }
     }
