@@ -197,6 +197,11 @@
         <delayTicks>180</delayTicks>
       </li>
     </comps>
+		<modExtensions>
+			<li Class="VanillaStorytellersExpanded.StorytellerDefExtension">
+					<allowedTechLevels>Animal~Neolithic</allowedTechLevels>
+			</li>
+		</modExtensions>
   </StorytellerDef>
 
 </Defs>
