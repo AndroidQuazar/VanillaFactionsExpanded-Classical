@@ -93,7 +93,7 @@
       <li>RewardStandardQualitySuper</li>
     </thingSetMakerTags>
     <equippedStatOffsets>
-	  <MentalBreakThreshold>0.02</MentalBreakThreshold>
+	  <MentalBreakThreshold>-0.02</MentalBreakThreshold>
     </equippedStatOffsets>
     <thingCategories>
       <li>ArmorHeadgear</li>

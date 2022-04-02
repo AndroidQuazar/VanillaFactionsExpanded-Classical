@@ -92,7 +92,7 @@
     </thingSetMakerTags>
     <equippedStatOffsets>
       <MoveSpeed>-0.2</MoveSpeed>
-	  <MentalBreakThreshold>0.05</MentalBreakThreshold>
+	  <MentalBreakThreshold>-0.05</MentalBreakThreshold>
     </equippedStatOffsets>
     <thingCategories>
       <li>ApparelArmor</li>
