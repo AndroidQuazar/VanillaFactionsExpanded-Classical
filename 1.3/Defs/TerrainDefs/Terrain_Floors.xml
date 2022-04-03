@@ -9,6 +9,7 @@
 			<WorkToBuild>8000</WorkToBuild>
 			<Beauty>5</Beauty>
 		</statBases>
+		<designatorDropdown>VFEC_Mosaics</designatorDropdown>
 		<researchPrerequisites>
 			<li>VFEC_Mosaics</li>
 		</researchPrerequisites>
