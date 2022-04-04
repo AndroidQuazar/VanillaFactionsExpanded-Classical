@@ -59,7 +59,7 @@
 	
   <ThingDef ParentName="ArmorSmithableBase">
     <defName>VFEC_Apparel_LegionnaireArmor</defName>
-    <label>legionary armor</label>
+    <label>legionnaire armor</label>
     <description>A carefully designed set of armor made from a series of reinforced metal or wooden sheets, forming somewhat of a carapace without sacrificing too much dexterity. Such armor is known to embolden one's mental fortitude.</description>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
@@ -92,7 +92,7 @@
     </thingSetMakerTags>
     <equippedStatOffsets>
       <MoveSpeed>-0.2</MoveSpeed>
-	  <MentalBreakThreshold>0.05</MentalBreakThreshold>
+	  <MentalBreakThreshold>-0.05</MentalBreakThreshold>
     </equippedStatOffsets>
     <thingCategories>
       <li>ApparelArmor</li>

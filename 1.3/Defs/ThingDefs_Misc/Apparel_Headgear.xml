@@ -61,7 +61,7 @@
 	
   <ThingDef ParentName="ArmorSmithableBase">
     <defName>VFEC_Apparel_LegionnaireHelmet</defName>
-    <label>legionary helmet</label>
+    <label>legionnaire helmet</label>
     <description>A carefully designed helmet made out of a single large piece of wood or metal. A wide open gap near the mouth and eyes allows full peripheral vision and unmuffled communication.</description>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
@@ -93,7 +93,7 @@
       <li>RewardStandardQualitySuper</li>
     </thingSetMakerTags>
     <equippedStatOffsets>
-	  <MentalBreakThreshold>0.02</MentalBreakThreshold>
+	  <MentalBreakThreshold>-0.02</MentalBreakThreshold>
     </equippedStatOffsets>
     <thingCategories>
       <li>ArmorHeadgear</li>
