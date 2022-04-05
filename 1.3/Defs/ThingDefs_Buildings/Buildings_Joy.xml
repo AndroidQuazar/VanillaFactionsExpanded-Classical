@@ -49,6 +49,13 @@
 			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
 			<joyKind>VFEC_Relaxing_Bath</joyKind>
 		</building>
+		<comps>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>16</heatPerSecond>
+				<heatPushMaxTemperature>30</heatPushMaxTemperature>
+			</li>
+		</comps>
 		<researchPrerequisites>
 			<li>VFEC_Thermaebath</li>
 		</researchPrerequisites>
