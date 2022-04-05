@@ -82,8 +82,7 @@ namespace VFEC.Buildings
         public override void Tick()
         {
             base.Tick();
-            if (Find.TickManager.TicksGame >= litTick + MapComponent_Beacon.BEACON_COOLDOWN) Destroy(DestroyMode.KillFinalize);
-            else if (litTick > 0)
+            if (litTick > 0)
             {
                 if (ticksTillSmoke <= 0)
                 {
@@ -101,6 +100,8 @@ namespace VFEC.Buildings
                     var info = SoundInfo.InMap(new TargetInfo(Position, Map), MaintenanceType.PerTick);
                     sustainer = SustainerAggregatorUtility.AggregateOrSpawnSustainerFor(this, SoundDefOf.FireBurning, info);
                 }
+
+                if (Find.TickManager.TicksGame >= litTick + MapComponent_Beacon.BEACON_COOLDOWN) Destroy(DestroyMode.KillFinalize);
             }
         }
 

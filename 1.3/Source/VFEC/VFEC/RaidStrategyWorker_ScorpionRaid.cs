@@ -36,6 +36,7 @@ namespace VFEC
             return pawns;
         }
 
-        private static bool UsesScorpion(PawnGenOption option) => option.kind.weaponTags.Count == 1 && option.kind.weaponTags.Contains("ClassicalScorpion");
+        private static bool UsesScorpion(PawnGenOption option) =>
+            option?.kind?.weaponTags is not null && option.kind.weaponTags.Count == 1 && option.kind.weaponTags.Contains("ClassicalScorpion");
     }
 }
