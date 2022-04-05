@@ -41,6 +41,7 @@
       <passability>PassThroughOnly</passability>
       <pathCost>50</pathCost>
       <surfaceType>Item</surfaceType>
+	  <rotatable>false</rotatable>
       <comps>
          <li Class="ItemProcessor.CompProperties_ItemProcessor">
             <buildingOnGraphic>Things/Building/Production/MeatDryingRack/MeatDryingRack_b</buildingOnGraphic>
