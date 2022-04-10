@@ -312,6 +312,7 @@
       </graphicData>
       <castEdgeShadows>true</castEdgeShadows>
       <staticSunShadowHeight>0.20</staticSunShadowHeight>
+	  <tickerType>Rare</tickerType>
       <costList>
          <WoodLog>150</WoodLog>
       </costList>
@@ -354,9 +355,6 @@
             <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
          </li>
       </comps>
-      <placeWorkers>
-         <li>PlaceWorker_PreventInteractionSpotOverlap</li>
-      </placeWorkers>
    </ThingDef>
    
 </Defs>
