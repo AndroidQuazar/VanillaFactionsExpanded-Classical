@@ -64,6 +64,27 @@
 		</costList>
 	</TerrainDef>
 	
+  <TerrainDef ParentName="FloorBase">
+    <defName>VFEC_BronzeTile</defName>
+    <label>bronze tile</label>
+    <renderPrecedence>243</renderPrecedence>
+    <description>Bronze tiles with special cleanliness-enhancing properties. Extra-clean rooms improve outcomes in hospitals and research labs. This tile is very slow to build.</description>
+    <texturePath>Terrain/Surfaces/GenericFloorTile</texturePath>
+    <color>((132,80,52)</color>
+    <statBases>
+      <WorkToBuild>2400</WorkToBuild>
+      <Cleanliness>0.6</Cleanliness>
+    </statBases>
+    <costList>
+      <VFEC_Bronze>12</VFEC_Bronze>
+    </costList>
+    <constructEffect>ConstructMetal</constructEffect>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>Smithing</li>
+    </researchPrerequisites>
+  </TerrainDef>
+	
 	<!-- Vanilla -->
   <TerrainDef ParentName="TileStoneBase">
     <defName>VFEC_TileConcrete</defName>
