@@ -70,7 +70,7 @@
     <renderPrecedence>243</renderPrecedence>
     <description>Bronze tiles with special cleanliness-enhancing properties. Extra-clean rooms improve outcomes in hospitals and research labs. This tile is very slow to build.</description>
     <texturePath>Terrain/Surfaces/GenericFloorTile</texturePath>
-    <color>((132,80,52)</color>
+    <color>(132,80,52)</color>
     <statBases>
       <WorkToBuild>2400</WorkToBuild>
       <Cleanliness>0.6</Cleanliness>
