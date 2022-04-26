@@ -31,8 +31,11 @@ Player can side with each of them, as each of them provides different rewards - 
   <loadAfter>
     <li>Ludeon.RimWorld</li>
     <li>Ludeon.RimWorld.Royalty</li>
-	<li>Ludeon.RimWorld.Ideology</li>
+	  <li>Ludeon.RimWorld.Ideology</li>
     <li>brrainz.harmony</li>
     <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
   </loadAfter>
+  <loadBefore>
+    <li>oskarpotocki.vfe.mechanoid</li>
+  </loadBefore>
 </ModMetaData>
