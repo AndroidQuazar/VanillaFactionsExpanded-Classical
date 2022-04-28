@@ -121,14 +121,23 @@ namespace VFEC.Senators
             {
                 if (Widgets.ButtonText(inRect.TakeTopPart(40f).ContractedBy(10f, 0f), "VFEC.UI.ReQuest".Translate()))
                 {
-                    if (info.Quest is not null) Messages.Message("VFEC.UI.AlreadyQuest".Translate(), MessageTypeDefOf.RejectInput, false);
-                    else
+                    var canGetQuest = true;
+                    if (info.Quest is not null)
+                    {
+                        if (info.Quest.State is not QuestState.Ongoing and not QuestState.NotYetAccepted)
+                            info.Quest = null;
+                        else canGetQuest = false;
+                    }
+
+                    if (canGetQuest)
                     {
                         var info2 = WorldComponent_Senators.Instance.InfoFor(info.Pawn, Faction);
                         info.Quest = info2.Quest = SenatorQuests.GenerateQuestFor(info2, Faction);
                         Find.QuestManager.Add(info2.Quest);
                         QuestUtility.SendLetterQuestAvailable(info2.Quest);
                     }
+                    else
+                        Messages.Message("VFEC.UI.AlreadyQuest".Translate(), MessageTypeDefOf.RejectInput, false);
                 }
 
                 if (info.CanBribe)
@@ -170,7 +179,8 @@ namespace VFEC.Senators
             Text.Font = GameFont.Small;
             Label(ref inRect, "VFEC.UI.GainingFavor".Translate());
 
-            heights[curIdx] = Mathf.Max(heights[curIdx], Text.CalcHeight(info.Perk.LabelCap, inRect.width) + 30f + Text.CalcHeight(info.Research.LabelCap, inRect.width));
+            heights[curIdx] = Mathf.Max(heights[curIdx],
+                Text.CalcHeight(info.Perk.LabelCap, inRect.width) + 30f + Text.CalcHeight(info.Research.LabelCap, inRect.width));
             DoRewardsInfo(inRect.TakeTopPart(heights[curIdx]), info.Perk, info.Research);
 
             DoPerkInfo(inRect.TakeTopPart(100f).ContractedBy((inRect.width - 100f) / 2, 0f), info.Perk, !info.Favored);
@@ -190,7 +200,8 @@ namespace VFEC.Senators
             Widgets.Label(inRect.BottomHalf(), "VFEC.UI.Research".Translate(research.LabelCap).Colorize(ColoredText.SubtleGrayColor));
         }
 
-        public RenderTexture GetPawnTexture(Pawn pawn, Vector2 size, Rot4 rotation, Vector3 cameraOffset = default, float cameraZoom = 1f, bool supersample = true,
+        public RenderTexture GetPawnTexture(Pawn pawn, Vector2 size, Rot4 rotation, Vector3 cameraOffset = default, float cameraZoom = 1f,
+            bool supersample = true,
             bool compensateForUIScale = true, bool renderHeadgear = true, bool renderClothes = true, Dictionary<Apparel, Color> overrideApparelColors = null,
             Color? overrideHairColor = null, bool stylingStation = false)
         {

@@ -64,6 +64,7 @@
     <pathCost>50</pathCost>
     <fillPercent>0.4</fillPercent>
     <hasTooltip>true</hasTooltip>
+    <tradeability>None</tradeability>
     <costList>
       <WoodLog>70</WoodLog>
       <Steel>25</Steel>

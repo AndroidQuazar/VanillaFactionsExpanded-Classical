@@ -35,6 +35,12 @@ namespace VFEC.Buildings
             yield return des;
         }
 
+        public override void PostMake()
+        {
+            base.PostMake();
+            InnerThing ??= ThingMaker.MakeThing(VFEC_DefOf.VFEC_Turret_Scorpion);
+        }
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);

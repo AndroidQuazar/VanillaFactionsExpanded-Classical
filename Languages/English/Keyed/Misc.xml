@@ -15,4 +15,5 @@
     <VFEC.LightTheBeacon.Desc>Light this beacon to call reiforcements.</VFEC.LightTheBeacon.Desc>
     <VFEC.BuildingRoad>Building road: {0}, progress: {1}, ({2}/{3})</VFEC.BuildingRoad>
     <VFEC.RoadFinished>{0} has finished building {1}</VFEC.RoadFinished>
+    <VFEC.Unknown>Unknown</VFEC.Unknown>
 </LanguageData>
