@@ -196,10 +196,10 @@ namespace VFEC.Senators
         {
             base.WorldComponentTick();
             if (Find.TickManager.TicksGame % 60000 == 25)
-                foreach (var (faction, infos) in SenatorInfo)
+                foreach (var (faction, senatorInfos) in SenatorInfo)
                 {
                     var perm = Permanent[faction];
-                    foreach (var senatorInfo in infos)
+                    foreach (var senatorInfo in senatorInfos)
                     {
                         if (!senatorInfo.Favored && senatorInfo.Pawn == null)
                         {

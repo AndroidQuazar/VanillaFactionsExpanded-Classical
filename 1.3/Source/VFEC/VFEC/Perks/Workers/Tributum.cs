@@ -22,7 +22,8 @@ namespace VFEC.Perks.Workers
         {
             yield return new Patch(AccessTools.Method(typeof(Tradeable), "InitPriceDataIfNeeded"), AccessTools.Method(GetType(), nameof(CheckShouldModify)),
                 AccessTools.Method(GetType(), nameof(ModifySellPrice)));
-            yield return Patch.Postfix(AccessTools.Method(typeof(Tradeable), nameof(Tradeable.GetPriceTooltip)), AccessTools.Method(GetType(), nameof(AddToTooltip)));
+            yield return Patch.Postfix(AccessTools.Method(typeof(Tradeable), nameof(Tradeable.GetPriceTooltip)),
+                AccessTools.Method(GetType(), nameof(AddToTooltip)));
         }
 
         public override void Initialize()
@@ -41,7 +42,8 @@ namespace VFEC.Perks.Workers
                 var silver = ThingMaker.MakeThing(ThingDefOf.Silver);
                 silver.stackCount = Mathf.FloorToInt(money);
                 DropPodUtility.DropThingsNear(DropCellFinder.TradeDropSpot(map), map, Gen.YieldSingle(silver), canRoofPunch: false, forbid: false);
-                Find.LetterStack.ReceiveLetter("VFEC.Letters.Donation".Translate(faction.Name), "VFEC.Letters.Donation.Desc".Translate(faction.Name, money.ToStringMoney()),
+                Find.LetterStack.ReceiveLetter("VFEC.Letters.Donation".Translate(faction.Name),
+                    "VFEC.Letters.Donation.Desc".Translate(faction.Name, money.ToStringMoney()),
                     LetterDefOf.PositiveEvent, silver, faction);
                 lastTickDonated = Find.TickManager.TicksGame;
             }
@@ -59,7 +61,7 @@ namespace VFEC.Perks.Workers
 
         public static void ModifySellPrice(ref float ___pricePlayerBuy, ref float ___pricePlayerSell)
         {
-            if (shouldModify && TradeSession.trader.Faction.def == VFEC_DefOf.VFEC_CentralRepublic)
+            if (shouldModify && TradeSession.trader.Faction is {def: var def} && def == VFEC_DefOf.VFEC_CentralRepublic)
                 ___pricePlayerBuy *= 0.5f;
             // ___pricePlayerSell *= 2f;
         }
