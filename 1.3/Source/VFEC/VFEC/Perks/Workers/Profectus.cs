@@ -31,15 +31,19 @@ namespace VFEC.Perks.Workers
 
         private void DoResearch()
         {
-            var research = DefDatabase<ResearchProjectDef>.AllDefs.Where(proj => proj.TechprintCount <= 0 && proj.CanStartNow).RandomElement();
-            Find.ResearchManager.FinishProject(research);
-            var faction = Find.FactionManager.FirstFactionOfDef(VFEC_DefOf.VFEC_EasternRepublic);
-            Find.LetterStack.ReceiveLetter("VFEC.Letters.Researched".Translate(research.LabelCap),
-                "VFEC.Letters.Researched.Desc".Translate(research.LabelCap,
-                    faction?.Name ?? VFEC_DefOf.VFEC_EasternRepublic.LabelCap),
-                LetterDefOf.PositiveEvent, null, faction);
-            researchesUnlocked++;
-            nextResearchTick = Find.TickManager.TicksGame + TicksTillNextResearch;
+            if (DefDatabase<ResearchProjectDef>.AllDefs.Where(proj => proj.TechprintCount <= 0 && proj.CanStartNow).TryRandomElement(out var research))
+            {
+                Find.ResearchManager.FinishProject(research);
+                var faction = Find.FactionManager.FirstFactionOfDef(VFEC_DefOf.VFEC_EasternRepublic);
+                Find.LetterStack.ReceiveLetter("VFEC.Letters.Researched".Translate(research.LabelCap),
+                    "VFEC.Letters.Researched.Desc".Translate(research.LabelCap,
+                        faction?.Name ?? VFEC_DefOf.VFEC_EasternRepublic.LabelCap),
+                    LetterDefOf.PositiveEvent, null, faction);
+                researchesUnlocked++;
+                nextResearchTick = Find.TickManager.TicksGame + TicksTillNextResearch;
+            }
+            else
+                nextResearchTick = Find.TickManager.TicksGame + 60000; // Check each day for new research
         }
 
         public override void ExposeData()
