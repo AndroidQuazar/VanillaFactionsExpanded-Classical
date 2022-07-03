@@ -35,6 +35,7 @@
           <li Class="HediffCompProperties_Link">
             <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
             <maxDistance>1.9</maxDistance>
+            <customMote>VFEC_MoteCenturionLink</customMote>
           </li>
         </comps>
         <isBad>false</isBad>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="MoteGlowDistorted">
+        <defName>VFEC_MoteCenturionLink</defName>
+        <thingClass>MoteDualAttached</thingClass>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <mote>
+          <fadeInTime>0.1</fadeInTime>
+          <fadeOutTime>0.1</fadeOutTime>
+          <solidTime>999999</solidTime>
+          <needsMaintenance>True</needsMaintenance>
+          <rotateTowardsTarget>True</rotateTowardsTarget>
+          <scaleToConnectTargets>True</scaleToConnectTargets>
+        </mote>
+        <graphicData>
+          <texPath>Things/Mote/PsychicLinkLine</texPath>
+          <shaderParameters>
+            <_distortionIntensity>0.1</_distortionIntensity>
+            <_distortionScale>0.1</_distortionScale>
+            <_wordSpaceDistortionToggle>1</_wordSpaceDistortionToggle>
+          </shaderParameters>
+        </graphicData>
+      </ThingDef>
+</Defs>
