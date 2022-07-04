@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <ThingDef ParentName="MoteGlowDistorted">
+    <ThingDef ParentName="MoteBase">
         <defName>VFEC_MoteCenturionLink</defName>
         <thingClass>MoteDualAttached</thingClass>
         <altitudeLayer>MoteLow</altitudeLayer>
@@ -18,6 +18,10 @@
             <_distortionIntensity>0.1</_distortionIntensity>
             <_distortionScale>0.1</_distortionScale>
             <_wordSpaceDistortionToggle>1</_wordSpaceDistortionToggle>
+          </shaderParameters>
+          <shaderType>MoteGlowDistorted</shaderType>
+          <shaderParameters>
+            <_DistortionTex>/Other/Ripples</_DistortionTex>
           </shaderParameters>
         </graphicData>
       </ThingDef>
