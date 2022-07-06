@@ -2,6 +2,7 @@
 <Defs>
     <ThingDef ParentName="MoteBase">
         <defName>VFEC_MoteCenturionLink</defName>
+        <label>centurion link</label>
         <thingClass>MoteDualAttached</thingClass>
         <altitudeLayer>MoteLow</altitudeLayer>
         <mote>
@@ -13,16 +14,7 @@
           <scaleToConnectTargets>True</scaleToConnectTargets>
         </mote>
         <graphicData>
-          <texPath>Things/Mote/PsychicLinkLine</texPath>
-          <shaderParameters>
-            <_distortionIntensity>0.1</_distortionIntensity>
-            <_distortionScale>0.1</_distortionScale>
-            <_wordSpaceDistortionToggle>1</_wordSpaceDistortionToggle>
-          </shaderParameters>
-          <shaderType>MoteGlowDistorted</shaderType>
-          <shaderParameters>
-            <_DistortionTex>/Other/Ripples</_DistortionTex>
-          </shaderParameters>
+          <texPath>Things/Mote/Transparent</texPath>
         </graphicData>
       </ThingDef>
 </Defs>
