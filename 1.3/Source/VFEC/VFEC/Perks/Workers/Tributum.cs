@@ -61,7 +61,7 @@ public class Tributum : PerkWorker
 
     public static void ModifySellPrice(ref float ___pricePlayerBuy, ref float ___pricePlayerSell)
     {
-        if (shouldModify && TradeSession.trader.Faction is { def: var def } && def == VFEC_DefOf.VFEC_CentralRepublic)
+        if (shouldModify && TradeSession.trader?.Faction is { def: var def } && def == VFEC_DefOf.VFEC_CentralRepublic)
             ___pricePlayerBuy *= 0.5f;
         // ___pricePlayerSell *= 2f;
     }
