@@ -58,7 +58,7 @@ public class WorldComponent_Senators : WorldComponent
     public void CheckInit()
     {
         foreach (var faction in world.factionManager.AllFactions)
-            if (faction.hidden is false && !faction.temporary && faction.def.HasModExtension<FactionExtension_SenatorInfo>())
+            if (faction.ShouldHaveSenators())
             {
                 if (SenatorInfo.ContainsKey(faction) != Permanent.ContainsKey(faction))
                 {
@@ -116,7 +116,7 @@ public class WorldComponent_Senators : WorldComponent
     }
 
     public static IEnumerable<FloatMenuOption> AddSenatorsOption(IEnumerable<FloatMenuOption> options, Settlement __instance, Caravan caravan) =>
-        __instance.Faction.def.HasModExtension<FactionExtension_SenatorInfo>() && __instance.Tile == caravan.Tile
+        __instance.Faction.ShouldHaveSenators() && __instance.Tile == caravan.Tile
             ? options.Append(new FloatMenuOption("VFEC.Senators.Open".Translate(), delegate
             {
                 Instance.CheckInit();
